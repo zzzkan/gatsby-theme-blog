@@ -1,0 +1,19 @@
+{
+  "name": "site",
+  "version": "1.0.0",
+  "description": "Site using @zzzkan/gatsby-theme-blog",
+  "author": "zzzkan <zzz602214076@outlook.com>",
+  "license": "MIT",
+  "private": true,
+  "scripts": {
+    "build": "gatsby build",
+    "develop": "gatsby develop",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@zzzkan/gatsby-theme-blog": "*",
+    "gatsby": "^4.24.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "name": "@zzzkan/gatsby-theme-blog",
+  "version": "1.0.0",
+  "description": "A gatsby theme for blogging",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzzkan/gatsby-theme-blog.git",
+    "directory": "package"
+  },
+  "author": "zzzkan <zzz602214076@outlook.com>",
+  "license": "MIT",
+  "keywords": [
+    "gatsby",
+    "gatsby-theme",
+    "gatsby-plugin",
+    "react",
+    "blog"
+  ],
+  "homepage": "",
+  "peerDependencies": {
+    "gatsby": "^4.24.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}
