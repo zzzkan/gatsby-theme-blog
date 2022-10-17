@@ -5,5 +5,9 @@
   "author": "zzzkan <zzz602214076@outlook.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": ["package", "site"]
+  "workspaces": [
+    "package",
+    "site"
+  ],
+  "packageManager": "yarn@3.2.4"
 }
