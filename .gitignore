@@ -111,3 +111,6 @@ public
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
+
+# GraphQL Typegen
+gatsby-types.d.ts

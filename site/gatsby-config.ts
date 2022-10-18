@@ -1,4 +1,7 @@
-module.exports = {
+import type { GatsbyConfig } from "gatsby"
+
+const config: GatsbyConfig = {
+  graphqlTypegen: true,
   plugins: [
     {
       resolve: "@zzzkan/gatsby-theme-blog",
@@ -6,3 +9,5 @@ module.exports = {
     },
   ],
 }
+
+export default config
