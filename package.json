@@ -9,5 +9,29 @@
     "package",
     "site"
   ],
-  "packageManager": "yarn@3.2.4"
+  "scripts": {
+    "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.mdx",
+    "lint:fix": "yarn lint --fix",
+    "format": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,json}\"  --write"
+  },
+  "packageManager": "yarn@3.2.4",
+  "devDependencies": {
+    "@types/eslint": "^8",
+    "@types/node": "^18.11.0",
+    "@types/prettier": "^2",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "eslint": "^8.0.1",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-config-standard-with-typescript": "latest",
+    "eslint-plugin-import": "^2.25.2",
+    "eslint-plugin-jsx-a11y": "^6.6.1",
+    "eslint-plugin-n": "^15.0.0",
+    "eslint-plugin-promise": "^6.0.0",
+    "eslint-plugin-react": "latest",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "prettier": "^2.7.1",
+    "typescript": "*"
+  }
 }
