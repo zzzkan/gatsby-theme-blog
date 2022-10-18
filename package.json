@@ -12,7 +12,17 @@
   "scripts": {
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.mdx",
     "lint:fix": "yarn lint --fix",
-    "format": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,json}\"  --write"
+    "format": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,json}\"  --write",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write",
+      "eslint --fix"
+    ],
+    "*.{md,mdx,json}": [
+      "prettier --write"
+    ]
   },
   "packageManager": "yarn@3.2.4",
   "devDependencies": {
@@ -31,6 +41,8 @@
     "eslint-plugin-promise": "^6.0.0",
     "eslint-plugin-react": "latest",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.0.3",
     "prettier": "^2.7.1",
     "typescript": "*"
   }
