@@ -7819,7 +7819,7 @@ __metadata:
     husky: ^8.0.0
     lint-staged: ^13.0.3
     prettier: ^2.7.1
-    typescript: "*"
+    typescript: ^4.8.4
     vitest: ^0.24.3
   languageName: unknown
   linkType: soft
@@ -13920,7 +13920,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@npm:*":
+"typescript@npm:^4.8.4":
   version: 4.8.4
   resolution: "typescript@npm:4.8.4"
   bin:
@@ -13930,7 +13930,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@*#~builtin<compat/typescript>":
+"typescript@patch:typescript@^4.8.4#~builtin<compat/typescript>":
   version: 4.8.4
   resolution: "typescript@patch:typescript@npm%3A4.8.4#~builtin<compat/typescript>::version=4.8.4&hash=701156"
   bin:
