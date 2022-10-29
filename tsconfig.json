@@ -100,11 +100,7 @@
   },
   "include": [
     "./package/src/**/*",
-    "./package/gatsby-node.ts",
-    "./package/gatsby-config.ts",
     "./site/src/**/*",
-    "./site/gatsby-node.ts",
-    "./site/gatsby-config.ts",
     "./vite.config.ts",
     "./vitest-setup.ts"
   ],
