@@ -44,8 +44,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       filePath: String!
       slug: String! @slugify
       title: String!
-      publishedDate : Date! @dateformat
-      updatedDate : Date @dateformat
+      publishedDate: Date! @dateformat
+      updatedDate: Date @dateformat
       featuredImage: File @fileByRelativePath
       featuredImageAlt: String
       tags: [String!]
@@ -100,4 +100,45 @@ exports.onCreateNode = ({
 
     createParentChildLink({ parent: node, child: getNode(postId) })
   }
+}
+
+const postTemplate = require.resolve("./src/templates/PostTemplate.tsx")
+const postsTemplate = require.resolve("./src/templates/PostsTemplate.tsx")
+
+exports.createPages = async ({ graphql, actions, reporter }) => {
+  const { createPage } = actions
+
+  createPage({
+    path: "/",
+    component: postsTemplate,
+  })
+
+  const result = await graphql(`
+    query {
+      allPost(sort: { fields: publishedDate, order: DESC }) {
+        nodes {
+          id
+          filePath
+          slug
+        }
+      }
+    }
+  `)
+
+  if (result.errors) reporter.panicOnBuild(result.errors)
+
+  const posts = result.data.allPost.nodes
+  posts.forEach((post, index) => {
+    const previous = index === posts.length - 1 ? undefined : posts[index + 1]
+    const next = index === 0 ? undefined : posts[index - 1]
+    createPage({
+      path: post.slug,
+      component: `${postTemplate}?__contentFilePath=${post.filePath}`,
+      context: {
+        id: post.id,
+        previousId: previous ? previous.id : undefined,
+        nextId: next ? next.id : undefined,
+      },
+    })
+  })
 }
