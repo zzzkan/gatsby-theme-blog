@@ -25,7 +25,17 @@
   },
   "dependencies": {
     "@mdx-js/react": "^2.1.5",
+    "gatsby-plugin-catch-links": "^4.24.0",
+    "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-mdx": "^4.3.0",
-    "gatsby-source-filesystem": "^4.24.0"
+    "gatsby-plugin-sharp": "^4.24.0",
+    "gatsby-remark-images": "^6.24.0",
+    "gatsby-source-filesystem": "^4.24.0",
+    "gatsby-transformer-sharp": "^4.24.0",
+    "reading-time": "^1.5.0",
+    "rehype-autolink-headings": "^6.1.1",
+    "rehype-external-links": "^2.0.1",
+    "rehype-slug": "^5.1.0",
+    "remark-gfm": "^1"
   }
 }

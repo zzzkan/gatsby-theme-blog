@@ -1,3 +1,5 @@
+const readingTime = require("reading-time")
+
 exports.createSchemaCustomization = ({ actions }) => {
   const { createTypes, createFieldExtension } = actions
 
@@ -49,6 +51,8 @@ exports.createSchemaCustomization = ({ actions }) => {
       featuredImage: File @fileByRelativePath
       featuredImageAlt: String
       tags: [String!]
+      timeToReadMinutes: Float
+      wordCount: Int
       description: String
       excerpt(pruneLength: Int = 140): String! @parentPassThrough
       body: String! @parentPassThrough
@@ -70,6 +74,7 @@ exports.onCreateNode = ({
     node.internal.type === "Mdx" &&
     fileNode.sourceInstanceName === "content/posts"
   ) {
+    const readingTimeResult = readingTime(node.body)
     const fieldData = {
       filePath: fileNode.absolutePath,
       slug: node.frontmatter.slug,
@@ -79,6 +84,8 @@ exports.onCreateNode = ({
       featuredImage: node.frontmatter.featuredImage,
       featuredImageAlt: node.frontmatter.featuredImageAlt,
       tags: node.frontmatter.tags,
+      timeToReadMinutes: readingTimeResult.minutes,
+      wordCount: readingTimeResult.words,
       description: node.frontmatter.description,
     }
 
