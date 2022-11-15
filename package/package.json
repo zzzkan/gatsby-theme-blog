@@ -29,6 +29,7 @@
     "@emotion/react": "^11.10.5",
     "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^2.1.5",
+    "@react-icons/all-files": "^4.1.0",
     "framer-motion": "^7.6.6",
     "gatsby-plugin-catch-links": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
