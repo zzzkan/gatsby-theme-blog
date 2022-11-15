@@ -24,7 +24,12 @@
     "react-dom": "^18.2.0"
   },
   "dependencies": {
+    "@chakra-ui/gatsby-plugin": "^3.0.6",
+    "@chakra-ui/react": "^2.3.7",
+    "@emotion/react": "^11.10.5",
+    "@emotion/styled": "^11.10.5",
     "@mdx-js/react": "^2.1.5",
+    "framer-motion": "^7.6.6",
     "gatsby-plugin-catch-links": "^4.24.0",
     "gatsby-plugin-image": "^2.24.0",
     "gatsby-plugin-mdx": "^4.3.0",

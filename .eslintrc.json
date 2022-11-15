@@ -18,7 +18,9 @@
     "project": "./tsconfig.json"
   },
   "plugins": [],
-  "rules": {},
+  "rules": {
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"]
+  },
   "settings": {
     "react": {
       "version": "detect"

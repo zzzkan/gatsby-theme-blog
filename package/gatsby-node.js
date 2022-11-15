@@ -110,23 +110,30 @@ exports.onCreateNode = ({
 }
 
 const postTemplate = require.resolve("./src/templates/PostTemplate.tsx")
-const postsTemplate = require.resolve("./src/templates/PostsTemplate.tsx")
+const allPostsTemplate = require.resolve("./src/templates/AllPostsTemplate.tsx")
+const tagPostsTemplate = require.resolve("./src/templates/TagPostsTemplate.tsx")
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
 
   createPage({
     path: "/",
-    component: postsTemplate,
+    component: allPostsTemplate,
   })
 
   const result = await graphql(`
     query {
-      allPost(sort: { fields: publishedDate, order: DESC }) {
+      allPosts: allPost(sort: { fields: publishedDate, order: DESC }) {
         nodes {
           id
           filePath
           slug
+        }
+      }
+      tagPosts: allPost {
+        group(field: tags) {
+          fieldValue
+          totalCount
         }
       }
     }
@@ -134,10 +141,11 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
 
   if (result.errors) reporter.panicOnBuild(result.errors)
 
-  const posts = result.data.allPost.nodes
-  posts.forEach((post, index) => {
-    const previous = index === posts.length - 1 ? undefined : posts[index + 1]
-    const next = index === 0 ? undefined : posts[index - 1]
+  const allPosts = result.data.allPosts.nodes
+  allPosts.forEach((post, index) => {
+    const previous =
+      index === allPosts.length - 1 ? undefined : allPosts[index + 1]
+    const next = index === 0 ? undefined : allPosts[index - 1]
     createPage({
       path: post.slug,
       component: `${postTemplate}?__contentFilePath=${post.filePath}`,
@@ -148,4 +156,18 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
       },
     })
   })
+
+  const tagPosts = result.data.tagPosts.group
+  if (tagPosts.length > 0) {
+    tagPosts.forEach((tag) => {
+      createPage({
+        path: `/tags/${tag.fieldValue}`,
+        component: tagPostsTemplate,
+        context: {
+          tag: tag.fieldValue,
+          count: tag.totalCount,
+        },
+      })
+    })
+  }
 }

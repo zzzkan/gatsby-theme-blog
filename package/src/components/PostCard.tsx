@@ -1,0 +1,54 @@
+import React from "react"
+import { Link as GatsbyLink } from "gatsby"
+import { GatsbyImage } from "gatsby-plugin-image"
+import { Box, Heading, Stack, Link } from "@chakra-ui/react"
+import PostMetadata, { PostMetadataProps } from "./PostMetadata"
+import Tags, { TagsProps } from "./Tags"
+
+export type PostCardProps = PostMetadataProps &
+  TagsProps & {
+    readonly slug: string
+    readonly title: string
+    readonly featuredImage: {
+      readonly childImageSharp: {
+        readonly gatsbyImageData: import("gatsby-plugin-image").IGatsbyImageData
+      } | null
+    } | null
+    readonly featuredImageAlt: string | null
+  }
+
+const PostCard: React.FC<PostCardProps> = (post) => {
+  const image = post.featuredImage?.childImageSharp?.gatsbyImageData
+  return (
+    <Box
+      as={"article"}
+      boxShadow={"2xl"}
+      rounded={"lg"}
+      paddingX={6}
+      paddingY={3}
+      overflow={"hidden"}
+    >
+      {image != null && (
+        <Link as={GatsbyLink} to={post.slug}>
+          <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
+            <Box _hover={{ transform: "scale(1.02)" }}>
+              <GatsbyImage
+                image={image}
+                alt={post.featuredImageAlt ?? "Featured image"}
+              />
+            </Box>
+          </Box>
+        </Link>
+      )}
+      <Stack spacing={0}>
+        <Tags {...post} />
+        <Link as={GatsbyLink} to={post.slug}>
+          <Heading fontSize={"xl"}>{post.title}</Heading>
+        </Link>
+        <PostMetadata {...post} />
+      </Stack>
+    </Box>
+  )
+}
+
+export default PostCard

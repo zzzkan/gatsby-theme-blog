@@ -1,36 +1,36 @@
 import React from "react"
 import { graphql, PageProps } from "gatsby"
+import Layout from "../components/Layout"
+import Post from "../components/Post"
 
 const PostTemplate: React.FC<PageProps<Queries.PostTemplateQuery>> = ({
   data,
-  pageContext,
   children,
 }) => {
-  return (
-    <main>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-      <pre>{JSON.stringify(pageContext, null, 2)}</pre>
-      {children}
-    </main>
-  )
+  const post = data.post
+  return <Layout>{post != null && <Post post={post}>{children}</Post>}</Layout>
 }
 
 export default PostTemplate
 
 export const query = graphql`
-  query PostTemplate($id: String!, $previousId: String, $nextId: String) {
-    mdx(id: { eq: $id }) {
+  query PostTemplate($id: String!) {
+    post(id: { eq: $id }) {
       id
-    }
-    previous: post(id: { eq: $previousId }) {
-      id
-      slug
       title
-    }
-    next: post(id: { eq: $nextId }) {
-      id
-      slug
-      title
+      publishedDate(formatString: "YYYY/MM/DD")
+      updatedDate(formatString: "YYYY/MM/DD")
+      featuredImage {
+        childImageSharp {
+          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1.77777, quality: 80)
+        }
+      }
+      featuredImageAlt
+      tags
+      timeToReadMinutes
+      wordCount
+      description
+      excerpt
     }
   }
 `

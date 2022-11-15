@@ -14,6 +14,12 @@ module.exports = {
   graphqlTypegen: true,
   plugins: [
     {
+      resolve: "@chakra-ui/gatsby-plugin",
+      options: {
+        resetCSS: true,
+      },
+    },
+    {
       resolve: "gatsby-source-filesystem",
       options: {
         path: "content/posts",
@@ -29,7 +35,9 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 650,
+              linkImagesToOriginal: false,
               backgroundColor: "transparent",
+              withWebp: true,
             },
           },
         ],
