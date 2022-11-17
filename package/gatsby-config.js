@@ -11,6 +11,12 @@ const wrapESMPlugin = (name) =>
   }
 
 module.exports = {
+  siteMetadata: {
+    title: "zzzkan blog",
+    siteUrl: "https://github.com/zzzkan",
+    description: `@zzzkan/gatsby-theme-blog example.`,
+    author: "zzzkan",
+  },
   graphqlTypegen: true,
   plugins: [
     {
