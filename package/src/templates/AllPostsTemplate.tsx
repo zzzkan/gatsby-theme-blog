@@ -23,8 +23,8 @@ export const query = graphql`
         id
         slug
         title
-        publishedDate(formatString: "YYYY/MM/DD")
-        updatedDate(formatString: "YYYY/MM/DD")
+        publishedDate(formatString: "YYYY-MM-DD")
+        updatedDate(formatString: "YYYY-MM-DD")
         featuredImage {
           childImageSharp {
             gatsbyImageData(aspectRatio: 1.77777, quality: 30)

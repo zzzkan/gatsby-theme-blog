@@ -13,7 +13,6 @@ export type HeaderProps = PostMetadataProps &
       } | null
     } | null
     readonly featuredImageAlt: string | null
-    readonly wordCount: number | null
   }
 
 const Header: React.FC<HeaderProps> = (post) => {

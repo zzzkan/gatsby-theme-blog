@@ -18,8 +18,8 @@ export const query = graphql`
     post(id: { eq: $id }) {
       id
       title
-      publishedDate(formatString: "YYYY/MM/DD")
-      updatedDate(formatString: "YYYY/MM/DD")
+      publishedDate(formatString: "YYYY-MM-DD")
+      updatedDate(formatString: "YYYY-MM-DD")
       featuredImage {
         childImageSharp {
           gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1.77777, quality: 80)
