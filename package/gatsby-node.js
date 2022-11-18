@@ -1,7 +1,9 @@
 const readingTime = require("reading-time")
+const defaultThemeOptions = require("./utils/defaultThemeOptions")
 
-exports.createSchemaCustomization = ({ actions }) => {
+exports.createSchemaCustomization = ({ actions }, themeOptions) => {
   const { createTypes, createFieldExtension } = actions
+  const { basePath } = defaultThemeOptions(themeOptions)
 
   createFieldExtension({
     name: "slugify",
@@ -14,7 +16,7 @@ exports.createSchemaCustomization = ({ actions }) => {
             .toLowerCase()
             .replace(/[^a-z0-9]+/g, "-")
             .replace(/(^-|-$)+/g, "")
-          return `/${""}/${slug}`.replace(/\/\/+/g, "/")
+          return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
         },
       }
     },
@@ -57,22 +59,55 @@ exports.createSchemaCustomization = ({ actions }) => {
       excerpt(pruneLength: Int = 140): String! @parentPassThrough
       body: String! @parentPassThrough
     }
+
+    type themeOption implements Node {
+      basePath: String
+      contentPath: String
+      imageMaxWidth: Int
+      aspectRatio: Float
+      formatString: String
+      links: [Link]
+    }
+
+    type Link {
+      name: String!
+      url: String!
+      label: String
+    }
+
   `)
 }
 
-exports.onCreateNode = ({
-  node,
-  actions,
-  getNode,
-  createNodeId,
-  createContentDigest,
-}) => {
+exports.sourceNodes = ({ actions, createContentDigest }, themeOptions) => {
+  const { createNode } = actions
+  const options = defaultThemeOptions(themeOptions)
+  const themeConfig = { ...options }
+
+  createNode({
+    ...themeConfig,
+    id: "@zzzkan/gatsby-theme-blog",
+    parent: null,
+    children: [],
+    internal: {
+      type: "themeOption",
+      contentDigest: createContentDigest(themeConfig),
+      content: JSON.stringify(themeConfig),
+      description: "Options for @zzzkan/gatsby-theme-blog",
+    },
+  })
+}
+
+exports.onCreateNode = (
+  { node, actions, getNode, createNodeId, createContentDigest },
+  themeOptions
+) => {
   const { createNode, createParentChildLink } = actions
   const fileNode = getNode(node.parent)
+  const { contentPath } = defaultThemeOptions(themeOptions)
 
   if (
     node.internal.type === "Mdx" &&
-    fileNode.sourceInstanceName === "content/posts"
+    fileNode.sourceInstanceName === contentPath
   ) {
     const readingTimeResult = readingTime(node.body)
     const fieldData = {
@@ -113,12 +148,18 @@ const postTemplate = require.resolve("./src/templates/PostTemplate.tsx")
 const allPostsTemplate = require.resolve("./src/templates/AllPostsTemplate.tsx")
 const tagPostsTemplate = require.resolve("./src/templates/TagPostsTemplate.tsx")
 
-exports.createPages = async ({ graphql, actions, reporter }) => {
+exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
+  const { basePath, aspectRatio, formatString } =
+    defaultThemeOptions(themeOptions)
 
   createPage({
-    path: "/",
+    path: basePath,
     component: allPostsTemplate,
+    context: {
+      aspectRatio,
+      formatString,
+    },
   })
 
   const result = await graphql(`
@@ -153,6 +194,8 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
         id: post.id,
         previousId: previous ? previous.id : undefined,
         nextId: next ? next.id : undefined,
+        aspectRatio,
+        formatString,
       },
     })
   })
@@ -161,11 +204,13 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
   if (tagPosts.length > 0) {
     tagPosts.forEach((tag) => {
       createPage({
-        path: `/tags/${tag.fieldValue}`,
+        path: `${basePath}/tags/${tag.fieldValue}`.replace(/\/\/+/g, "/"),
         component: tagPostsTemplate,
         context: {
           tag: tag.fieldValue,
           count: tag.totalCount,
+          aspectRatio,
+          formatString,
         },
       })
     })

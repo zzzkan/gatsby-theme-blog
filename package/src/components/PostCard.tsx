@@ -1,6 +1,6 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
-import { GatsbyImage } from "gatsby-plugin-image"
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { Box, Heading, Stack, Link } from "@chakra-ui/react"
 import PostMetadata, { PostMetadataProps } from "./PostMetadata"
 import Tags, { TagsProps } from "./Tags"
@@ -11,7 +11,7 @@ export type PostCardProps = PostMetadataProps &
     readonly title: string
     readonly featuredImage: {
       readonly childImageSharp: {
-        readonly gatsbyImageData: import("gatsby-plugin-image").IGatsbyImageData
+        readonly gatsbyImageData: IGatsbyImageData
       } | null
     } | null
     readonly featuredImageAlt: string | null

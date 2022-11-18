@@ -14,37 +14,40 @@ import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { useSiteMetadata } from "../../hooks/useSiteMetadata"
+import { useThemeOption } from "../../hooks/useThemeOption"
+import { IconType } from "@react-icons/all-files/lib"
+
+const icon = (name: string): IconType | undefined => {
+  if (name === "github") return FaGithub
+  if (name === "twiiter") return FaTwitter
+  if (name === "rss") return FaRss
+  if (name === "portfolio") return FaLink
+}
 
 const Footer: React.FC = () => {
   const { author } = useSiteMetadata()
+  const { links } = useThemeOption()
   return (
     <Box as={"footer"} position={"sticky"} top={"100vh"}>
       <Container maxWidth={"container.lg"}>
         <Flex paddingTop={3} alignItems={"end"}>
           <Box>© 2022 {author}</Box>
           <Spacer />
-          <HStack spacing={2}>
-            <Tooltip label="Github" placement="top">
-              <Link href={"/"} isExternal={true}>
-                <Icon as={FaGithub} fontSize={"2xl"} />
-              </Link>
-            </Tooltip>
-            <Tooltip label="Twitter" placement="top">
-              <Link href={"/"} isExternal={true}>
-                <Icon as={FaTwitter} fontSize={"2xl"} />
-              </Link>
-            </Tooltip>
-            <Tooltip label="Author page" placement="top">
-              <Link href={"/"} isExternal={true}>
-                <Icon as={FaLink} fontSize={"2xl"} />
-              </Link>
-            </Tooltip>
-            <Tooltip label="RSS" placement="top">
-              <Link href={"/"} isExternal={true}>
-                <Icon as={FaRss} fontSize={"2xl"} />
-              </Link>
-            </Tooltip>
-          </HStack>
+          {links?.length > 0 && (
+            <HStack spacing={2}>
+              {links?.map((link) => (
+                <Tooltip
+                  key={link.url}
+                  label={link.label ?? link.name}
+                  placement="top"
+                >
+                  <Link href={link.url} isExternal={true}>
+                    <Icon as={icon(link.name)} fontSize={"2xl"} />
+                  </Link>
+                </Tooltip>
+              ))}
+            </HStack>
+          )}
         </Flex>
       </Container>
     </Box>

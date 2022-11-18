@@ -14,21 +14,29 @@ const PostTemplate: React.FC<PageProps<Queries.PostTemplateQuery>> = ({
 export default PostTemplate
 
 export const query = graphql`
-  query PostTemplate($id: String!) {
+  query PostTemplate(
+    $id: String!
+    $aspectRatio: Float!
+    $formatString: String!
+  ) {
     post(id: { eq: $id }) {
-      id
       title
-      publishedDate(formatString: "YYYY-MM-DD")
-      updatedDate(formatString: "YYYY-MM-DD")
+      publishedDate(formatString: $formatString)
+      updatedDate(formatString: $formatString)
+      publishedDate_ISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+      updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
       featuredImage {
         childImageSharp {
-          gatsbyImageData(layout: FULL_WIDTH, aspectRatio: 1.77777, quality: 80)
+          gatsbyImageData(
+            layout: FULL_WIDTH
+            aspectRatio: $aspectRatio
+            quality: 80
+          )
         }
       }
       featuredImageAlt
       tags
       timeToReadMinutes
-      wordCount
       description
       excerpt
     }

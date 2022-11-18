@@ -9,7 +9,7 @@ type SiteMetadataProps = {
 export const useSiteMetadata = (): Queries.SiteSiteMetadata => {
   const { site } = useStaticQuery<SiteMetadataProps>(
     graphql`
-      query SiteMetaData {
+      query {
         site {
           siteMetadata {
             title
