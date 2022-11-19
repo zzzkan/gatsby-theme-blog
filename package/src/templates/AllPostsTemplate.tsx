@@ -17,20 +17,23 @@ const AllPostsTemplate: React.FC<PageProps<Queries.AllPostsTemplateQuery>> = ({
 export default AllPostsTemplate
 
 export const query = graphql`
-  query AllPostsTemplate($aspectRatio: Float!, $formatString: String!) {
+  query AllPostsTemplate(
+    $featuredImageAspectRatio: Float!
+    $dateFormatString: String!
+  ) {
     allPost(sort: { fields: publishedDate, order: DESC }) {
       nodes {
         slug
         title
-        publishedDate(formatString: $formatString)
-        updatedDate(formatString: $formatString)
+        publishedDate(formatString: $dateFormatString)
+        updatedDate(formatString: $dateFormatString)
         publishedDate_ISO8601: publishedDate(
           formatString: "YYYY-MM-DDTHH:mm:ss"
         )
         updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
         featuredImage {
           childImageSharp {
-            gatsbyImageData(aspectRatio: $aspectRatio, quality: 30)
+            gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
           }
         }
         featuredImageAlt

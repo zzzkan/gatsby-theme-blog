@@ -9,19 +9,20 @@ import {
   Spacer,
   Tooltip,
 } from "@chakra-ui/react"
+import { IconType } from "@react-icons/all-files/lib"
 import { FaLink } from "@react-icons/all-files/fa/FaLink"
 import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { useSiteMetadata } from "../../hooks/useSiteMetadata"
 import { useThemeOption } from "../../hooks/useThemeOption"
-import { IconType } from "@react-icons/all-files/lib"
 
 const icon = (name: string): IconType | undefined => {
   if (name === "github") return FaGithub
-  if (name === "twiiter") return FaTwitter
+  if (name === "twitter") return FaTwitter
   if (name === "rss") return FaRss
-  if (name === "portfolio") return FaLink
+  if (name === "profile") return FaLink
+  return undefined
 }
 
 const Footer: React.FC = () => {

@@ -63,9 +63,9 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
     type themeOption implements Node {
       basePath: String
       contentPath: String
-      imageMaxWidth: Int
-      aspectRatio: Float
-      formatString: String
+      postImageMaxWidth: Int
+      featuredImageAspectRatio: Float
+      dateFormatString: String
       links: [Link]
     }
 
@@ -150,15 +150,15 @@ const tagPostsTemplate = require.resolve("./src/templates/TagPostsTemplate.tsx")
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
-  const { basePath, aspectRatio, formatString } =
+  const { basePath, featuredImageAspectRatio, dateFormatString } =
     defaultThemeOptions(themeOptions)
 
   createPage({
     path: basePath,
     component: allPostsTemplate,
     context: {
-      aspectRatio,
-      formatString,
+      featuredImageAspectRatio,
+      dateFormatString,
     },
   })
 
@@ -194,8 +194,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         id: post.id,
         previousId: previous ? previous.id : undefined,
         nextId: next ? next.id : undefined,
-        aspectRatio,
-        formatString,
+        featuredImageAspectRatio,
+        dateFormatString,
       },
     })
   })
@@ -209,8 +209,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         context: {
           tag: tag.fieldValue,
           count: tag.totalCount,
-          aspectRatio,
-          formatString,
+          featuredImageAspectRatio,
+          dateFormatString,
         },
       })
     })

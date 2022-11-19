@@ -16,20 +16,20 @@ export default PostTemplate
 export const query = graphql`
   query PostTemplate(
     $id: String!
-    $aspectRatio: Float!
-    $formatString: String!
+    $featuredImageAspectRatio: Float!
+    $dateFormatString: String!
   ) {
     post(id: { eq: $id }) {
       title
-      publishedDate(formatString: $formatString)
-      updatedDate(formatString: $formatString)
+      publishedDate(formatString: $dateFormatString)
+      updatedDate(formatString: $dateFormatString)
       publishedDate_ISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
       updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
       featuredImage {
         childImageSharp {
           gatsbyImageData(
             layout: FULL_WIDTH
-            aspectRatio: $aspectRatio
+            aspectRatio: $featuredImageAspectRatio
             quality: 80
           )
         }

@@ -13,7 +13,7 @@ const wrapESMPlugin = (name) =>
 const defaultThemeOptions = require("./utils/defaultThemeOptions")
 
 module.exports = (themeOptions) => {
-  const { contentPath, imageMaxWidth } = defaultThemeOptions(themeOptions)
+  const { contentPath, postImageMaxWidth } = defaultThemeOptions(themeOptions)
   return {
     siteMetadata: {
       title: "zzzkan blog",
@@ -44,7 +44,7 @@ module.exports = (themeOptions) => {
             {
               resolve: "gatsby-remark-images",
               options: {
-                maxWidth: imageMaxWidth,
+                maxWidth: postImageMaxWidth,
                 linkImagesToOriginal: false,
                 backgroundColor: "transparent",
                 withWebp: true,
