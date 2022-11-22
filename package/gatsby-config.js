@@ -56,7 +56,46 @@ module.exports = (themeOptions) => {
             rehypePlugins: [
               wrapESMPlugin("rehype-external-links"),
               wrapESMPlugin("rehype-slug"),
-              wrapESMPlugin("rehype-autolink-headings"),
+              [
+                wrapESMPlugin("rehype-autolink-headings"),
+                {
+                  behavior: "append",
+                  properties: {
+                    className: "anchor",
+                    ariaHidden: true,
+                    tabIndex: -1,
+                  },
+                  content: [
+                    {
+                      type: "element",
+                      tagName: "span",
+                      children: [
+                        {
+                          type: "text",
+                          value: "#",
+                        },
+                      ],
+                    },
+                  ],
+                },
+              ],
+              [
+                wrapESMPlugin("rehype-pretty-code"),
+                {
+                  theme: "one-dark-pro",
+                  onVisitLine(node) {
+                    if (node.children.length === 0) {
+                      node.children = [{ type: "text", value: " " }]
+                    }
+                  },
+                  onVisitHighlightedLine(node) {
+                    node.properties.className.push("highlighted-line")
+                  },
+                  onVisitHighlightedWord(node) {
+                    node.properties.className = ["highlighted-word"]
+                  },
+                },
+              ],
             ],
           },
         },

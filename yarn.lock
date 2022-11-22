@@ -5119,8 +5119,10 @@ __metadata:
     reading-time: ^1.5.0
     rehype-autolink-headings: ^6.1.1
     rehype-external-links: ^2.0.1
+    rehype-pretty-code: ^0.5.0
     rehype-slug: ^5.1.0
     remark-gfm: ^1
+    shiki: ^0.11.1
   peerDependencies:
     gatsby: ^4.24.4
     react: ^18.2.0
@@ -11900,6 +11902,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"jsonc-parser@npm:^3.0.0":
+  version: 3.2.0
+  resolution: "jsonc-parser@npm:3.2.0"
+  checksum: 946dd9a5f326b745aa326d48a7257e3f4a4b62c5e98ec8e49fa2bdd8d96cef7e6febf1399f5c7016114fd1f68a1c62c6138826d5d90bc650448e3cf0951c53c7
+  languageName: node
+  linkType: hard
+
 "jsonfile@npm:^6.0.1":
   version: 6.1.0
   resolution: "jsonfile@npm:6.1.0"
@@ -14309,6 +14318,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"parse-numeric-range@npm:^1.3.0":
+  version: 1.3.0
+  resolution: "parse-numeric-range@npm:1.3.0"
+  checksum: 289ca126d5b8ace7325b199218de198014f58ea6895ccc88a5247491d07f0143bf047f80b4a31784f1ca8911762278d7d6ecb90a31dfae31da91cc1a2524c8ce
+  languageName: node
+  linkType: hard
+
 "parse-path@npm:^7.0.0":
   version: 7.0.0
   resolution: "parse-path@npm:7.0.0"
@@ -15729,6 +15745,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"rehype-pretty-code@npm:^0.5.0":
+  version: 0.5.0
+  resolution: "rehype-pretty-code@npm:0.5.0"
+  dependencies:
+    parse-numeric-range: ^1.3.0
+  peerDependencies:
+    shiki: "*"
+  checksum: 792d153960b6cd54e802e1d54353b6c55e40f784ac443c52d35a33f529e45595ae41df67825217ebff83828da8fff7c014a74df96fc2fad720fdd0f5c91de8b6
+  languageName: node
+  linkType: hard
+
 "rehype-slug@npm:^5.1.0":
   version: 5.1.0
   resolution: "rehype-slug@npm:5.1.0"
@@ -16353,6 +16380,17 @@ __metadata:
   version: 1.7.4
   resolution: "shell-quote@npm:1.7.4"
   checksum: 2874ea9c1a7c3ebfc9ec5734a897e16533d0d06f2e4cddc22ba3d1cab5cdc07d0f825364c1b1e39abe61236f44d8e60e933c7ad7349ce44de4f5dddc7b4354e9
+  languageName: node
+  linkType: hard
+
+"shiki@npm:^0.11.1":
+  version: 0.11.1
+  resolution: "shiki@npm:0.11.1"
+  dependencies:
+    jsonc-parser: ^3.0.0
+    vscode-oniguruma: ^1.6.1
+    vscode-textmate: ^6.0.0
+  checksum: 2a4ebc3b466816263fc244ae4f67a4ff96aa74d863b9c5e7e4affc50f37fd6d1a781405de0dbf763b777bc33e49a0d441de7ff3fededb8b01e3b8dbb37e2927d
   languageName: node
   linkType: hard
 
@@ -18153,6 +18191,20 @@ __metadata:
   bin:
     vitest: vitest.mjs
   checksum: dd954f57396b81df466dd4346aa6c95709a1b3c2409d5526d3172fa34ec684f756a855f885778929a6b903a22b2517ff79d22f936fb3e4d7d54ff24e8e577459
+  languageName: node
+  linkType: hard
+
+"vscode-oniguruma@npm:^1.6.1":
+  version: 1.6.2
+  resolution: "vscode-oniguruma@npm:1.6.2"
+  checksum: 6b754acdafd5b68242ea5938bb00a32effc16c77f471d4f0f337d879d0e8e592622998e2441f42d9a7ff799c1593f31c11f26ca8d9bf9917e3ca881d3c1f3e19
+  languageName: node
+  linkType: hard
+
+"vscode-textmate@npm:^6.0.0":
+  version: 6.0.0
+  resolution: "vscode-textmate@npm:6.0.0"
+  checksum: ff6f17a406c2906586afc14ef01cb122e33acd35312e815abb5c924347a777c6783ce3fe7db8b83f1760ebf843c669843b9390f905b69c433b3395af28e4b483
   languageName: node
   linkType: hard
 

@@ -21,9 +21,7 @@ const Header: React.FC<HeaderProps> = (post) => {
     <Box as={"header"}>
       <Stack spacing={0} marginBottom={3}>
         <Tags {...post} />
-        <Heading as={"h1"} fontSize={"xl"}>
-          {post.title}
-        </Heading>
+        <Heading as={"h1"}>{post.title}</Heading>
         <PostMetadata {...post} />
       </Stack>
       {image != null && (
