@@ -21,6 +21,7 @@ module.exports = (themeOptions) => {
       siteUrl: "https://github.com/zzzkan",
       description: "@zzzkan/gatsby-theme-blog example.",
       author: "zzzkan",
+      publicationYear: 2022,
     },
     graphqlTypegen: true,
     plugins: [
