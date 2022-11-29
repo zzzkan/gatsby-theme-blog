@@ -18,10 +18,12 @@ export type HeaderProps = PostMetadataProps &
 const Header: React.FC<HeaderProps> = (post) => {
   const image = post.featuredImage?.childImageSharp?.gatsbyImageData
   return (
-    <Box as={"header"}>
+    <Box as={"header"} marginBottom={9}>
       <Stack spacing={0} marginBottom={3}>
         <Tags {...post} />
-        <Heading as={"h1"}>{post.title}</Heading>
+        <Heading as={"h1"} size={"xl"}>
+          {post.title}
+        </Heading>
         <PostMetadata {...post} />
       </Stack>
       {image != null && (

@@ -2,7 +2,7 @@ import React, { ReactNode } from "react"
 import { Box } from "@chakra-ui/react"
 import Header, { HeaderProps } from "./Header"
 import Footer from "./Footer"
-import { MdxComponentsWrapper } from "./MdxComponentsWrapper"
+import { Mdx } from "../Mdx"
 
 export type PostProps = {
   children: ReactNode
@@ -13,8 +13,8 @@ const Post: React.FC<PostProps> = ({ children, post }) => {
   return (
     <Box as={"article"}>
       <Header {...post} />
-      <Box as={"section"}>
-        <MdxComponentsWrapper>{children}</MdxComponentsWrapper>
+      <Box as={"section"} marginBottom={9}>
+        <Mdx>{children}</Mdx>
       </Box>
       <Footer />
     </Box>

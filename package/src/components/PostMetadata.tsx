@@ -14,11 +14,11 @@ export type PostMetadataProps = {
 
 const PostMetadata: React.FC<PostMetadataProps> = (post) => {
   return (
-    <Wrap spacingX={1} spacingY={0} fontSize={"sm"}>
+    <Wrap color={"base.500"} fontSize={"sm"} spacingX={1} spacingY={0}>
       <WrapItem>
         <HStack spacing={0}>
-          <Icon as={BiCalendar} fontSize={"md"} />
-          <Box as="time" dateTime={post.publishedDate_ISO8601}>
+          <Icon as={BiCalendar} fontSize={"md"} marginTop={-0.5} />
+          <Box as={"time"} dateTime={post.publishedDate_ISO8601}>
             {post.publishedDate}
           </Box>
         </HStack>
@@ -26,8 +26,8 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
       {post.updatedDate != null && post.updatedDate_ISO8601 != null && (
         <WrapItem>
           <HStack spacing={0}>
-            <Icon as={BiCalendarEdit} fontSize={"md"} />
-            <Box as="time" dateTime={post.updatedDate_ISO8601}>
+            <Icon as={BiCalendarEdit} fontSize={"md"} marginTop={-0.5} />
+            <Box as={"time"} dateTime={post.updatedDate_ISO8601}>
               {post.updatedDate}
             </Box>
           </HStack>
@@ -36,8 +36,8 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
       {post.timeToReadMinutes != null && (
         <WrapItem>
           <HStack spacing={0}>
-            <Icon as={BiTime} fontSize={"md"} />
-            <Box as="span">{Math.ceil(post.timeToReadMinutes)}min</Box>
+            <Icon as={BiTime} fontSize={"md"} marginTop={-0.5} />
+            <Box as={"time"}>{Math.ceil(post.timeToReadMinutes)}min</Box>
           </HStack>
         </WrapItem>
       )}

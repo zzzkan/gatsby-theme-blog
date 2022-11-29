@@ -10,10 +10,10 @@ export type TagPostsProps = PostCardListProps & {
 const TagPosts: React.FC<TagPostsProps> = ({ posts, tag, count }) => {
   return (
     <Box as={"section"}>
-      <Heading as={"h1"} textAlign={"center"}>
+      <Heading as={"h1"} size={"xl"} textAlign={"center"} marginBottom={3}>
         Tag - {tag}({count})
       </Heading>
-      <Center paddingY={3}>
+      <Center>
         <PostCardList posts={posts} />
       </Center>
     </Box>

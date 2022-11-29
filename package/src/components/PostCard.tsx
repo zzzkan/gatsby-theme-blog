@@ -22,14 +22,18 @@ const PostCard: React.FC<PostCardProps> = (post) => {
   return (
     <Box
       as={"article"}
-      boxShadow={"2xl"}
-      rounded={"lg"}
+      boxShadow={"md"}
+      rounded={"xl"}
       paddingX={6}
       paddingY={3}
       overflow={"hidden"}
     >
       {image != null && (
-        <Link as={GatsbyLink} to={post.slug}>
+        <Link
+          as={GatsbyLink}
+          to={post.slug}
+          _hover={{ textDecoration: "none" }}
+        >
           <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
             <Box _hover={{ transform: "scale(1.02)" }}>
               <GatsbyImage
@@ -42,8 +46,14 @@ const PostCard: React.FC<PostCardProps> = (post) => {
       )}
       <Stack spacing={0}>
         <Tags {...post} />
-        <Link as={GatsbyLink} to={post.slug}>
-          <Heading fontSize={"xl"}>{post.title}</Heading>
+        <Link
+          as={GatsbyLink}
+          to={post.slug}
+          _hover={{ textDecoration: "none" }}
+        >
+          <Heading as={"div"} size={"md"}>
+            {post.title}
+          </Heading>
         </Link>
         <PostMetadata {...post} />
       </Stack>

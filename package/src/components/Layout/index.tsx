@@ -5,9 +5,9 @@ import Footer from "./Footer"
 
 const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
   return (
-    <Box minHeight={"100vh"}>
+    <Box background={"base.900"} color={"base.100"} minHeight={"100vh"}>
       <Header />
-      <Box as={"main"}>
+      <Box as={"main"} marginBottom={9}>
         <Container maxWidth={"container.lg"}>{children}</Container>
       </Box>
       <Footer />

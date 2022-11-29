@@ -8,7 +8,7 @@ export type PostCardListProps = {
 
 const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {
   return (
-    <SimpleGrid columns={[1, 2, 3]} spacing={"6"}>
+    <SimpleGrid columns={[1, 2, 3]} spacing={"3"}>
       {posts.map((post) => {
         return <PostCard key={post.slug} {...post} />
       })}
