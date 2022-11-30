@@ -13,7 +13,7 @@ const wrapESMPlugin = (name) =>
 const defaultThemeOptions = require("./utils/defaultThemeOptions")
 
 module.exports = (themeOptions) => {
-  const { contentPath, postImageMaxWidth, shikiTheme } =
+  const { contentPath, postImageMaxWidth, shikiLightTheme, shikiDarkTheme } =
     defaultThemeOptions(themeOptions)
   return {
     siteMetadata: {
@@ -84,7 +84,10 @@ module.exports = (themeOptions) => {
               [
                 wrapESMPlugin("rehype-pretty-code"),
                 {
-                  theme: shikiTheme,
+                  theme: {
+                    light: shikiLightTheme,
+                    dark: shikiDarkTheme,
+                  },
                   onVisitLine(node) {
                     if (node.children.length === 0) {
                       node.children = [{ type: "text", value: " " }]

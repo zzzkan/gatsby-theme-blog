@@ -6,6 +6,7 @@ import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
 import { useThemeOption } from "../../../hooks/useThemeOption"
+import { useThemeColor } from "../../../hooks/useThemeColor"
 
 const icon = (name: string): IconType | undefined => {
   if (name === "GitHub") return FaGithub
@@ -17,6 +18,7 @@ const icon = (name: string): IconType | undefined => {
 
 const ExternalLinks: React.FC = () => {
   const { links } = useThemeOption()
+  const { secondaryBackground } = useThemeColor()
   return (
     <HStack spacing={2}>
       {links?.map((link) => (
@@ -25,7 +27,7 @@ const ExternalLinks: React.FC = () => {
           label={link.label ?? link.name}
           placement={"top"}
           color={"inherit"}
-          background={"whiteAlpha.100"}
+          background={secondaryBackground}
         >
           <Link href={link.url} _hover={{ textDecoration: "none" }}>
             <Icon as={icon(link.name)} fontSize={"2xl"} />

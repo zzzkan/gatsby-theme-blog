@@ -3,6 +3,7 @@ import { Box, Icon, HStack, Wrap, WrapItem } from "@chakra-ui/react"
 import { BiCalendar } from "@react-icons/all-files/bi/BiCalendar"
 import { BiCalendarEdit } from "@react-icons/all-files/bi/BiCalendarEdit"
 import { BiTime } from "@react-icons/all-files/bi/BiTime"
+import { useThemeColor } from "../hooks/useThemeColor"
 
 export type PostMetadataProps = {
   readonly publishedDate: string
@@ -13,8 +14,9 @@ export type PostMetadataProps = {
 }
 
 const PostMetadata: React.FC<PostMetadataProps> = (post) => {
+  const { secondaryText } = useThemeColor()
   return (
-    <Wrap color={"base.500"} fontSize={"sm"} spacingX={1} spacingY={0}>
+    <Wrap color={secondaryText} fontSize={"sm"} spacingX={1} spacingY={0}>
       <WrapItem>
         <HStack spacing={0}>
           <Icon as={BiCalendar} fontSize={"md"} marginTop={-0.5} />
