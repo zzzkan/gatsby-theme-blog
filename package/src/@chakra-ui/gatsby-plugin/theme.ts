@@ -32,6 +32,7 @@ const theme = extendTheme({
     global: {
       html: {
         scrollPaddingTop: "12",
+        scrollbarGutter: "stable",
       },
     },
   },
