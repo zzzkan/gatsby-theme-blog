@@ -10,18 +10,19 @@ const Code: React.FC<CodeProps> = (props) => {
   return (
     <ChakraCode
       as={"code"}
-      sx={{
-        "&[data-theme=light]": {
-          display: isDarkMode ? "none" : "inherit",
-        },
-        "&[data-theme=dark]": {
-          display: isDarkMode ? "inherit" : "none",
-        },
-        ".highlighted-line, .highlighted-word": {
-          backgroundColor: "RGBA(255, 255, 0, 0.08)",
-          rounded: "sm",
-        },
-      }}
+      sx={
+        isDarkMode
+          ? {
+              "&[data-theme=light]": {
+                display: "none",
+              },
+            }
+          : {
+              "&[data-theme=dark]": {
+                display: "none",
+              },
+            }
+      }
       {...props}
     />
   )

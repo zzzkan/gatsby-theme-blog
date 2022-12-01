@@ -8,16 +8,27 @@ type ThemeColorProps = {
   primaryBackground: string
   secondaryBackground: string
   codeBackground: string
+  highlightBackground: string
 }
 
 export const useThemeColor = (): ThemeColorProps => {
   return {
     tint: useColorModeValue("brand.600", "brand.200"),
     primaryText: useColorModeValue("base.800", "base.100"),
-    secondaryText: useColorModeValue("base.700", "base.300"),
+    secondaryText: useColorModeValue("base.600", "base.400"),
     onTintText: useColorModeValue("white", "base.900"),
     primaryBackground: useColorModeValue("white", "base.900"),
-    secondaryBackground: useColorModeValue("blackAlpha.50", "whiteAlpha.50"),
-    codeBackground: useColorModeValue("white", "whiteAlpha.50"),
+    secondaryBackground: useColorModeValue(
+      "RGBA(0, 0, 0, 0.02)",
+      "RGBA(255, 255, 255, 0.02)"
+    ),
+    codeBackground: useColorModeValue(
+      "RGBA(0, 0, 0, 0.02)",
+      "RGBA(255, 255, 255, 0.02)"
+    ),
+    highlightBackground: useColorModeValue(
+      "RGBA(0, 0, 0, 0.04)",
+      "RGBA(255, 255, 255, 0.04)"
+    ),
   }
 }

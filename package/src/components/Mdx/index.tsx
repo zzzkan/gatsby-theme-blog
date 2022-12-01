@@ -20,8 +20,14 @@ import AnchorHeading from "./AnchorHeading"
 import { useThemeColor } from "../../hooks/useThemeColor"
 
 export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const { tint, primaryText, secondaryBackground, codeBackground } =
-    useThemeColor()
+  const {
+    tint,
+    primaryText,
+    secondaryText,
+    secondaryBackground,
+    codeBackground,
+    highlightBackground,
+  } = useThemeColor()
   const components = {
     p: (props: object) => <Text {...props} />,
     h1: (props: object) => (
@@ -112,7 +118,13 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
       />
     ),
     pre: (props: object) => (
-      <Pre marginY={3} boxShadow={"lg"} rounded={"sm"} {...props} />
+      <Pre
+        highlightBackground={highlightBackground}
+        lineColor={secondaryText}
+        marginY={3}
+        rounded={"sm"}
+        {...props}
+      />
     ),
     code: (props: object) => <Code background={codeBackground} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
