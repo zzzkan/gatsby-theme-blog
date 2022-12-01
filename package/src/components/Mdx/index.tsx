@@ -134,6 +134,7 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
       <Divider as={"hr"} borderColor={primaryText} marginY={3} {...props} />
     ),
     a: (props: object) => <Link color={tint} {...props} />,
+    input: (props: object) => <input aria-label={"input"} {...props} />,
   }
   return <MDXProvider components={components}>{children}</MDXProvider>
 }

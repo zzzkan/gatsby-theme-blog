@@ -29,7 +29,11 @@ const ExternalLinks: React.FC = () => {
           color={"inherit"}
           background={secondaryBackground}
         >
-          <Link href={link.url} _hover={{ textDecoration: "none" }}>
+          <Link
+            href={link.url}
+            aria-label={link.label ?? link.name}
+            _hover={{ textDecoration: "none" }}
+          >
             <Icon as={icon(link.name)} fontSize={"2xl"} />
           </Link>
         </Tooltip>
