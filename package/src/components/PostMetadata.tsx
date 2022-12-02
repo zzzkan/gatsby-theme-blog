@@ -19,7 +19,7 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
     <Wrap color={secondaryText} fontSize={"sm"} spacingX={1} spacingY={0}>
       <WrapItem>
         <HStack spacing={0}>
-          <Icon as={BiCalendar} fontSize={"md"} marginTop={-0.5} />
+          <Icon as={BiCalendar} fontSize={"md"} />
           <Box as={"time"} dateTime={post.publishedDate_ISO8601}>
             {post.publishedDate}
           </Box>
@@ -28,7 +28,7 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
       {post.updatedDate != null && post.updatedDate_ISO8601 != null && (
         <WrapItem>
           <HStack spacing={0}>
-            <Icon as={BiCalendarEdit} fontSize={"md"} marginTop={-0.5} />
+            <Icon as={BiCalendarEdit} fontSize={"md"} />
             <Box as={"time"} dateTime={post.updatedDate_ISO8601}>
               {post.updatedDate}
             </Box>
@@ -38,7 +38,7 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
       {post.timeToReadMinutes != null && (
         <WrapItem>
           <HStack spacing={0}>
-            <Icon as={BiTime} fontSize={"md"} marginTop={-0.5} />
+            <Icon as={BiTime} fontSize={"md"} />
             <Box as={"time"}>{Math.ceil(post.timeToReadMinutes)}min</Box>
           </HStack>
         </WrapItem>
