@@ -5,6 +5,7 @@ module.exports = (themeOptions) => {
   const featuredImageAspectRatio =
     themeOptions.featuredImageAspectRatio || 1.7777
   const dateFormatString = themeOptions.dateFormatString || "YYYY-MM-DD"
+  const relatedPostsLimit = themeOptions.relatedPostsLimit || 6
   const shikiLightTheme = themeOptions.shikiLightTheme || "github-light"
   const shikiDarkTheme = themeOptions.shikiDarkTheme || "github-dark"
   const links = themeOptions.links || []
@@ -15,6 +16,7 @@ module.exports = (themeOptions) => {
     postImageMaxWidth,
     featuredImageAspectRatio,
     dateFormatString,
+    relatedPostsLimit,
     shikiLightTheme,
     shikiDarkTheme,
     links,

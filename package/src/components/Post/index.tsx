@@ -1,12 +1,12 @@
 import React, { ReactNode } from "react"
 import { Box } from "@chakra-ui/react"
 import Header, { HeaderProps } from "./Header"
-import Footer from "./Footer"
+import Footer, { FooterProps } from "./Footer"
 import { Mdx } from "../Mdx"
 
 export type PostProps = {
   children: ReactNode
-  post: HeaderProps
+  post: HeaderProps & FooterProps
 }
 
 const Post: React.FC<PostProps> = ({ children, post }) => {
@@ -16,7 +16,7 @@ const Post: React.FC<PostProps> = ({ children, post }) => {
       <Box as={"section"} marginBottom={9}>
         <Mdx>{children}</Mdx>
       </Box>
-      <Footer />
+      <Footer {...post} />
     </Box>
   )
 }

@@ -39,6 +39,24 @@ export const query = graphql`
       timeToReadMinutes
       description
       excerpt
+      posts: relatedPosts {
+        slug
+        title
+        publishedDate(formatString: $dateFormatString)
+        updatedDate(formatString: $dateFormatString)
+        publishedDate_ISO8601: publishedDate(
+          formatString: "YYYY-MM-DDTHH:mm:ss"
+        )
+        updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+        featuredImage {
+          childImageSharp {
+            gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
+          }
+        }
+        featuredImageAlt
+        tags
+        timeToReadMinutes
+      }
     }
   }
 `

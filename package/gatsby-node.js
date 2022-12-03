@@ -66,6 +66,9 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       postImageMaxWidth: Int
       featuredImageAspectRatio: Float
       dateFormatString: String
+      relatedPostsLimit: Int
+      shikiLightTheme: String
+      shikiDarkTheme: String
       links: [Link]
     }
 
@@ -142,6 +145,37 @@ exports.onCreateNode = (
 
     createParentChildLink({ parent: node, child: getNode(postId) })
   }
+}
+
+exports.createResolvers = ({ createResolvers }, themeOptions) => {
+  const { relatedPostsLimit } = defaultThemeOptions(themeOptions)
+  const resolvers = {
+    Post: {
+      relatedPosts: {
+        type: ["Post"],
+        resolve: async (source, args, context, info) => {
+          const { entries } = await context.nodeModel.findAll({
+            type: "Post",
+            query: {
+              sort: { fields: ["publishedDate"], order: ["desc"] },
+              filter: {
+                id: {
+                  ne: source.id,
+                },
+                tags: {
+                  in: source.tags,
+                },
+              },
+              limit: relatedPostsLimit,
+            },
+          })
+          return entries
+        },
+      },
+    },
+  }
+
+  createResolvers(resolvers)
 }
 
 const postTemplate = require.resolve("./src/templates/PostTemplate.tsx")
