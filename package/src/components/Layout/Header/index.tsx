@@ -10,7 +10,7 @@ const Header: React.FC = () => {
       position={"sticky"}
       top={0}
       zIndex={"sticky"}
-      backdropFilter={"blur(3px)"}
+      background={"inherit"}
       marginBottom={9}
     >
       <Container maxWidth={"container.lg"}>
