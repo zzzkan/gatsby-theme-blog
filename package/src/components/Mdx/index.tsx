@@ -40,16 +40,16 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
       />
     ),
     h2: (props: object) => (
-      <>
-        <AnchorHeading
-          as={"h2"}
-          color={tint}
-          size={"lg"}
-          marginTop={6}
-          {...props}
-        />
-        <Divider as={"hr"} borderColor={secondaryText} marginBottom={6} />
-      </>
+      <AnchorHeading
+        as={"h2"}
+        color={tint}
+        size={"lg"}
+        borderBottom={"1px solid"}
+        borderColor={secondaryText}
+        marginY={6}
+        paddingBottom={1}
+        {...props}
+      />
     ),
     h3: (props: object) => (
       <AnchorHeading
@@ -131,7 +131,13 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
     hr: (props: object) => (
-      <Divider as={"hr"} borderColor={secondaryText} marginY={3} {...props} />
+      <Divider
+        as={"hr"}
+        border={"1px solid"}
+        borderColor={secondaryText}
+        marginY={6}
+        {...props}
+      />
     ),
     a: (props: object) => <Link color={tint} {...props} />,
     input: (props: object) => <input aria-label={"input"} {...props} />,

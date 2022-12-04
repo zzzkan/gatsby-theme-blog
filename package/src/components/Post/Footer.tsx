@@ -11,7 +11,12 @@ const Footer: React.FC<FooterProps> = ({ posts }) => {
     <Box as={"footer"}>
       {posts != null && posts.length > 0 && (
         <Box>
-          <Divider as={"hr"} borderColor={secondaryText} marginBottom={6} />
+          <Divider
+            as={"hr"}
+            border={"1px solid"}
+            borderColor={secondaryText}
+            marginBottom={6}
+          />
           <Heading as={"div"} size={"md"} textAlign={"center"} marginBottom={3}>
             You may also like ...
           </Heading>
