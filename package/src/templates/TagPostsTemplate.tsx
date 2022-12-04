@@ -3,19 +3,21 @@ import { graphql, PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import TagPosts from "../components/TagPosts"
 
-type TagPageContextProps = {
-  tag: string
-  count: number
+type TagPostsContextProps = {
+  readonly basePath: string
+  readonly totalPage: number
+  readonly currentPage: number
+  readonly tag: string
+  readonly count: number
 }
 
 const TagPostsTemplate: React.FC<
-  PageProps<Queries.TagPostsTemplateQuery, TagPageContextProps>
+  PageProps<Queries.TagPostsTemplateQuery, TagPostsContextProps>
 > = ({ data, pageContext }) => {
   const posts = data.allPost.nodes
-  const { tag, count } = pageContext
   return (
     <Layout>
-      <TagPosts posts={posts} tag={tag} count={count} />
+      <TagPosts posts={posts} {...pageContext} />
     </Layout>
   )
 }
@@ -24,6 +26,8 @@ export default TagPostsTemplate
 
 export const query = graphql`
   query TagPostsTemplate(
+    $limit: Int!
+    $skip: Int!
     $tag: String!
     $featuredImageAspectRatio: Float!
     $dateFormatString: String!
@@ -31,6 +35,8 @@ export const query = graphql`
     allPost(
       sort: { fields: publishedDate, order: DESC }
       filter: { tags: { in: [$tag] } }
+      limit: $limit
+      skip: $skip
     ) {
       nodes {
         slug

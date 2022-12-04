@@ -184,17 +184,8 @@ const tagPostsTemplate = require.resolve("./src/templates/TagPostsTemplate.tsx")
 
 exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const { createPage } = actions
-  const { basePath, featuredImageAspectRatio, dateFormatString } =
+  const { basePath, featuredImageAspectRatio, dateFormatString, postsLimit } =
     defaultThemeOptions(themeOptions)
-
-  createPage({
-    path: basePath,
-    component: allPostsTemplate,
-    context: {
-      featuredImageAspectRatio,
-      dateFormatString,
-    },
-  })
 
   const result = await graphql(`
     query {
@@ -234,19 +225,53 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
     })
   })
 
-  const tagPosts = result.data.tagPosts.group
-  if (tagPosts.length > 0) {
-    tagPosts.forEach((tag) => {
-      createPage({
-        path: `${basePath}/tags/${tag.fieldValue}`.replace(/\/\/+/g, "/"),
-        component: tagPostsTemplate,
-        context: {
-          tag: tag.fieldValue,
-          count: tag.totalCount,
-          featuredImageAspectRatio,
-          dateFormatString,
-        },
-      })
+  const allPostsPageNumber = Math.ceil(allPosts.length / postsLimit)
+  for (let i = 0; i < allPostsPageNumber; i++) {
+    createPage({
+      path: i === 0 ? basePath : `${basePath}/${i + 1}`.replace(/\/\/+/g, "/"),
+      component: allPostsTemplate,
+      context: {
+        basePath,
+        totalPage: allPostsPageNumber,
+        currentPage: i + 1,
+        limit: postsLimit,
+        skip: i * postsLimit,
+        featuredImageAspectRatio,
+        dateFormatString,
+      },
+    })
+  }
+
+  const tagPostsGroup = result.data.tagPosts.group
+  if (tagPostsGroup.length > 0) {
+    tagPostsGroup.forEach((posts) => {
+      const tagPostsPath = `${basePath}/tags/${posts.fieldValue}`.replace(
+        /\/\/+/g,
+        "/"
+      )
+      const tag = posts.fieldValue
+      const count = posts.totalCount
+      const tagPostsPageNumber = Math.ceil(count / postsLimit)
+      for (let i = 0; i < tagPostsPageNumber; i++) {
+        createPage({
+          path:
+            i === 0
+              ? tagPostsPath
+              : `${tagPostsPath}/${i + 1}`.replace(/\/\/+/g, "/"),
+          component: tagPostsTemplate,
+          context: {
+            basePath: tagPostsPath,
+            totalPage: tagPostsPageNumber,
+            currentPage: i + 1,
+            limit: postsLimit,
+            skip: i * postsLimit,
+            tag,
+            count,
+            featuredImageAspectRatio,
+            dateFormatString,
+          },
+        })
+      }
     })
   }
 }
