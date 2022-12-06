@@ -15,10 +15,10 @@ const Footer: React.FC<FooterProps> = ({ posts }) => {
             as={"hr"}
             border={"1px solid"}
             borderColor={secondaryText}
-            marginBottom={6}
+            marginBottom={3}
           />
           <Heading as={"div"} size={"md"} textAlign={"center"} marginBottom={3}>
-            You may also like ...
+            Read next
           </Heading>
           <Center>
             <PostCardList posts={posts} />

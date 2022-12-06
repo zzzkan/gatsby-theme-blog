@@ -24,6 +24,7 @@ const Pagination: React.FC<PaginationProps> = ({
     if (page === 1) return basePath
     return `${basePath}/${page}`.replace(/\/\/+/g, "/")
   }
+  if (totalPage < 2) return null
   return (
     <HStack spacing={3} fontSize={"xl"}>
       {currentPage !== 1 && (

@@ -9,9 +9,10 @@ export type TagsProps = {
 
 const Tags: React.FC<TagsProps> = ({ tags }) => {
   const { tint, onTintText } = useThemeColor()
+  if (tags == null || tags.length === 0) return null
   return (
     <Wrap>
-      {tags?.map((tag) => (
+      {tags.map((tag) => (
         <WrapItem key={tag}>
           <Link
             as={GatsbyLink}

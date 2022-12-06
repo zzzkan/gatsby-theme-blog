@@ -5,8 +5,8 @@ import { FaLink } from "@react-icons/all-files/fa/FaLink"
 import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
-import { useThemeOption } from "../../../hooks/useThemeOption"
-import { useThemeColor } from "../../../hooks/useThemeColor"
+import { useThemeOption } from "../hooks/useThemeOption"
+import { useThemeColor } from "../hooks/useThemeColor"
 
 const icon = (name: string): IconType | undefined => {
   if (name === "GitHub") return FaGithub
@@ -19,9 +19,10 @@ const icon = (name: string): IconType | undefined => {
 const ExternalLinks: React.FC = () => {
   const { links } = useThemeOption()
   const { secondaryBackground } = useThemeColor()
+  if (links == null || links.length === 0) return null
   return (
     <HStack spacing={2}>
-      {links?.map((link) => (
+      {links.map((link) => (
         <Tooltip
           key={link.url}
           label={link.label ?? link.name}

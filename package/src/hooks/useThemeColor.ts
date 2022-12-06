@@ -27,7 +27,7 @@ export const useThemeColor = (): ThemeColorProps => {
       "RGBA(255, 255, 255, 0.02)"
     ),
     highlightBackground: useColorModeValue(
-      "RGBA(0, 0, 0, 0.04)",
+      "RGBA(0, 0, 0, 0.03)",
       "RGBA(255, 255, 255, 0.04)"
     ),
   }

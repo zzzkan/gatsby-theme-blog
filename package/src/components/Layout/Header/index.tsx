@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
-import Title from "./Title"
-import ToggleColorModeButton from "./ToggleColorModeButton"
+import Left from "./Left"
+import Right from "./Right"
 
 const Header: React.FC = () => {
   return (
@@ -15,9 +15,9 @@ const Header: React.FC = () => {
     >
       <Container maxWidth={"container.lg"}>
         <Flex alignItems={"center"}>
-          <Title />
+          <Left />
           <Spacer />
-          <ToggleColorModeButton />
+          <Right />
         </Flex>
       </Container>
     </Box>

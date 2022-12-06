@@ -7,9 +7,10 @@ export type PostCardListProps = {
 }
 
 const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {
+  if (posts == null || posts.length === 0) return null
   return (
     <SimpleGrid columns={[1, 2, 3]} spacing={"6"}>
-      {posts?.map((post) => {
+      {posts.map((post) => {
         if (post == null) return <Box>Unknown Post</Box>
         return <PostCard key={post.slug} {...post} />
       })}
