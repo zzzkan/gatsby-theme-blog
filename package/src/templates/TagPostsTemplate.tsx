@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
+import { graphql, HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import TagPosts from "../components/TagPosts"
+import Seo from "../components/Seo"
 
 type TagPostsContextProps = {
   readonly basePath: string
@@ -24,6 +25,24 @@ const TagPostsTemplate: React.FC<
 
 export default TagPostsTemplate
 
+export const Head: HeadFC<
+  Queries.TagPostsTemplateQuery,
+  TagPostsContextProps
+> = ({ location, pageContext }) => {
+  const { tag, currentPage } = pageContext
+  return (
+    <Seo
+      path={location.pathname}
+      title={currentPage > 1 ? `${tag} (${currentPage} page)` : tag}
+      description={
+        currentPage > 1
+          ? `Posts tagged with "${tag}". (${currentPage} page)`
+          : `Posts tagged with "${tag}".`
+      }
+    />
+  )
+}
+
 export const query = graphql`
   query TagPostsTemplate(
     $limit: Int!
@@ -43,10 +62,8 @@ export const query = graphql`
         title
         publishedDate(formatString: $dateFormatString)
         updatedDate(formatString: $dateFormatString)
-        publishedDate_ISO8601: publishedDate(
-          formatString: "YYYY-MM-DDTHH:mm:ss"
-        )
-        updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+        publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+        updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
         featuredImage {
           childImageSharp {
             gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)

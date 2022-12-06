@@ -61,15 +61,17 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
     }
 
     type themeOption implements Node {
-      basePath: String
-      contentPath: String
-      postImageMaxWidth: Int
-      featuredImageAspectRatio: Float
-      dateFormatString: String
-      relatedPostsLimit: Int
-      shikiLightTheme: String
-      shikiDarkTheme: String
-      links: [Link]
+      lang: String!
+      basePath: String!
+      contentPath: String!
+      postImageMaxWidth: Int!
+      featuredImageAspectRatio: Float!
+      dateFormatString: String!
+      postsLimit: Int!
+      relatedPostsLimit: Int!
+      shikiLightTheme: String!
+      shikiDarkTheme: String!
+      links: [Link]!
     }
 
     type Link {

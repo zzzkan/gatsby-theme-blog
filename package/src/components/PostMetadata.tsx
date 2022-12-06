@@ -8,8 +8,8 @@ import { useThemeColor } from "../hooks/useThemeColor"
 export type PostMetadataProps = {
   readonly publishedDate: string
   readonly updatedDate: string | null
-  readonly publishedDate_ISO8601: string
-  readonly updatedDate_ISO8601: string | null
+  readonly publishedDateISO8601: string
+  readonly updatedDateISO8601: string | null
   readonly timeToReadMinutes: number | null
 }
 
@@ -20,16 +20,16 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
       <WrapItem>
         <HStack spacing={0}>
           <Icon as={BiCalendar} fontSize={"md"} />
-          <Box as={"time"} dateTime={post.publishedDate_ISO8601}>
+          <Box as={"time"} dateTime={post.publishedDateISO8601}>
             {post.publishedDate}
           </Box>
         </HStack>
       </WrapItem>
-      {post.updatedDate != null && post.updatedDate_ISO8601 != null && (
+      {post.updatedDate != null && post.updatedDateISO8601 != null && (
         <WrapItem>
           <HStack spacing={0}>
             <Icon as={BiCalendarEdit} fontSize={"md"} />
-            <Box as={"time"} dateTime={post.updatedDate_ISO8601}>
+            <Box as={"time"} dateTime={post.updatedDateISO8601}>
               {post.updatedDate}
             </Box>
           </HStack>

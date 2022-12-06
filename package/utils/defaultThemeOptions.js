@@ -1,4 +1,5 @@
 module.exports = (themeOptions) => {
+  const lang = themeOptions.lang || "en"
   const basePath = themeOptions.basePath || "/"
   const contentPath = themeOptions.contentPath || "content/posts"
   const postImageMaxWidth = themeOptions.postImageMaxWidth || 960
@@ -12,6 +13,7 @@ module.exports = (themeOptions) => {
   const links = themeOptions.links || []
 
   return {
+    lang,
     basePath,
     contentPath,
     postImageMaxWidth,

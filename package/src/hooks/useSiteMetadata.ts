@@ -17,6 +17,7 @@ export const useSiteMetadata = (): Queries.SiteSiteMetadata => {
             description
             author
             publicationYear
+            image
           }
         }
       }

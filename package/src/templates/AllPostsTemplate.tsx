@@ -1,7 +1,8 @@
 import React from "react"
-import { graphql, PageProps } from "gatsby"
+import { graphql, HeadFC, PageProps } from "gatsby"
 import Layout from "../components/Layout"
 import AllPosts from "../components/AllPosts"
+import Seo from "../components/Seo"
 
 type AllPostsContextProps = {
   readonly basePath: string
@@ -22,6 +23,24 @@ const AllPostsTemplate: React.FC<
 
 export default AllPostsTemplate
 
+export const Head: HeadFC<
+  Queries.AllPostsTemplateQuery,
+  AllPostsContextProps
+> = ({ location, pageContext }) => {
+  const { currentPage } = pageContext
+  return (
+    <Seo
+      path={location.pathname}
+      title={currentPage > 1 ? `All Posts (${currentPage} page)` : "All Posts"}
+      description={
+        currentPage > 1
+          ? `All posts page. (${currentPage} page)`
+          : "All posts page."
+      }
+    />
+  )
+}
+
 export const query = graphql`
   query AllPostsTemplate(
     $limit: Int!
@@ -39,10 +58,8 @@ export const query = graphql`
         title
         publishedDate(formatString: $dateFormatString)
         updatedDate(formatString: $dateFormatString)
-        publishedDate_ISO8601: publishedDate(
-          formatString: "YYYY-MM-DDTHH:mm:ss"
-        )
-        updatedDate_ISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+        publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+        updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
         featuredImage {
           childImageSharp {
             gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
