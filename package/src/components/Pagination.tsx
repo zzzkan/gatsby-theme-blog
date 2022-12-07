@@ -1,7 +1,6 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Box, HStack, Link } from "@chakra-ui/react"
-import { useThemeColor } from "../hooks/useThemeColor"
 
 export type PaginationProps = {
   readonly basePath: string
@@ -16,7 +15,6 @@ const Pagination: React.FC<PaginationProps> = ({
   totalPage,
   currentPage,
 }) => {
-  const { tint } = useThemeColor()
   const pages = [...Array(2 * width + 1)]
     .map((_, i) => i + currentPage - width)
     .filter((page) => page >= 1 && page <= totalPage)
@@ -35,7 +33,7 @@ const Pagination: React.FC<PaginationProps> = ({
       {pages.map((page) => {
         if (page === currentPage) {
           return (
-            <Box key={page} as={"span"} color={tint}>
+            <Box key={page} as={"span"} color={"tint"}>
               {page}
             </Box>
           )

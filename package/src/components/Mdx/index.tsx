@@ -17,23 +17,14 @@ import Blockquote from "./Blockquote"
 import Pre from "./Pre"
 import Code from "./Code"
 import AnchorHeading from "./AnchorHeading"
-import { useThemeColor } from "../../hooks/useThemeColor"
 
 export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
-  const {
-    tint,
-    primaryText,
-    secondaryText,
-    secondaryBackground,
-    codeBackground,
-    highlightBackground,
-  } = useThemeColor()
   const components = {
     p: (props: object) => <Text {...props} />,
     h1: (props: object) => (
       <AnchorHeading
         as={"h1"}
-        color={tint}
+        color={"tint"}
         size={"xl"}
         marginY={6}
         {...props}
@@ -42,10 +33,10 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     h2: (props: object) => (
       <AnchorHeading
         as={"h2"}
-        color={tint}
+        color={"tint"}
         size={"lg"}
         borderBottom={"1px solid"}
-        borderColor={secondaryText}
+        borderColor={"secondaryText"}
         marginY={6}
         paddingBottom={1}
         {...props}
@@ -54,7 +45,7 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     h3: (props: object) => (
       <AnchorHeading
         as={"h3"}
-        color={tint}
+        color={"tint"}
         size={"lg"}
         marginY={3}
         {...props}
@@ -63,7 +54,7 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     h4: (props: object) => (
       <AnchorHeading
         as={"h4"}
-        color={tint}
+        color={"tint"}
         size={"md"}
         marginY={3}
         {...props}
@@ -72,7 +63,7 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     h5: (props: object) => (
       <AnchorHeading
         as={"h5"}
-        color={tint}
+        color={"tint"}
         size={"sm"}
         marginY={3}
         {...props}
@@ -81,7 +72,7 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     h6: (props: object) => (
       <AnchorHeading
         as={"h6"}
-        color={tint}
+        color={"tint"}
         size={"xs"}
         marginY={3}
         {...props}
@@ -89,8 +80,8 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     ),
     blockquote: (props: object) => (
       <Blockquote
-        background={secondaryBackground}
-        borderColor={secondaryBackground}
+        background={"secondaryBackground"}
+        borderColor={"tint"}
         rounded={"sm"}
         marginY={3}
         {...props}
@@ -106,27 +97,32 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
     ),
     tr: (props: object) => <Tr as={"tr"} {...props} />,
     td: (props: object) => (
-      <Td as={"td"} color={primaryText} borderColor={primaryText} {...props} />
+      <Td
+        as={"td"}
+        color={"primaryText"}
+        borderColor={"primaryText"}
+        {...props}
+      />
     ),
     th: (props: object) => (
       <Th
         as={"th"}
-        color={primaryText}
-        borderColor={primaryText}
+        color={"primaryText"}
+        borderColor={"primaryText"}
         fontWeight={"semibold"}
         {...props}
       />
     ),
     pre: (props: object) => (
       <Pre
-        highlightBackground={highlightBackground}
-        lineColor={secondaryText}
+        highlightBackground={"highlightBackground"}
+        lineColor={"secondaryText"}
         marginY={3}
         rounded={"sm"}
         {...props}
       />
     ),
-    code: (props: object) => <Code background={codeBackground} {...props} />,
+    code: (props: object) => <Code background={"codeBackground"} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
@@ -134,12 +130,12 @@ export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
       <Divider
         as={"hr"}
         border={"1px solid"}
-        borderColor={secondaryText}
+        borderColor={"secondaryText"}
         marginY={6}
         {...props}
       />
     ),
-    a: (props: object) => <Link color={tint} {...props} />,
+    a: (props: object) => <Link color={"tint"} {...props} />,
     input: (props: object) => <input aria-label={"input"} {...props} />,
   }
   return <MDXProvider components={components}>{children}</MDXProvider>

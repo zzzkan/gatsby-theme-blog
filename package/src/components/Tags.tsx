@@ -1,14 +1,12 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link, Tag, Wrap, WrapItem } from "@chakra-ui/react"
-import { useThemeColor } from "../hooks/useThemeColor"
 
 export type TagsProps = {
   tags: readonly string[] | null
 }
 
 const Tags: React.FC<TagsProps> = ({ tags }) => {
-  const { tint, onTintText } = useThemeColor()
   if (tags == null || tags.length === 0) return null
   return (
     <Wrap>
@@ -22,8 +20,8 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
             <Tag
               size={"sm"}
               variant={"solid"}
-              color={onTintText}
-              background={tint}
+              color={"onTintText"}
+              background={"tint"}
             >
               {tag}
             </Tag>

@@ -6,26 +6,19 @@ import {
 } from "@chakra-ui/react"
 
 const Code: React.FC<CodeProps> = (props) => {
-  const isDarkMode = useColorModeValue(false, true)
-  return (
-    <ChakraCode
-      as={"code"}
-      sx={
-        isDarkMode
-          ? {
-              "&[data-theme=light]": {
-                display: "none",
-              },
-            }
-          : {
-              "&[data-theme=dark]": {
-                display: "none",
-              },
-            }
-      }
-      {...props}
-    />
+  const style = useColorModeValue(
+    {
+      "&[data-theme=dark]": {
+        display: "none",
+      },
+    },
+    {
+      "&[data-theme=light]": {
+        display: "none",
+      },
+    }
   )
+  return <ChakraCode as={"code"} sx={style} {...props} />
 }
 
 export default Code
