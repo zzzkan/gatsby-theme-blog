@@ -10,15 +10,21 @@
     "site"
   ],
   "scripts": {
+    "tsc": "tsc --noEmit",
     "lint": "eslint . --ext .ts,.tsx,.js,.jsx,.mdx",
     "lint:fix": "yarn lint --fix",
     "format": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,json}\"  --write",
-    "test:ci": "vitest run",
+    "test": "vitest run",
     "test:watch": "vitest watch",
     "prepare": "husky install"
   },
   "lint-staged": {
-    "*.{ts,tsx,js,jsx}": [
+    "*.{ts,tsx}": [
+      "prettier --write",
+      "tsc --noEmit",
+      "eslint --fix"
+    ],
+    "*.{js,jsx}": [
       "prettier --write",
       "eslint --fix"
     ],
