@@ -1,8 +1,8 @@
 import React from "react"
 import { Text } from "@chakra-ui/react"
-import { useSiteMetadata } from "../../../hooks/useSiteMetadata"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-const Left: React.FC = () => {
+const Copyright: React.FC = () => {
   const { author, publicationYear } = useSiteMetadata()
   return (
     <Text as={"div"} fontSize={"sm"}>
@@ -11,4 +11,4 @@ const Left: React.FC = () => {
   )
 }
 
-export default Left
+export default Copyright

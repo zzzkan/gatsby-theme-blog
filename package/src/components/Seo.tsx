@@ -13,24 +13,22 @@ export type SeoProps = {
 
 const Seo: React.FC<SeoProps> = (props) => {
   const {
-    title,
-    siteUrl: url,
+    title: siteTitle,
+    siteUrl,
     description,
     author,
     image: defaultImage,
   } = useSiteMetadata()
 
   const isBlogPosting = props.publishedDate != null
-  const siteTitle = title ?? ""
   const pageTitle =
     props.title != null ? `${props.title} - ${siteTitle}` : siteTitle
-  const siteUrl = url ?? ""
   const pageUrl = `${siteUrl}/${props?.path ?? ""}`.replace(/\/\/+/g, "/")
-  const pageDescription = props?.description ?? description ?? ""
-  const pageImageUrl = `${siteUrl}/${
-    props?.image ?? defaultImage ?? ""
-  }`.replace(/\/\/+/g, "/")
-  const pageAuthor = author ?? ""
+  const pageDescription = props?.description ?? description
+  const pageImageUrl = `${siteUrl}/${props?.image ?? defaultImage}`.replace(
+    /\/\/+/g,
+    "/"
+  )
   return (
     <>
       <title>{pageTitle}</title>
@@ -49,7 +47,7 @@ const Seo: React.FC<SeoProps> = (props) => {
       <meta name={"twitter:description"} content={pageDescription} />
       <meta name={"twitter:image"} content={pageImageUrl} />
       <meta name={"twitter:image:alt"} content={pageDescription} />
-      <meta name={"twitter:creator"} content={pageAuthor} />
+      <meta name={"twitter:creator"} content={author} />
       {isBlogPosting && (
         <script type="application/ld+json">
           {JSON.stringify({
@@ -61,7 +59,7 @@ const Seo: React.FC<SeoProps> = (props) => {
             dateModified: props.updatedDate ?? props.publishedDate,
             author: {
               "@type": "Person",
-              name: pageAuthor,
+              name: author,
               url: siteUrl,
             },
           })}
