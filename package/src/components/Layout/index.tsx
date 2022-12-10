@@ -1,9 +1,11 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import { Box, Container } from "@chakra-ui/react"
-import Header from "./Header"
-import Footer from "./Footer"
+import { Header } from "./Header"
+import { Footer } from "./Footer"
 
-const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const Layout: React.FC<{ children: React.ReactNode }> = ({
+  children,
+}) => {
   return (
     <Box
       background={"primaryBackground"}
@@ -18,5 +20,3 @@ const Layout: React.FC<{ children: ReactNode }> = ({ children }) => {
     </Box>
   )
 }
-
-export default Layout

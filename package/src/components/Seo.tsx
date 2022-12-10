@@ -11,7 +11,7 @@ export type SeoProps = {
   children?: React.ReactNode
 }
 
-const Seo: React.FC<SeoProps> = (props) => {
+export const Seo: React.FC<SeoProps> = (props) => {
   const {
     title: siteTitle,
     siteUrl,
@@ -69,5 +69,3 @@ const Seo: React.FC<SeoProps> = (props) => {
     </>
   )
 }
-
-export default Seo

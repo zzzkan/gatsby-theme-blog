@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
-import Layout from "../components/Layout"
-import TagPosts from "../components/TagPosts"
-import Seo from "../components/Seo"
+import { Layout } from "../components/Layout"
+import { TagPosts } from "../components/TagPosts"
+import { Seo } from "../components/Seo"
 
 type TagPostsContextProps = {
   readonly basePath: string

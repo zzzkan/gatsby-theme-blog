@@ -10,7 +10,7 @@ export type PaginationProps = {
 
 const width = 2
 
-const Pagination: React.FC<PaginationProps> = ({
+export const Pagination: React.FC<PaginationProps> = ({
   basePath,
   totalPage,
   currentPage,
@@ -52,5 +52,3 @@ const Pagination: React.FC<PaginationProps> = ({
     </HStack>
   )
 }
-
-export default Pagination

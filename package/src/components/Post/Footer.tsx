@@ -1,10 +1,10 @@
 import React from "react"
 import { Box, Center, Divider, Heading } from "@chakra-ui/react"
-import PostCardList, { PostCardListProps } from "../PostCardList"
+import { PostCardList, PostCardListProps } from "../PostCardList"
 
 export type FooterProps = PostCardListProps
 
-const Footer: React.FC<FooterProps> = ({ posts }) => {
+export const Footer: React.FC<FooterProps> = ({ posts }) => {
   return (
     <Box as={"footer"}>
       {posts != null && posts.length > 0 && (
@@ -26,5 +26,3 @@ const Footer: React.FC<FooterProps> = ({ posts }) => {
     </Box>
   )
 }
-
-export default Footer

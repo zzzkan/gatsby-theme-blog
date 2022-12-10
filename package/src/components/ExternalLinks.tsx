@@ -15,7 +15,7 @@ const icon = (name: string): IconType | undefined => {
   return undefined
 }
 
-const ExternalLinks: React.FC = () => {
+export const ExternalLinks: React.FC = () => {
   const { links } = useThemeOption()
   if (links == null || links.length === 0) return null
   return (
@@ -40,5 +40,3 @@ const ExternalLinks: React.FC = () => {
     </HStack>
   )
 }
-
-export default ExternalLinks

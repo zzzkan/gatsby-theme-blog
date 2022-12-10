@@ -1,8 +1,8 @@
 import React from "react"
 import { graphql, HeadFC, PageProps } from "gatsby"
-import Layout from "../components/Layout"
-import AllPosts from "../components/AllPosts"
-import Seo from "../components/Seo"
+import { Layout } from "../components/Layout"
+import { AllPosts } from "../components/AllPosts"
+import { Seo } from "../components/Seo"
 
 type AllPostsContextProps = {
   readonly basePath: string

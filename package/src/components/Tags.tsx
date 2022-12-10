@@ -6,7 +6,7 @@ export type TagsProps = {
   tags: readonly string[] | null
 }
 
-const Tags: React.FC<TagsProps> = ({ tags }) => {
+export const Tags: React.FC<TagsProps> = ({ tags }) => {
   if (tags == null || tags.length === 0) return null
   return (
     <Wrap>
@@ -31,5 +31,3 @@ const Tags: React.FC<TagsProps> = ({ tags }) => {
     </Wrap>
   )
 }
-
-export default Tags

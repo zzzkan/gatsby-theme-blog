@@ -1,7 +1,7 @@
 import React from "react"
 import { Heading, HeadingProps } from "@chakra-ui/react"
 
-const AnchorHeading: React.FC<HeadingProps> = (props) => {
+export const AnchorHeading: React.FC<HeadingProps> = (props) => {
   return (
     <Heading
       sx={{
@@ -22,5 +22,3 @@ const AnchorHeading: React.FC<HeadingProps> = (props) => {
     />
   )
 }
-
-export default AnchorHeading

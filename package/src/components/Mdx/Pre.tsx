@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react"
 
-const Pre: React.FC<
+export const Pre: React.FC<
   BoxProps & { highlightBackground: string; lineColor: string }
 > = (props) => {
   const isDarkMode = useColorModeValue(false, true)
@@ -53,5 +53,3 @@ const Pre: React.FC<
     />
   )
 }
-
-export default Pre

@@ -12,7 +12,7 @@ export type PostMetadataProps = {
   readonly timeToReadMinutes: number | null
 }
 
-const PostMetadata: React.FC<PostMetadataProps> = (post) => {
+export const PostMetadata: React.FC<PostMetadataProps> = (post) => {
   return (
     <Wrap color={"secondaryText"} fontSize={"sm"} spacingX={1} spacingY={0}>
       <WrapItem>
@@ -37,12 +37,10 @@ const PostMetadata: React.FC<PostMetadataProps> = (post) => {
         <WrapItem>
           <HStack spacing={0}>
             <Icon as={BiTime} fontSize={"md"} />
-            <Box as={"time"}>{Math.ceil(post.timeToReadMinutes)}min</Box>
+            <Box as={"span"}>{Math.ceil(post.timeToReadMinutes)}min</Box>
           </HStack>
         </WrapItem>
       )}
     </Wrap>
   )
 }
-
-export default PostMetadata

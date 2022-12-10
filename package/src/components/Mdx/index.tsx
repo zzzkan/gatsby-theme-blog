@@ -1,4 +1,4 @@
-import React, { ReactNode } from "react"
+import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import {
   Divider,
@@ -13,12 +13,12 @@ import {
   Tr,
   UnorderedList,
 } from "@chakra-ui/react"
-import Blockquote from "./Blockquote"
-import Pre from "./Pre"
-import Code from "./Code"
-import AnchorHeading from "./AnchorHeading"
+import { Blockquote } from "./Blockquote"
+import { Pre } from "./Pre"
+import { Code } from "./Code"
+import { AnchorHeading } from "./AnchorHeading"
 
-export const Mdx: React.FC<{ children: ReactNode }> = ({ children }) => {
+export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const components = {
     p: (props: object) => <Text {...props} />,
     h1: (props: object) => (

@@ -1,11 +1,11 @@
 import React from "react"
 import { Box, Center, Heading } from "@chakra-ui/react"
-import PostCardList, { PostCardListProps } from "../components/PostCardList"
-import Pagination, { PaginationProps } from "./Pagination"
+import { PostCardList, PostCardListProps } from "../components/PostCardList"
+import { Pagination, PaginationProps } from "./Pagination"
 
 export type AllPostsProps = PostCardListProps & PaginationProps
 
-const AllPosts: React.FC<AllPostsProps> = ({
+export const AllPosts: React.FC<AllPostsProps> = ({
   posts,
   basePath,
   totalPage,
@@ -29,5 +29,3 @@ const AllPosts: React.FC<AllPostsProps> = ({
     </Box>
   )
 }
-
-export default AllPosts

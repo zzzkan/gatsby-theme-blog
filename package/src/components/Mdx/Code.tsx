@@ -5,7 +5,7 @@ import {
   useColorModeValue,
 } from "@chakra-ui/react"
 
-const Code: React.FC<CodeProps> = (props) => {
+export const Code: React.FC<CodeProps> = (props) => {
   const style = useColorModeValue(
     {
       "&[data-theme=dark]": {
@@ -20,5 +20,3 @@ const Code: React.FC<CodeProps> = (props) => {
   )
   return <ChakraCode as={"code"} sx={style} {...props} />
 }
-
-export default Code

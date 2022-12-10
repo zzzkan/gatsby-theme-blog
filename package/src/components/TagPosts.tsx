@@ -1,7 +1,7 @@
 import React from "react"
 import { Box, Center, Heading } from "@chakra-ui/react"
-import PostCardList, { PostCardListProps } from "../components/PostCardList"
-import Pagination, { PaginationProps } from "./Pagination"
+import { PostCardList, PostCardListProps } from "../components/PostCardList"
+import { Pagination, PaginationProps } from "./Pagination"
 
 export type TagPostsProps = PostCardListProps &
   PaginationProps & {
@@ -9,7 +9,7 @@ export type TagPostsProps = PostCardListProps &
     count: number
   }
 
-const TagPosts: React.FC<TagPostsProps> = ({
+export const TagPosts: React.FC<TagPostsProps> = ({
   posts,
   basePath,
   totalPage,
@@ -35,5 +35,3 @@ const TagPosts: React.FC<TagPostsProps> = ({
     </Box>
   )
 }
-
-export default TagPosts

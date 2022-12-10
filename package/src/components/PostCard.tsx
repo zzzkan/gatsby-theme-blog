@@ -2,8 +2,8 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { Box, Heading, Stack, Link } from "@chakra-ui/react"
-import PostMetadata, { PostMetadataProps } from "./PostMetadata"
-import Tags, { TagsProps } from "./Tags"
+import { PostMetadata, PostMetadataProps } from "./PostMetadata"
+import { Tags, TagsProps } from "./Tags"
 
 export type PostCardProps = PostMetadataProps &
   TagsProps & {
@@ -17,7 +17,7 @@ export type PostCardProps = PostMetadataProps &
     readonly featuredImageAlt: string | null
   }
 
-const PostCard: React.FC<PostCardProps> = (post) => {
+export const PostCard: React.FC<PostCardProps> = (post) => {
   const image = post.featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box
@@ -60,5 +60,3 @@ const PostCard: React.FC<PostCardProps> = (post) => {
     </Box>
   )
 }
-
-export default PostCard

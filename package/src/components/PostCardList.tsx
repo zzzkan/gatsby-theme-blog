@@ -1,12 +1,12 @@
 import React from "react"
 import { Box, SimpleGrid } from "@chakra-ui/react"
-import PostCard, { PostCardProps } from "../components/PostCard"
+import { PostCard, PostCardProps } from "../components/PostCard"
 
 export type PostCardListProps = {
   posts: ReadonlyArray<PostCardProps | null> | null
 }
 
-const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {
+export const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {
   if (posts == null || posts.length === 0) return null
   return (
     <SimpleGrid columns={[1, 2, 3]} spacing={"6"}>
@@ -17,5 +17,3 @@ const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {
     </SimpleGrid>
   )
 }
-
-export default PostCardList

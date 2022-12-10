@@ -1,8 +1,8 @@
 import React from "react"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { Box, Heading, Stack } from "@chakra-ui/react"
-import PostMetadata, { PostMetadataProps } from "../PostMetadata"
-import Tags, { TagsProps } from "../Tags"
+import { PostMetadata, PostMetadataProps } from "../PostMetadata"
+import { Tags, TagsProps } from "../Tags"
 
 export type HeaderProps = PostMetadataProps &
   TagsProps & {
@@ -15,7 +15,7 @@ export type HeaderProps = PostMetadataProps &
     readonly featuredImageAlt: string | null
   }
 
-const Header: React.FC<HeaderProps> = (post) => {
+export const Header: React.FC<HeaderProps> = (post) => {
   const image = post.featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box as={"header"} marginBottom={9}>
@@ -35,5 +35,3 @@ const Header: React.FC<HeaderProps> = (post) => {
     </Box>
   )
 }
-
-export default Header

@@ -1,9 +1,9 @@
 import React from "react"
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
-import Title from "../Title"
-import ToggleColorModeButton from "../ToggleColorModeButton"
+import { Title } from "../Title"
+import { ToggleColorModeButton } from "../ToggleColorModeButton"
 
-const Header: React.FC = () => {
+export const Header: React.FC = () => {
   return (
     <Box
       as={"header"}
@@ -23,5 +23,3 @@ const Header: React.FC = () => {
     </Box>
   )
 }
-
-export default Header
