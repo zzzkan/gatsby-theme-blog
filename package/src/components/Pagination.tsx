@@ -18,11 +18,11 @@ export const Pagination: React.FC<PaginationProps> = ({
   const pages = [...Array(2 * width + 1)]
     .map((_, i) => i + currentPage - width)
     .filter((page) => page >= 1 && page <= totalPage)
+  if (pages.length < 2 || !pages.includes(currentPage)) return null
   const path = (page: number): string => {
     if (page === 1) return basePath
     return `${basePath}/${page}`.replace(/\/\/+/g, "/")
   }
-  if (totalPage < 2) return null
   return (
     <HStack spacing={3} fontSize={"xl"}>
       {currentPage !== 1 && (

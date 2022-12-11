@@ -1,0 +1,150 @@
+// Vitest Snapshot v1
+
+exports[`Seo component > snapshot with no props 1`] = `
+<DocumentFragment>
+  <title>
+    siteTitle
+  </title>
+  <meta
+    content="siteDescription"
+    name="description"
+  />
+  <meta
+    content="siteUrl/siteImage"
+    name="image"
+  />
+  <meta
+    content="siteTitle"
+    property="og:title"
+  />
+  <meta
+    content="siteTitle"
+    property="og:site_name"
+  />
+  <meta
+    content="siteUrl/"
+    property="og:url"
+  />
+  <meta
+    content="siteDescription"
+    property="og:description"
+  />
+  <meta
+    content="siteUrl/siteImage"
+    property="og:image"
+  />
+  <meta
+    content="siteDescription"
+    property="og:image:alt"
+  />
+  <meta
+    content="blog"
+    property="og:type"
+  />
+  <meta
+    content="summary_large_image"
+    name="twitter:card"
+  />
+  <meta
+    content="siteTitle"
+    name="twitter:title"
+  />
+  <meta
+    content="siteUrl/"
+    name="twitter:url"
+  />
+  <meta
+    content="siteDescription"
+    name="twitter:description"
+  />
+  <meta
+    content="siteUrl/siteImage"
+    name="twitter:image"
+  />
+  <meta
+    content="siteDescription"
+    name="twitter:image:alt"
+  />
+  <meta
+    content="siteAuthor"
+    name="twitter:creator"
+  />
+</DocumentFragment>
+`;
+
+exports[`Seo component > snapshot with props 1`] = `
+<DocumentFragment>
+  <title>
+    pageTitle - siteTitle
+  </title>
+  <meta
+    content="pageDescription"
+    name="description"
+  />
+  <meta
+    content="siteUrl/pageImage"
+    name="image"
+  />
+  <meta
+    content="pageTitle - siteTitle"
+    property="og:title"
+  />
+  <meta
+    content="siteTitle"
+    property="og:site_name"
+  />
+  <meta
+    content="siteUrl/pagePath"
+    property="og:url"
+  />
+  <meta
+    content="pageDescription"
+    property="og:description"
+  />
+  <meta
+    content="siteUrl/pageImage"
+    property="og:image"
+  />
+  <meta
+    content="pageDescription"
+    property="og:image:alt"
+  />
+  <meta
+    content="article"
+    property="og:type"
+  />
+  <meta
+    content="summary_large_image"
+    name="twitter:card"
+  />
+  <meta
+    content="pageTitle - siteTitle"
+    name="twitter:title"
+  />
+  <meta
+    content="siteUrl/pagePath"
+    name="twitter:url"
+  />
+  <meta
+    content="pageDescription"
+    name="twitter:description"
+  />
+  <meta
+    content="siteUrl/pageImage"
+    name="twitter:image"
+  />
+  <meta
+    content="pageDescription"
+    name="twitter:image:alt"
+  />
+  <meta
+    content="siteAuthor"
+    name="twitter:creator"
+  />
+  <script
+    type="application/ld+json"
+  >
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"siteUrl/pageImage","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"siteUrl"}}
+  </script>
+</DocumentFragment>
+`;

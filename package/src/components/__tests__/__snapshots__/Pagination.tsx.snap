@@ -1,0 +1,51 @@
+// Vitest Snapshot v1
+
+exports[`Pagination component > snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="chakra-stack css-amvnyx"
+  >
+    <a
+      class="chakra-link css-0"
+      href="/4"
+    >
+      &lt;
+    </a>
+    <a
+      class="chakra-link css-0"
+      href="/3"
+    >
+      3
+    </a>
+    <a
+      class="chakra-link css-0"
+      href="/4"
+    >
+      4
+    </a>
+    <span
+      class="css-b5d91b"
+    >
+      5
+    </span>
+    <a
+      class="chakra-link css-0"
+      href="/6"
+    >
+      6
+    </a>
+    <a
+      class="chakra-link css-0"
+      href="/7"
+    >
+      7
+    </a>
+    <a
+      class="chakra-link css-0"
+      href="/6"
+    >
+      &gt;
+    </a>
+  </div>
+</DocumentFragment>
+`;

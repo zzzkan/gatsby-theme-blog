@@ -1,0 +1,16 @@
+// Vitest Snapshot v1
+
+exports[`Title component > snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="chakra-heading css-u4py6g"
+  >
+    <a
+      class="chakra-link css-163zzif"
+      href="/"
+    >
+      title
+    </a>
+  </div>
+</DocumentFragment>
+`;

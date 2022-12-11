@@ -1,0 +1,11 @@
+// Vitest Snapshot v1
+
+exports[`ToggleColorModeButton component > snapshot 1`] = `
+<DocumentFragment>
+  <button
+    aria-label="Toggle color mode"
+    class="chakra-button css-1skh0f2"
+    type="button"
+  />
+</DocumentFragment>
+`;

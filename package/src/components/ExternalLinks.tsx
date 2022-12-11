@@ -11,8 +11,7 @@ const icon = (name: string): IconType | undefined => {
   if (name === "GitHub") return FaGithub
   if (name === "Twitter") return FaTwitter
   if (name === "RSS") return FaRss
-  if (name === "Profile") return FaLink
-  return undefined
+  return FaLink
 }
 
 export const ExternalLinks: React.FC = () => {
@@ -20,9 +19,9 @@ export const ExternalLinks: React.FC = () => {
   if (links == null || links.length === 0) return null
   return (
     <HStack spacing={2}>
-      {links.map((link) => (
+      {links.map((link, index) => (
         <Tooltip
-          key={link.url}
+          key={`${link.name}-${index}`}
           label={link.label ?? link.name}
           placement={"top"}
           color={"inherit"}

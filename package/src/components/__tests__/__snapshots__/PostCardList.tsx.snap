@@ -1,0 +1,19 @@
+// Vitest Snapshot v1
+
+exports[`PostCardList component > snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="css-jom4b4"
+  >
+    <div>
+      PostCard
+    </div>
+    <div>
+      PostCard
+    </div>
+    <div>
+      PostCard
+    </div>
+  </div>
+</DocumentFragment>
+`;

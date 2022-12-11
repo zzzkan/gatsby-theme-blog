@@ -1,0 +1,47 @@
+// Vitest Snapshot v1
+
+exports[`PostCard component > snapshot 1`] = `
+<DocumentFragment>
+  <article
+    class="css-1luunky"
+  >
+    <a
+      class="chakra-link css-163zzif"
+      href="/slug"
+    >
+      <div
+        class="css-1u0ptzu"
+      >
+        <div
+          class="css-1beqgpm"
+        >
+          <img
+            alt="featuredImageAlt"
+            src="featuredImage"
+          />
+        </div>
+      </div>
+    </a>
+    <div
+      class="chakra-stack css-1h3nfwc"
+    >
+      <div>
+        Tags
+      </div>
+      <a
+        class="chakra-link css-163zzif"
+        href="/slug"
+      >
+        <div
+          class="chakra-heading css-0"
+        >
+          title
+        </div>
+      </a>
+      <div>
+        PostMetadata
+      </div>
+    </div>
+  </article>
+</DocumentFragment>
+`;

@@ -1,0 +1,84 @@
+// Vitest Snapshot v1
+
+exports[`Tags component > snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="chakra-wrap css-i6bazn"
+  >
+    <ul
+      class="chakra-wrap__list css-wah4g8"
+    >
+      <li
+        class="chakra-wrap__listitem css-1yp4ln"
+      >
+        <a
+          class="chakra-link css-163zzif"
+          href="/tags/tag1"
+        >
+          <span
+            class="css-qzvay7"
+          >
+            tag1
+          </span>
+        </a>
+      </li>
+      <li
+        class="chakra-wrap__listitem css-1yp4ln"
+      >
+        <a
+          class="chakra-link css-163zzif"
+          href="/tags/tag2"
+        >
+          <span
+            class="css-qzvay7"
+          >
+            tag2
+          </span>
+        </a>
+      </li>
+      <li
+        class="chakra-wrap__listitem css-1yp4ln"
+      >
+        <a
+          class="chakra-link css-163zzif"
+          href="/tags/tag3"
+        >
+          <span
+            class="css-qzvay7"
+          >
+            tag3
+          </span>
+        </a>
+      </li>
+      <li
+        class="chakra-wrap__listitem css-1yp4ln"
+      >
+        <a
+          class="chakra-link css-163zzif"
+          href="/tags/tag4"
+        >
+          <span
+            class="css-qzvay7"
+          >
+            tag4
+          </span>
+        </a>
+      </li>
+      <li
+        class="chakra-wrap__listitem css-1yp4ln"
+      >
+        <a
+          class="chakra-link css-163zzif"
+          href="/tags/tag5"
+        >
+          <span
+            class="css-qzvay7"
+          >
+            tag5
+          </span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</DocumentFragment>
+`;

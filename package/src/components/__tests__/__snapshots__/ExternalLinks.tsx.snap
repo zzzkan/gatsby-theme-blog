@@ -1,0 +1,30 @@
+// Vitest Snapshot v1
+
+exports[`ExternalLinks component > snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="chakra-stack css-15lgeks"
+  >
+    <a
+      aria-label="Profile Label"
+      class="chakra-link css-163zzif"
+      href="/profile"
+    />
+    <a
+      aria-label="RSS Label"
+      class="chakra-link css-163zzif"
+      href="/rss"
+    />
+    <a
+      aria-label="GitHub Label"
+      class="chakra-link css-163zzif"
+      href="/github"
+    />
+    <a
+      aria-label="Twitter Label"
+      class="chakra-link css-163zzif"
+      href="/twitter"
+    />
+  </div>
+</DocumentFragment>
+`;
