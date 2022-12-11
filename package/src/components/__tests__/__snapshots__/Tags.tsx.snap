@@ -2,77 +2,135 @@
 
 exports[`Tags component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="chakra-wrap css-i6bazn"
+  .emotion-0 {
+  overflow: hidden;
+}
+
+.emotion-1 {
+  --chakra-wrap-x-spacing: 0.5rem;
+  --chakra-wrap-y-spacing: 0.5rem;
+  --wrap-x-spacing: calc(var(--chakra-wrap-x-spacing) / 2);
+  --wrap-y-spacing: calc(var(--chakra-wrap-y-spacing) / 2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: calc(var(--wrap-y-spacing) * -1) calc(var(--wrap-x-spacing) * -1);
+}
+
+.emotion-1>*:not(style) {
+  margin: var(--wrap-y-spacing) var(--wrap-x-spacing);
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.emotion-3:hover,
+.emotion-3[data-hover] {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-4 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: top;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  max-width: 100%;
+  color: onTintText;
+  background: tint;
+}
+
+<div
+    class="chakra-wrap emotion-0"
   >
     <ul
-      class="chakra-wrap__list css-wah4g8"
+      class="chakra-wrap__list emotion-1"
     >
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <a
-          class="chakra-link css-163zzif"
+          class="chakra-link emotion-3"
           href="/tags/tag1"
         >
           <span
-            class="css-qzvay7"
+            class="emotion-4"
           >
             tag1
           </span>
         </a>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <a
-          class="chakra-link css-163zzif"
+          class="chakra-link emotion-3"
           href="/tags/tag2"
         >
           <span
-            class="css-qzvay7"
+            class="emotion-4"
           >
             tag2
           </span>
         </a>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <a
-          class="chakra-link css-163zzif"
+          class="chakra-link emotion-3"
           href="/tags/tag3"
         >
           <span
-            class="css-qzvay7"
+            class="emotion-4"
           >
             tag3
           </span>
         </a>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <a
-          class="chakra-link css-163zzif"
+          class="chakra-link emotion-3"
           href="/tags/tag4"
         >
           <span
-            class="css-qzvay7"
+            class="emotion-4"
           >
             tag4
           </span>
         </a>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <a
-          class="chakra-link css-163zzif"
+          class="chakra-link emotion-3"
           href="/tags/tag5"
         >
           <span
-            class="css-qzvay7"
+            class="emotion-4"
           >
             tag5
           </span>

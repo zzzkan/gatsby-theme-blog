@@ -2,8 +2,12 @@
 
 exports[`Copyright component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="chakra-text css-g5hezf"
+  .emotion-0 {
+  font-size: sm;
+}
+
+<div
+    class="chakra-text emotion-0"
   >
     © 9999 author
   </div>

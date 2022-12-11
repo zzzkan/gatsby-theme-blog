@@ -2,46 +2,74 @@
 
 exports[`Pagination component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="chakra-stack css-amvnyx"
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+  font-size: xl;
+}
+
+.emotion-0>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 3px;
+  margin-inline-start: 3px;
+}
+
+.emotion-4 {
+  color: tint;
+}
+
+<div
+    class="chakra-stack emotion-0"
   >
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/4"
     >
       &lt;
     </a>
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/3"
     >
       3
     </a>
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/4"
     >
       4
     </a>
     <span
-      class="css-b5d91b"
+      class="emotion-4"
     >
       5
     </span>
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/6"
     >
       6
     </a>
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/7"
     >
       7
     </a>
     <a
-      class="chakra-link css-0"
+      class="chakra-link emotion-1"
       href="/6"
     >
       &gt;

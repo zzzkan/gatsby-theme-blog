@@ -2,18 +2,73 @@
 
 exports[`PostCard component > snapshot 1`] = `
 <DocumentFragment>
-  <article
-    class="css-1luunky"
+  .emotion-0 {
+  box-shadow: md;
+  border-radius: xl;
+  -webkit-padding-start: 6px;
+  padding-inline-start: 6px;
+  -webkit-padding-end: 6px;
+  padding-inline-end: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
+  overflow: hidden;
+}
+
+.emotion-1:hover,
+.emotion-1[data-hover] {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+.emotion-2 {
+  margin-top: -3px;
+  -webkit-margin-start: -6px;
+  margin-inline-start: -6px;
+  -webkit-margin-end: -6px;
+  margin-inline-end: -6px;
+  margin-bottom: 3px;
+  overflow: hidden;
+}
+
+.emotion-3:hover,
+.emotion-3[data-hover] {
+  -webkit-transform: scale(1.02);
+  -moz-transform: scale(1.02);
+  -ms-transform: scale(1.02);
+  transform: scale(1.02);
+}
+
+.emotion-4 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+.emotion-4>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0px;
+  margin-inline-start: 0px;
+}
+
+<article
+    class="emotion-0"
   >
     <a
-      class="chakra-link css-163zzif"
+      class="chakra-link emotion-1"
       href="/slug"
     >
       <div
-        class="css-1u0ptzu"
+        class="emotion-2"
       >
         <div
-          class="css-1beqgpm"
+          class="emotion-3"
         >
           <img
             alt="featuredImageAlt"
@@ -23,17 +78,17 @@ exports[`PostCard component > snapshot 1`] = `
       </div>
     </a>
     <div
-      class="chakra-stack css-1h3nfwc"
+      class="chakra-stack emotion-4"
     >
       <div>
         Tags
       </div>
       <a
-        class="chakra-link css-163zzif"
+        class="chakra-link emotion-1"
         href="/slug"
       >
         <div
-          class="chakra-heading css-0"
+          class="chakra-heading emotion-6"
         >
           title
         </div>

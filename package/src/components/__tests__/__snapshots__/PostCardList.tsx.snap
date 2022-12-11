@@ -2,8 +2,16 @@
 
 exports[`PostCardList component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="css-jom4b4"
+  .emotion-0 {
+  display: grid;
+  grid-gap: 6px;
+  grid-template-columns: repeat(1, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+<div
+    class="emotion-0"
   >
     <div>
       PostCard

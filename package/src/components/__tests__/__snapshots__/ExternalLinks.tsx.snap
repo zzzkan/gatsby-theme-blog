@@ -2,27 +2,56 @@
 
 exports[`ExternalLinks component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="chakra-stack css-15lgeks"
+  .emotion-0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-0>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 2px;
+  margin-inline-start: 2px;
+}
+
+.emotion-1:hover,
+.emotion-1[data-hover] {
+  -webkit-text-decoration: none;
+  text-decoration: none;
+}
+
+<div
+    class="chakra-stack emotion-0"
   >
     <a
       aria-label="Profile Label"
-      class="chakra-link css-163zzif"
+      class="chakra-link emotion-1"
       href="/profile"
     />
     <a
       aria-label="RSS Label"
-      class="chakra-link css-163zzif"
+      class="chakra-link emotion-1"
       href="/rss"
     />
     <a
       aria-label="GitHub Label"
-      class="chakra-link css-163zzif"
+      class="chakra-link emotion-1"
       href="/github"
     />
     <a
       aria-label="Twitter Label"
-      class="chakra-link css-163zzif"
+      class="chakra-link emotion-1"
       href="/twitter"
     />
   </div>

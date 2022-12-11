@@ -2,9 +2,40 @@
 
 exports[`ToggleColorModeButton component > snapshot 1`] = `
 <DocumentFragment>
-  <button
+  .emotion-0 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding: 0px;
+  border-radius: full;
+  font-size: 2xl;
+}
+
+<button
     aria-label="Toggle color mode"
-    class="chakra-button css-1skh0f2"
+    class="chakra-button emotion-0"
     type="button"
   />
 </DocumentFragment>

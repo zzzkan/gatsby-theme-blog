@@ -2,20 +2,94 @@
 
 exports[`PostMetadata component > snapshot 1`] = `
 <DocumentFragment>
-  <div
-    class="chakra-wrap css-w97r8k"
+  .emotion-0 {
+  overflow: hidden;
+  color: secondaryText;
+  font-size: sm;
+}
+
+.emotion-1 {
+  --chakra-wrap-x-spacing: 1px;
+  --chakra-wrap-y-spacing: 0px;
+  --wrap-x-spacing: calc(var(--chakra-wrap-x-spacing) / 2);
+  --wrap-y-spacing: calc(var(--chakra-wrap-y-spacing) / 2);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex-wrap: wrap;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  list-style-type: none;
+  padding: 0px;
+  margin: calc(var(--wrap-y-spacing) * -1) calc(var(--wrap-x-spacing) * -1);
+}
+
+.emotion-1>*:not(style) {
+  margin: var(--wrap-y-spacing) var(--wrap-x-spacing);
+}
+
+.emotion-2 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: flex-start;
+  -webkit-box-align: flex-start;
+  -ms-flex-align: flex-start;
+  align-items: flex-start;
+}
+
+.emotion-3 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+.emotion-3>*:not(style)~*:not(style) {
+  margin-top: 0px;
+  -webkit-margin-end: 0px;
+  margin-inline-end: 0px;
+  margin-bottom: 0px;
+  -webkit-margin-start: 0px;
+  margin-inline-start: 0px;
+}
+
+.emotion-4 {
+  width: 1em;
+  height: 1em;
+  display: inline-block;
+  line-height: 1em;
+  -webkit-flex-shrink: 0;
+  -ms-flex-negative: 0;
+  flex-shrink: 0;
+  color: currentColor;
+  font-size: md;
+}
+
+<div
+    class="chakra-wrap emotion-0"
   >
     <ul
-      class="chakra-wrap__list css-1ojoey9"
+      class="chakra-wrap__list emotion-1"
     >
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <div
-          class="chakra-stack css-1sigv9r"
+          class="chakra-stack emotion-3"
         >
           <svg
-            class="chakra-icon css-1pr7mfq"
+            class="chakra-icon emotion-4"
             fill="currentColor"
             focusable="false"
             height="1em"
@@ -33,7 +107,7 @@ exports[`PostMetadata component > snapshot 1`] = `
             />
           </svg>
           <time
-            class="css-0"
+            class="emotion-5"
             datetime="2022-01-01"
           >
             2022/01/01
@@ -41,13 +115,13 @@ exports[`PostMetadata component > snapshot 1`] = `
         </div>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <div
-          class="chakra-stack css-1sigv9r"
+          class="chakra-stack emotion-3"
         >
           <svg
-            class="chakra-icon css-1pr7mfq"
+            class="chakra-icon emotion-4"
             fill="currentColor"
             focusable="false"
             height="1em"
@@ -69,7 +143,7 @@ exports[`PostMetadata component > snapshot 1`] = `
             />
           </svg>
           <time
-            class="css-0"
+            class="emotion-5"
             datetime="2022-01-02"
           >
             2022/01/02
@@ -77,13 +151,13 @@ exports[`PostMetadata component > snapshot 1`] = `
         </div>
       </li>
       <li
-        class="chakra-wrap__listitem css-1yp4ln"
+        class="chakra-wrap__listitem emotion-2"
       >
         <div
-          class="chakra-stack css-1sigv9r"
+          class="chakra-stack emotion-3"
         >
           <svg
-            class="chakra-icon css-1pr7mfq"
+            class="chakra-icon emotion-4"
             fill="currentColor"
             focusable="false"
             height="1em"
@@ -101,7 +175,7 @@ exports[`PostMetadata component > snapshot 1`] = `
             />
           </svg>
           <span
-            class="css-0"
+            class="emotion-5"
           >
             10min
           </span>
