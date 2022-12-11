@@ -5,7 +5,6 @@ import { AllPosts } from "../components/AllPosts"
 import { Seo } from "../components/Seo"
 
 type AllPostsContextProps = {
-  readonly basePath: string
   readonly totalPage: number
   readonly currentPage: number
 }

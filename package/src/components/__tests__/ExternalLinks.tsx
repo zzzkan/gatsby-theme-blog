@@ -29,7 +29,7 @@ describe("ExternalLinks component", () => {
   })
 
   test("snapshot", () => {
-    ;(useThemeOption as jest.Mock).mockImplementationOnce(() => {
+    mockUseThemeOption.mockImplementationOnce(() => {
       return {
         links: [
           {

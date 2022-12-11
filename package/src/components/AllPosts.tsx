@@ -7,7 +7,6 @@ export type AllPostsProps = PostCardListProps & PaginationProps
 
 export const AllPosts: React.FC<AllPostsProps> = ({
   posts,
-  basePath,
   totalPage,
   currentPage,
 }) => {
@@ -20,11 +19,7 @@ export const AllPosts: React.FC<AllPostsProps> = ({
         <PostCardList posts={posts} />
       </Center>
       <Center>
-        <Pagination
-          basePath={basePath}
-          totalPage={totalPage}
-          currentPage={currentPage}
-        />
+        <Pagination totalPage={totalPage} currentPage={currentPage} />
       </Center>
     </Box>
   )

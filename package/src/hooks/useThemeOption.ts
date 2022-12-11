@@ -1,10 +1,11 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 type ThemeOptionProps = {
-  links: Array<{
-    name: string
-    url: string
-    label: string | null
+  readonly basePath: string
+  readonly links: Array<{
+    readonly name: string
+    readonly url: string
+    readonly label: string | null
   }>
 }
 
@@ -12,6 +13,7 @@ export const useThemeOption = (): ThemeOptionProps => {
   const data = useStaticQuery<{ themeOption: ThemeOptionProps }>(graphql`
     query {
       themeOption(id: { eq: "@zzzkan/gatsby-theme-blog" }) {
+        basePath
         links {
           name
           url

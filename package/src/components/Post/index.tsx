@@ -5,8 +5,8 @@ import { Footer, FooterProps } from "./Footer"
 import { Mdx } from "../Mdx"
 
 export type PostProps = {
-  children: React.ReactNode
-  post: HeaderProps & FooterProps
+  readonly children: React.ReactNode
+  readonly post: HeaderProps & FooterProps
 }
 
 export const Post: React.FC<PostProps> = ({ children, post }) => {

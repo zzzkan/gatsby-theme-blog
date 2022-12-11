@@ -5,7 +5,6 @@ import { TagPosts } from "../components/TagPosts"
 import { Seo } from "../components/Seo"
 
 type TagPostsContextProps = {
-  readonly basePath: string
   readonly totalPage: number
   readonly currentPage: number
   readonly tag: string

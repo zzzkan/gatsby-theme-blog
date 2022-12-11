@@ -233,7 +233,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       path: i === 0 ? basePath : `${basePath}/${i + 1}`.replace(/\/\/+/g, "/"),
       component: allPostsTemplate,
       context: {
-        basePath,
         totalPage: allPostsPageNumber,
         currentPage: i + 1,
         limit: postsLimit,
@@ -262,7 +261,6 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
               : `${tagPostsPath}/${i + 1}`.replace(/\/\/+/g, "/"),
           component: tagPostsTemplate,
           context: {
-            basePath: tagPostsPath,
             totalPage: tagPostsPageNumber,
             currentPage: i + 1,
             limit: postsLimit,

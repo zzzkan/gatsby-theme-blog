@@ -3,7 +3,7 @@ import { Box, SimpleGrid } from "@chakra-ui/react"
 import { PostCard, PostCardProps } from "../components/PostCard"
 
 export type PostCardListProps = {
-  posts: ReadonlyArray<PostCardProps | null> | null
+  readonly posts: ReadonlyArray<PostCardProps | null> | null
 }
 
 export const PostCardList: React.FC<PostCardListProps> = ({ posts }) => {

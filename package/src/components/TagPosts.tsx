@@ -5,13 +5,12 @@ import { Pagination, PaginationProps } from "./Pagination"
 
 export type TagPostsProps = PostCardListProps &
   PaginationProps & {
-    tag: string
-    count: number
+    readonly tag: string
+    readonly count: number
   }
 
 export const TagPosts: React.FC<TagPostsProps> = ({
   posts,
-  basePath,
   totalPage,
   currentPage,
   tag,
@@ -27,7 +26,7 @@ export const TagPosts: React.FC<TagPostsProps> = ({
       </Center>
       <Center>
         <Pagination
-          basePath={basePath}
+          prefix={`tags/${tag}`}
           totalPage={totalPage}
           currentPage={currentPage}
         />

@@ -1,12 +1,12 @@
 import { useStaticQuery, graphql } from "gatsby"
 
 type SiteMetadataProps = {
-  title: string
-  siteUrl: string
-  description: string
-  author: string
-  publicationYear: string
-  image: string
+  readonly title: string
+  readonly siteUrl: string
+  readonly description: string
+  readonly author: string
+  readonly publicationYear: string
+  readonly image: string
 }
 
 export const useSiteMetadata = (): SiteMetadataProps => {
