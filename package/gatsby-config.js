@@ -17,8 +17,8 @@ module.exports = (themeOptions) => {
     defaultThemeOptions(themeOptions)
   return {
     siteMetadata: {
-      title: "zzzkan blog",
-      siteUrl: "https://github.com/zzzkan",
+      title: "@zzzkan/gatsby-theme-blog",
+      siteUrl: "http://localhost:9000/",
       description: "@zzzkan/gatsby-theme-blog example.",
       author: "zzzkan",
       publicationYear: 2022,

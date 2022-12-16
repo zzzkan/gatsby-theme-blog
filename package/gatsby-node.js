@@ -246,12 +246,9 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const tagPostsGroup = result.data.tagPosts.group
   if (tagPostsGroup.length > 0) {
     tagPostsGroup.forEach((posts) => {
-      const tagPostsPath = `${basePath}/tags/${posts.fieldValue}`.replace(
-        /\/\/+/g,
-        "/"
-      )
       const tag = posts.fieldValue
       const count = posts.totalCount
+      const tagPostsPath = `${basePath}/tags/${tag}`.replace(/\/\/+/g, "/")
       const tagPostsPageNumber = Math.ceil(count / postsLimit)
       for (let i = 0; i < tagPostsPageNumber; i++) {
         createPage({
