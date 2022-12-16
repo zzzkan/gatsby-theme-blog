@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: "zzzkan blog",
-    siteUrl: "http://localhost:9000/",
+    siteUrl: "https://zzzkan-gatsby-theme-blog.netlify.app/",
     description: "gatsby-theme-blog by @zzzkan.",
     author: "zzzkan",
     publicationYear: 2023,
