@@ -29,7 +29,7 @@ export const ExternalLinks: React.FC = () => {
         >
           <Link
             href={link.url}
-            aria-label={link.label ?? link.name}
+            aria-label={`Transition to ${link.label ?? link.name}`}
             _hover={{ textDecoration: "none" }}
           >
             <Icon as={icon(link.name)} fontSize={"2xl"} />

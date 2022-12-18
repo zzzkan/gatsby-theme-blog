@@ -7,7 +7,12 @@ export const Title: React.FC = () => {
   const { title } = useSiteMetadata()
   return (
     <Heading as={"div"} size={"md"} fontWeight={"extrabold"} paddingY={3}>
-      <Link as={GatsbyLink} to="/" _hover={{ textDecoration: "none" }}>
+      <Link
+        as={GatsbyLink}
+        to="/"
+        aria-label={"Transition to home"}
+        _hover={{ textDecoration: "none" }}
+      >
         {title}
       </Link>
     </Heading>

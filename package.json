@@ -16,6 +16,7 @@
     "format": "prettier \"**/*.{ts,tsx,js,jsx,md,mdx,json}\"  --write",
     "test": "vitest run",
     "test:watch": "vitest watch",
+    "test:e2e": "playwright test",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -33,7 +34,9 @@
   },
   "packageManager": "yarn@3.2.4",
   "devDependencies": {
+    "@axe-core/playwright": "^4.5.2",
     "@emotion/jest": "^11.10.5",
+    "@playwright/test": "^1.28.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
     "@types/eslint": "^8",

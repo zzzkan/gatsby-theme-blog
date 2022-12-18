@@ -32,6 +32,7 @@ export const PostCard: React.FC<PostCardProps> = (post) => {
         <Link
           as={GatsbyLink}
           to={post.slug}
+          aria-label={`Transition to ${post.title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
@@ -49,6 +50,7 @@ export const PostCard: React.FC<PostCardProps> = (post) => {
         <Link
           as={GatsbyLink}
           to={post.slug}
+          aria-label={`Transition to ${post.title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Heading as={"div"} size={"md"}>

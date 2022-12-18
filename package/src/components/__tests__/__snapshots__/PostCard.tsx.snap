@@ -61,6 +61,7 @@ exports[`PostCard component > snapshot 1`] = `
     class="emotion-0"
   >
     <a
+      aria-label="Transition to title"
       class="chakra-link emotion-1"
       href="/slug"
     >
@@ -84,6 +85,7 @@ exports[`PostCard component > snapshot 1`] = `
         Tags
       </div>
       <a
+        aria-label="Transition to title"
         class="chakra-link emotion-1"
         href="/slug"
       >

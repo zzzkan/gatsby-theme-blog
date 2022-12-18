@@ -9,6 +9,7 @@ export const Pre: React.FC<
   return (
     <Box
       as={"pre"}
+      tabIndex={0}
       sx={{
         overflowX: "auto",
         overflowY: "hidden",

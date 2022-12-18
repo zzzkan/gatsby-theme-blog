@@ -20,6 +20,7 @@ export const Tags: React.FC<TagsProps> = ({ tags }) => {
           <Link
             as={GatsbyLink}
             to={path(tag)}
+            aria-label={`Transition to tag page (${tag})`}
             _hover={{ textDecoration: "none" }}
           >
             <Tag

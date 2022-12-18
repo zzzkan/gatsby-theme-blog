@@ -156,6 +156,7 @@ exports.createResolvers = ({ createResolvers }, themeOptions) => {
       relatedPosts: {
         type: ["Post"],
         resolve: async (source, args, context, info) => {
+          if (source.tags == null) return null
           const { entries } = await context.nodeModel.findAll({
             type: "Post",
             query: {

@@ -114,3 +114,7 @@ public
 
 # GraphQL Typegen
 gatsby-types.d.ts
+
+# Playwright
+test-results
+playwright-report

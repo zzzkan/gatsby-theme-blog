@@ -91,7 +91,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     ol: (props: object) => <OrderedList as={"ol"} {...props} />,
     li: (props: object) => <ListItem as={"li"} {...props} />,
     table: (props: object) => (
-      <TableContainer marginY={3}>
+      <TableContainer tabIndex={0} marginY={3}>
         <Table as={"table"} variant={"simple"} size={"md"} {...props} />
       </TableContainer>
     ),

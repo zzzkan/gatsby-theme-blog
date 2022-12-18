@@ -102,7 +102,9 @@
     "./package/src/**/*",
     "./site/src/**/*",
     "./vite.config.ts",
-    "./vitest-setup.ts"
+    "./vitest-setup.ts",
+    "./playwright.config.ts",
+    "./e2e/**/*",
   ],
   "exclude": ["node_modules"]
 }

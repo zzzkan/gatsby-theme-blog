@@ -29,7 +29,11 @@ export const Pagination: React.FC<PaginationProps> = ({
   return (
     <HStack spacing={3} fontSize={"xl"}>
       {currentPage !== 1 && (
-        <Link as={GatsbyLink} to={path(currentPage - 1)}>
+        <Link
+          as={GatsbyLink}
+          to={path(currentPage - 1)}
+          aria-label={"Transition to previous page"}
+        >
           {"<"}
         </Link>
       )}
@@ -42,13 +46,22 @@ export const Pagination: React.FC<PaginationProps> = ({
           )
         }
         return (
-          <Link key={page} as={GatsbyLink} to={path(page)}>
+          <Link
+            key={page}
+            as={GatsbyLink}
+            to={path(page)}
+            aria-label={`Transition to ${page} page`}
+          >
             {page}
           </Link>
         )
       })}
       {currentPage !== totalPage && (
-        <Link as={GatsbyLink} to={path(currentPage + 1)}>
+        <Link
+          as={GatsbyLink}
+          to={path(currentPage + 1)}
+          aria-label={"Transition to next page"}
+        >
           {">"}
         </Link>
       )}

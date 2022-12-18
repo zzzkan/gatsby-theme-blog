@@ -34,18 +34,21 @@ exports[`Pagination component > snapshot 1`] = `
     class="chakra-stack emotion-0"
   >
     <a
+      aria-label="Transition to previous page"
       class="chakra-link emotion-1"
       href="/4"
     >
       &lt;
     </a>
     <a
+      aria-label="Transition to 3 page"
       class="chakra-link emotion-1"
       href="/3"
     >
       3
     </a>
     <a
+      aria-label="Transition to 4 page"
       class="chakra-link emotion-1"
       href="/4"
     >
@@ -57,18 +60,21 @@ exports[`Pagination component > snapshot 1`] = `
       5
     </span>
     <a
+      aria-label="Transition to 6 page"
       class="chakra-link emotion-1"
       href="/6"
     >
       6
     </a>
     <a
+      aria-label="Transition to 7 page"
       class="chakra-link emotion-1"
       href="/7"
     >
       7
     </a>
     <a
+      aria-label="Transition to next page"
       class="chakra-link emotion-1"
       href="/6"
     >
