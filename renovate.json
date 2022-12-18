@@ -1,6 +1,14 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
-    "config:base"
-  ]
+    "config:base",
+    ":autodetectPinVersions",
+    ":automergePatch",
+    ":automergeTypes",
+    ":dependencyDashboard",
+    "prHourlyLimitNone",
+    "schedule:earlyMondays",
+    ":timezone(Asia/Tokyo)"
+  ],
+  "ignoreDeps": ["@zzzkan/gatsby-theme-blog"]
 }
