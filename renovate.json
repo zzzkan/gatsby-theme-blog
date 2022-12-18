@@ -6,7 +6,7 @@
     ":automergePatch",
     ":automergeTypes",
     ":dependencyDashboard",
-    "prHourlyLimitNone",
+    ":prHourlyLimitNone",
     "schedule:earlyMondays",
     ":timezone(Asia/Tokyo)"
   ],
