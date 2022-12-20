@@ -47,11 +47,7 @@ export const query = graphql`
     $featuredImageAspectRatio: Float!
     $dateFormatString: String!
   ) {
-    allPost(
-      sort: { fields: publishedDate, order: DESC }
-      limit: $limit
-      skip: $skip
-    ) {
+    allPost(sort: { publishedDate: DESC }, limit: $limit, skip: $skip) {
       nodes {
         slug
         title

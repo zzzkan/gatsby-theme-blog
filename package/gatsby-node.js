@@ -192,7 +192,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const result = await graphql(`
     query {
-      allPosts: allPost(sort: { fields: publishedDate, order: DESC }) {
+      allPosts: allPost(sort: { publishedDate: DESC }) {
         nodes {
           id
           filePath
@@ -200,7 +200,7 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         }
       }
       tagPosts: allPost {
-        group(field: tags) {
+        group(field: { tags: SELECT }) {
           fieldValue
           totalCount
         }

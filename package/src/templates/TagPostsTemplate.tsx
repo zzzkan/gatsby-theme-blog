@@ -51,7 +51,7 @@ export const query = graphql`
     $dateFormatString: String!
   ) {
     allPost(
-      sort: { fields: publishedDate, order: DESC }
+      sort: { publishedDate: DESC }
       filter: { tags: { in: [$tag] } }
       limit: $limit
       skip: $skip
