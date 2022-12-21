@@ -1,10 +1,6 @@
 {
-  "name": "site",
-  "version": "1.0.0",
-  "description": "Site using @zzzkan/gatsby-theme-blog",
-  "author": "zzzkan <zzz602214076@outlook.com>",
-  "license": "MIT",
   "private": true,
+  "name": "site",
   "scripts": {
     "build": "gatsby build",
     "serve": "gatsby serve",

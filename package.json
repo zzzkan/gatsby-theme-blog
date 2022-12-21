@@ -1,10 +1,6 @@
 {
-  "name": "gatsby-theme-blog",
-  "version": "1.0.0",
-  "description": "Gatsby theme for my blog",
-  "author": "zzzkan <zzz602214076@outlook.com>",
-  "license": "MIT",
   "private": true,
+  "name": "root",
   "workspaces": [
     "package",
     "site"

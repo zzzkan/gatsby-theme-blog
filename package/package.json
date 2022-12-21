@@ -1,13 +1,7 @@
 {
   "name": "@zzzkan/gatsby-theme-blog",
-  "version": "1.0.0",
-  "description": "A gatsby theme for blogging",
-  "main": "index.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/zzzkan/gatsby-theme-blog.git",
-    "directory": "package"
-  },
+  "version": "0.1.0",
+  "description": "Gatsby theme for a simple blog",
   "author": "zzzkan <zzz602214076@outlook.com>",
   "license": "MIT",
   "keywords": [
@@ -17,12 +11,24 @@
     "react",
     "blog"
   ],
-  "homepage": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/zzzkan/gatsby-theme-blog.git",
+    "directory": "package"
+  },
+  "homepage": "https://github.com/zzzkan/gatsby-theme-blog/tree/main/package#readme",
+  "bugs": {
+    "url": "https://github.com/zzzkan/gatsby-theme-blog/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
   "peerDependencies": {
     "gatsby": "^4.24.4 || ^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
+  "main": "index.js",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "3.0.7",
     "@chakra-ui/react": "^2.3.7",
@@ -45,5 +51,8 @@
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^1",
     "shiki": "^0.12.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
   }
 }
