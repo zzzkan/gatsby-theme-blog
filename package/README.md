@@ -5,6 +5,9 @@
   <a href="https://github.com/zzzkan/gatsby-theme-blog/blob/main/LICENSE">
     <img src="https://img.shields.io/badge/license-MIT-blue.svg" alt="MIT license" />
   </a>
+  <a href="https://badge.fury.io/js/@zzzkan%2Fgatsby-theme-blog">
+    <img src="https://badge.fury.io/js/@zzzkan%2Fgatsby-theme-blog.svg" alt="npm version" height="18">
+  </a>
 </p>
 <p align="center">Gatsby theme for a simple blog</p>
 
