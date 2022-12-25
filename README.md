@@ -11,8 +11,8 @@
   <a href="https://github.com/zzzkan/gatsby-theme-blog/actions/workflows/codeql.yml">
     <img src="https://github.com/zzzkan/gatsby-theme-blog/actions/workflows/codeql.yml/badge.svg" alt="CodeQL" />
   </a>
-  <a href="https://app.netlify.com/sites/zzzkan-gatsby-theme-blog/deploys">
-    <img src="https://api.netlify.com/api/v1/badges/be2e7fc4-4eca-42f4-bb51-ca643e7d179c/deploy-status" alt="Netlify Status" />
+  <a href="https://github.com/zzzkan/gatsby-theme-blog/actions/workflows/netlify.yml">
+    <img src="https://github.com/zzzkan/gatsby-theme-blog/actions/workflows/netlify.yml/badge.svg?branch=main" alt="Netlify" />
   </a>
 </p>
 
