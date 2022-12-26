@@ -151,7 +151,7 @@ A example is shown below.
 
 ```ts
 // /src/@chakra-ui/gatsby-plugin/theme.ts
-import { extendTheme, theme as baseTheme } from "@chakra-ui/react"
+import { extendTheme, baseTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({
   config: {
