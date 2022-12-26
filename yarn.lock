@@ -1751,13 +1751,13 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/gatsby-plugin@npm:3.0.7":
-  version: 3.0.7
-  resolution: "@chakra-ui/gatsby-plugin@npm:3.0.7"
+"@chakra-ui/gatsby-plugin@npm:3.1.1":
+  version: 3.1.1
+  resolution: "@chakra-ui/gatsby-plugin@npm:3.1.1"
   peerDependencies:
     "@chakra-ui/react": ">=2.0.0"
     gatsby: ">=2.29.3"
-  checksum: 9c2dd3ee39508eeeceaa7183d5fc54ab6259bc1c0d0f54a9f6a40b2be6b2d5553f460e7ca8c2be0994b9a367dec96757d7de81ebfe216117428bdb99feab9214
+  checksum: f363077813ecb9a8efd0c1eb7b1d2ed9685f03f021b7037145f817650ccbc4fb2c68297f755b868827f4b8b3c6fefd73921a894fafefe09fe7fb91175bc2a132
   languageName: node
   linkType: hard
 
@@ -5280,7 +5280,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zzzkan/gatsby-theme-blog@workspace:package"
   dependencies:
-    "@chakra-ui/gatsby-plugin": 3.0.7
+    "@chakra-ui/gatsby-plugin": 3.1.1
     "@chakra-ui/react": ^2.3.7
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
