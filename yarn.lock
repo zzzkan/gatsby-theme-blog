@@ -1774,7 +1774,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@chakra-ui/gatsby-plugin@npm:3.1.1":
+"@chakra-ui/gatsby-plugin@npm:^3.1.1":
   version: 3.1.1
   resolution: "@chakra-ui/gatsby-plugin@npm:3.1.1"
   peerDependencies:
@@ -5322,7 +5322,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@zzzkan/gatsby-theme-blog@workspace:package"
   dependencies:
-    "@chakra-ui/gatsby-plugin": 3.1.1
+    "@chakra-ui/gatsby-plugin": ^3.1.1
     "@chakra-ui/react": ^2.4.5
     "@emotion/react": ^11.10.5
     "@emotion/styled": ^11.10.5
