@@ -16,7 +16,7 @@ jobs:
       - name: Install dependencies
         run: yarn install --immutable
       - name: Publish package to npmjs
-        run: yarn npm publish --access public
-        working-directory: ./site
+        run: npm publish --access public
+        working-directory: ./package
         env:
           NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
