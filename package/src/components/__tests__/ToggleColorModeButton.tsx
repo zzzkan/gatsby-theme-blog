@@ -6,6 +6,12 @@ import { RiSunLine } from "@react-icons/all-files/ri/RiSunLine"
 import { RiMoonLine } from "@react-icons/all-files/ri/RiMoonLine"
 
 describe("ToggleColorModeButton component", () => {
+  vi.mock("@chakra-ui/react", async () => ({
+    __esModule: true,
+    ...(await vi.importActual<typeof import("@chakra-ui/react")>(
+      "@chakra-ui/react"
+    )),
+  }))
   vi.mock("@react-icons/all-files/ri/RiSunLine")
   vi.mock("@react-icons/all-files/ri/RiMoonLine")
   const mockRiSunLine = RiSunLine as jest.Mock
