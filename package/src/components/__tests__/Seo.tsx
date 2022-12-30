@@ -11,7 +11,7 @@ describe("Seo component", () => {
           siteUrl: "siteUrl",
           description: "siteDescription",
           author: "siteAuthor",
-          image: "siteImage",
+          imageUrl: "http://localhost:9000/siteImage",
         }
       }),
     }

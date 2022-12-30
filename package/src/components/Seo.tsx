@@ -17,7 +17,7 @@ export const Seo: React.FC<SeoProps> = (props) => {
     siteUrl,
     description,
     author,
-    image: defaultImage,
+    imageUrl,
   } = useSiteMetadata()
 
   const isBlogPosting = props.publishedDate != null
@@ -25,10 +25,9 @@ export const Seo: React.FC<SeoProps> = (props) => {
     props.title != null ? `${props.title} - ${siteTitle}` : siteTitle
   const pageUrl = `${siteUrl}/${props?.path ?? ""}`.replace(/\/\/+/g, "/")
   const pageDescription = props?.description ?? description
-  const pageImageUrl = `${siteUrl}/${props?.image ?? defaultImage}`.replace(
-    /\/\/+/g,
-    "/"
-  )
+  const pageImageUrl = (
+    props?.image != null ? `${siteUrl}/${props.image}` : imageUrl
+  ).replace(/\/\/+/g, "/")
   return (
     <>
       <title>{pageTitle}</title>
