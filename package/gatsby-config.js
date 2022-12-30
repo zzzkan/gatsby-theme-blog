@@ -22,7 +22,7 @@ module.exports = (themeOptions) => {
       description: "@zzzkan/gatsby-theme-blog example.",
       author: "zzzkan",
       publicationYear: 2022,
-      image: "og-image.png",
+      imageUrl: "http://localhost:9000/og-image.png",
     },
     graphqlTypegen: true,
     plugins: [

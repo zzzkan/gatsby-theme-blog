@@ -10,7 +10,7 @@ exports[`Seo component > snapshot with no props 1`] = `
     name="description"
   />
   <meta
-    content="siteUrl/siteImage"
+    content="http:/localhost:9000/siteImage"
     name="image"
   />
   <meta
@@ -30,7 +30,7 @@ exports[`Seo component > snapshot with no props 1`] = `
     property="og:description"
   />
   <meta
-    content="siteUrl/siteImage"
+    content="http:/localhost:9000/siteImage"
     property="og:image"
   />
   <meta
@@ -58,7 +58,7 @@ exports[`Seo component > snapshot with no props 1`] = `
     name="twitter:description"
   />
   <meta
-    content="siteUrl/siteImage"
+    content="http:/localhost:9000/siteImage"
     name="twitter:image"
   />
   <meta

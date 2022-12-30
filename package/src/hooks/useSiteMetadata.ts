@@ -6,7 +6,7 @@ type SiteMetadataProps = {
   readonly description: string
   readonly author: string
   readonly publicationYear: string
-  readonly image: string
+  readonly imageUrl: string
 }
 
 export const useSiteMetadata = (): SiteMetadataProps => {
@@ -22,7 +22,7 @@ export const useSiteMetadata = (): SiteMetadataProps => {
             description
             author
             publicationYear
-            image
+            imageUrl
           }
         }
       }

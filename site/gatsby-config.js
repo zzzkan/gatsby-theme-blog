@@ -5,7 +5,7 @@ module.exports = {
     description: "gatsby-theme-blog by @zzzkan.",
     author: "zzzkan",
     publicationYear: 2023,
-    image: "banner.png",
+    imageUrl: "https://zzzkan-gatsby-theme-blog.netlify.app/banner.png",
   },
   graphqlTypegen: true,
   plugins: [
