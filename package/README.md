@@ -118,14 +118,14 @@ module.exports = {
 
 There are items that you can customize via the `siteMetadata` object in `gatsby-config.js`. These are used for headers, footers, SEO, etc.
 
-| Key               | Description                                      |
-| ----------------- | ------------------------------------------------ |
-| `title`           | Blog title                                       |
-| `siteUrl`         | Blog site url                                    |
-| `description`     | Blog description                                 |
-| `author`          | Author                                           |
-| `publicationYear` | Blog publication year                            |
-| `image`           | og:image (must be placed inside `static` folder) |
+| Key               | Description                    |
+| ----------------- | ------------------------------ |
+| `title`           | Blog title                     |
+| `siteUrl`         | Blog site url                  |
+| `description`     | Blog description               |
+| `author`          | Author                         |
+| `publicationYear` | Blog publication year          |
+| `imageUrl`        | Image url for default og:image |
 
 A example is shown below.
 
@@ -138,7 +138,7 @@ module.exports = {
     description: "gatsby-theme-blog by @zzzkan.",
     author: "zzzkan",
     publicationYear: 2023,
-    image: "banner.png",
+    imageUrl: "https://zzzkan-gatsby-theme-blog.netlify.app/banner.png",
   },
 }
 ```
