@@ -20,11 +20,13 @@
 
 See the readme [@zzzkan/gatsby-theme-blog](https://github.com/zzzkan/gatsby-theme-blog/tree/main/package#readme).
 
-<!--
 ## Getting Started
 
-TODO : Starter infomation
--->
+You can use [@zzzkan/gatsby-starter-blog](https://github.com/zzzkan/gatsby-starter-blog#readme) if you are creating a new site and want to use the theme.
+
+```sh
+npx gatsby new gatsby-starter-blog https://github.com/zzzkan/gatsby-starter-blog
+```
 
 ## Contributing
 
