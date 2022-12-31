@@ -9,12 +9,6 @@
     <img src="https://badge.fury.io/js/@zzzkan%2Fgatsby-theme-blog.svg" alt="npm version" height="18">
   </a>
 </p>
-<p align="center">Gatsby theme for a simple blog</p>
-
-<!--
-## Demo
-TODO : Starter infomation
--->
 
 ## Features
 
@@ -29,13 +23,15 @@ TODO : Starter infomation
 
 ## Installation
 
-<!--
 ### For a new site
 
-TODO : Starter infomation
+You can use [@zzzkan/gatsby-starter-blog](https://github.com/zzzkan/gatsby-starter-blog#readme).
+
+```sh
+npx gatsby new gatsby-starter-blog https://github.com/zzzkan/gatsby-starter-blog
+```
 
 ### For an existing site
--->
 
 Install the blog theme
 
