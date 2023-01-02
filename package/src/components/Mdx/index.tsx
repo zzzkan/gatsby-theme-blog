@@ -84,6 +84,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         borderColor={"tint"}
         rounded={"sm"}
         marginY={3}
+        paddingY={0}
         {...props}
       />
     ),
