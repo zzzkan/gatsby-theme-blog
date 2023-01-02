@@ -20,7 +20,7 @@ import { AnchorHeading } from "./AnchorHeading"
 
 export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const components = {
-    p: (props: object) => <Text {...props} />,
+    p: (props: object) => <Text marginY={3} {...props} />,
     h1: (props: object) => (
       <AnchorHeading
         as={"h1"}
@@ -84,6 +84,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         borderColor={"tint"}
         rounded={"sm"}
         marginY={3}
+        paddingY={0}
         {...props}
       />
     ),
