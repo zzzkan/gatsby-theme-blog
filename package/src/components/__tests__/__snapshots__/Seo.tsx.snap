@@ -1,78 +1,6 @@
 // Vitest Snapshot v1
 
-exports[`Seo component > snapshot with no props 1`] = `
-<DocumentFragment>
-  <title>
-    siteTitle
-  </title>
-  <meta
-    content="siteDescription"
-    name="description"
-  />
-  <meta
-    content="http:/localhost:9000/siteImage"
-    name="image"
-  />
-  <meta
-    content="siteTitle"
-    property="og:title"
-  />
-  <meta
-    content="siteTitle"
-    property="og:site_name"
-  />
-  <meta
-    content="siteUrl/"
-    property="og:url"
-  />
-  <meta
-    content="siteDescription"
-    property="og:description"
-  />
-  <meta
-    content="http:/localhost:9000/siteImage"
-    property="og:image"
-  />
-  <meta
-    content="siteDescription"
-    property="og:image:alt"
-  />
-  <meta
-    content="blog"
-    property="og:type"
-  />
-  <meta
-    content="summary_large_image"
-    name="twitter:card"
-  />
-  <meta
-    content="siteTitle"
-    name="twitter:title"
-  />
-  <meta
-    content="siteUrl/"
-    name="twitter:url"
-  />
-  <meta
-    content="siteDescription"
-    name="twitter:description"
-  />
-  <meta
-    content="http:/localhost:9000/siteImage"
-    name="twitter:image"
-  />
-  <meta
-    content="siteDescription"
-    name="twitter:image:alt"
-  />
-  <meta
-    content="siteAuthor"
-    name="twitter:creator"
-  />
-</DocumentFragment>
-`;
-
-exports[`Seo component > snapshot with props 1`] = `
+exports[`Seo component > snapshot 1`] = `
 <DocumentFragment>
   <title>
     pageTitle - siteTitle
@@ -82,19 +10,15 @@ exports[`Seo component > snapshot with props 1`] = `
     name="description"
   />
   <meta
-    content="siteUrl/pageImage"
-    name="image"
+    content="article"
+    property="og:type"
   />
   <meta
     content="pageTitle - siteTitle"
     property="og:title"
   />
   <meta
-    content="siteTitle"
-    property="og:site_name"
-  />
-  <meta
-    content="siteUrl/pagePath"
+    content="http:/localhost:9000/page-path"
     property="og:url"
   />
   <meta
@@ -102,16 +26,12 @@ exports[`Seo component > snapshot with props 1`] = `
     property="og:description"
   />
   <meta
-    content="siteUrl/pageImage"
+    content="http:/localhost:9000/page-image.png"
     property="og:image"
   />
   <meta
-    content="pageDescription"
-    property="og:image:alt"
-  />
-  <meta
-    content="article"
-    property="og:type"
+    content="siteTitle"
+    property="og:site_name"
   />
   <meta
     content="summary_large_image"
@@ -122,7 +42,7 @@ exports[`Seo component > snapshot with props 1`] = `
     name="twitter:title"
   />
   <meta
-    content="siteUrl/pagePath"
+    content="http:/localhost:9000/page-path"
     name="twitter:url"
   />
   <meta
@@ -130,12 +50,8 @@ exports[`Seo component > snapshot with props 1`] = `
     name="twitter:description"
   />
   <meta
-    content="siteUrl/pageImage"
+    content="http:/localhost:9000/page-image.png"
     name="twitter:image"
-  />
-  <meta
-    content="pageDescription"
-    name="twitter:image:alt"
   />
   <meta
     content="siteAuthor"
@@ -144,7 +60,7 @@ exports[`Seo component > snapshot with props 1`] = `
   <script
     type="application/ld+json"
   >
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"siteUrl/pageImage","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"siteUrl"}}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"http:/localhost:9000/page-image.png","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"http://localhost:9000/"}}
   </script>
 </DocumentFragment>
 `;
