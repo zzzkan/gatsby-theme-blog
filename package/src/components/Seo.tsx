@@ -23,11 +23,11 @@ export const Seo: React.FC<SeoProps> = (props) => {
   const isBlogPosting = props.publishedDate != null
   const pageTitle =
     props.title != null ? `${props.title} - ${siteTitle}` : siteTitle
-  const pageUrl = `${siteUrl}/${props?.path ?? ""}`.replace(/\/\/+/g, "/")
+  const pageUrl = new URL(props?.path ?? "", siteUrl).href
   const pageDescription = props?.description ?? description
-  const pageImageUrl = (
-    props?.image != null ? `${siteUrl}/${props.image}` : imageUrl
-  ).replace(/\/\/+/g, "/")
+  const pageImageUrl =
+    props?.image != null ? new URL(props.image, siteUrl).href : imageUrl
+
   return (
     <>
       <title>{pageTitle}</title>

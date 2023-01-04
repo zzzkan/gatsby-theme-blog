@@ -18,7 +18,7 @@ exports[`Seo component > snapshot 1`] = `
     property="og:title"
   />
   <meta
-    content="http:/localhost:9000/page-path"
+    content="http://localhost:9000/page-path"
     property="og:url"
   />
   <meta
@@ -26,7 +26,7 @@ exports[`Seo component > snapshot 1`] = `
     property="og:description"
   />
   <meta
-    content="http:/localhost:9000/page-image.png"
+    content="http://localhost:9000/page-image.png"
     property="og:image"
   />
   <meta
@@ -42,7 +42,7 @@ exports[`Seo component > snapshot 1`] = `
     name="twitter:title"
   />
   <meta
-    content="http:/localhost:9000/page-path"
+    content="http://localhost:9000/page-path"
     name="twitter:url"
   />
   <meta
@@ -50,7 +50,7 @@ exports[`Seo component > snapshot 1`] = `
     name="twitter:description"
   />
   <meta
-    content="http:/localhost:9000/page-image.png"
+    content="http://localhost:9000/page-image.png"
     name="twitter:image"
   />
   <meta
@@ -60,7 +60,7 @@ exports[`Seo component > snapshot 1`] = `
   <script
     type="application/ld+json"
   >
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"http:/localhost:9000/page-image.png","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"http://localhost:9000/"}}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"http://localhost:9000/page-image.png","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"http://localhost:9000/"}}
   </script>
 </DocumentFragment>
 `;
