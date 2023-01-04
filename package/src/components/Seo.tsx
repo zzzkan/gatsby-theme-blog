@@ -23,29 +23,26 @@ export const Seo: React.FC<SeoProps> = (props) => {
   const isBlogPosting = props.publishedDate != null
   const pageTitle =
     props.title != null ? `${props.title} - ${siteTitle}` : siteTitle
-  const pageUrl = `${siteUrl}/${props?.path ?? ""}`.replace(/\/\/+/g, "/")
+  const pageUrl = new URL(props?.path ?? "", siteUrl).href
   const pageDescription = props?.description ?? description
-  const pageImageUrl = (
-    props?.image != null ? `${siteUrl}/${props.image}` : imageUrl
-  ).replace(/\/\/+/g, "/")
+  const pageImageUrl =
+    props?.image != null ? new URL(props.image, siteUrl).href : imageUrl
+
   return (
     <>
       <title>{pageTitle}</title>
       <meta name={"description"} content={pageDescription} />
-      <meta name={"image"} content={pageImageUrl} />
+      <meta property={"og:type"} content={isBlogPosting ? "article" : "blog"} />
       <meta property={"og:title"} content={pageTitle} />
-      <meta property={"og:site_name"} content={siteTitle} />
       <meta property={"og:url"} content={pageUrl} />
       <meta property={"og:description"} content={pageDescription} />
       <meta property={"og:image"} content={pageImageUrl} />
-      <meta property={"og:image:alt"} content={pageDescription} />
-      <meta property={"og:type"} content={isBlogPosting ? "article" : "blog"} />
+      <meta property={"og:site_name"} content={siteTitle} />
       <meta name={"twitter:card"} content={"summary_large_image"} />
       <meta name={"twitter:title"} content={pageTitle} />
       <meta name={"twitter:url"} content={pageUrl} />
       <meta name={"twitter:description"} content={pageDescription} />
       <meta name={"twitter:image"} content={pageImageUrl} />
-      <meta name={"twitter:image:alt"} content={pageDescription} />
       <meta name={"twitter:creator"} content={author} />
       {isBlogPosting && (
         <script type="application/ld+json">
