@@ -5,7 +5,7 @@ type SiteMetadataProps = {
   readonly siteUrl: string
   readonly description: string
   readonly author: string
-  readonly publicationYear: string
+  readonly publicationYear: number
   readonly imageUrl: string
 }
 

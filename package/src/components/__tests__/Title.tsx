@@ -3,31 +3,13 @@ import { render } from "@testing-library/react"
 import { Title } from "../Title"
 
 describe("Title component", () => {
-  vi.mock("../../hooks/useSiteMetadata", () => {
-    return {
-      useSiteMetadata: vi.fn().mockImplementation(() => {
-        return {
-          title: "title",
-        }
-      }),
-    }
-  })
-
-  afterEach(() => {
-    vi.clearAllMocks()
-  })
-
-  afterAll(() => {
-    vi.restoreAllMocks()
-  })
-
   test("snapshot", () => {
-    const { asFragment } = render(<Title />)
+    const { asFragment } = render(<Title title={"title"} />)
     expect(asFragment()).toMatchSnapshot()
   })
 
   test("should render home link", () => {
-    const { getByText } = render(<Title />)
+    const { getByText } = render(<Title title={"title"} />)
     expect(getByText("title")).toHaveAttribute("href", "/")
   })
 })

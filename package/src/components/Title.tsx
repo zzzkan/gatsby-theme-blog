@@ -1,10 +1,12 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Heading, Link } from "@chakra-ui/react"
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-export const Title: React.FC = () => {
-  const { title } = useSiteMetadata()
+export type TitleProps = {
+  readonly title: string
+}
+
+export const Title: React.FC<TitleProps> = ({ title }) => {
   return (
     <Heading as={"div"} size={"md"} fontWeight={"extrabold"} paddingY={3}>
       <Link

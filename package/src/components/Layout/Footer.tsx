@@ -1,16 +1,20 @@
 import React from "react"
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
-import { Copyright } from "../Copyright"
-import { ExternalLinks } from "../ExternalLinks"
+import { Copyright, CopyrightProps } from "../Copyright"
+import { ExternalLinks, ExternalLinksProps } from "../ExternalLinks"
 
-export const Footer: React.FC = () => {
+export const Footer: React.FC<CopyrightProps & ExternalLinksProps> = ({
+  author,
+  publicationYear,
+  links,
+}) => {
   return (
     <Box as={"footer"} position={"sticky"} top={"100vh"}>
       <Container maxWidth={"container.lg"}>
         <Flex alignItems={"end"}>
-          <Copyright />
+          <Copyright author={author} publicationYear={publicationYear} />
           <Spacer />
-          <ExternalLinks />
+          <ExternalLinks links={links} />
         </Flex>
       </Container>
     </Box>
