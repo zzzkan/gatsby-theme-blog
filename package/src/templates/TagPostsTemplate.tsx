@@ -56,7 +56,7 @@ export const query = graphql`
   ) {
     allPost(
       sort: { publishedDate: DESC }
-      filter: { tags: { in: [$tag] } }
+      filter: { tags: { elemMatch: { name: { in: [$tag] } } } }
       limit: $limit
       skip: $skip
     ) {
@@ -73,7 +73,10 @@ export const query = graphql`
           }
         }
         featuredImageAlt
-        tags
+        tags {
+          slug
+          name
+        }
         timeToReadMinutes
       }
     }

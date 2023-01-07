@@ -65,7 +65,10 @@ export const query = graphql`
           }
         }
         featuredImageAlt
-        tags
+        tags {
+          slug
+          name
+        }
         timeToReadMinutes
       }
     }

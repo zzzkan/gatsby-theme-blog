@@ -31,7 +31,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -51,7 +57,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={null}
@@ -74,7 +86,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{ childImageSharp: null }}
@@ -97,7 +115,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -122,7 +146,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -142,7 +172,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{

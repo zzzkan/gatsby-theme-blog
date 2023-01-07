@@ -61,7 +61,10 @@ export const query = graphql`
         }
       }
       featuredImageAlt
-      tags
+      tags {
+        slug
+        name
+      }
       timeToReadMinutes
       description
       excerpt
@@ -78,7 +81,10 @@ export const query = graphql`
           }
         }
         featuredImageAlt
-        tags
+        tags {
+          slug
+          name
+        }
         timeToReadMinutes
       }
     }
