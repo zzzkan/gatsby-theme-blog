@@ -5,17 +5,21 @@ import { AllPosts } from "../components/AllPosts"
 import { Seo } from "../components/Seo"
 
 type AllPostsContextProps = {
-  readonly totalPage: number
   readonly currentPage: number
+  readonly totalPage: number
 }
 
 const AllPostsTemplate: React.FC<
   PageProps<Queries.AllPostsTemplateQuery, AllPostsContextProps>
-> = ({ data, pageContext }) => {
+> = ({ location, data, pageContext }) => {
   const posts = data.allPost.nodes
   return (
     <Layout>
-      <AllPosts posts={posts} {...pageContext} />
+      <AllPosts
+        posts={posts}
+        currentPath={location.pathname}
+        {...pageContext}
+      />
     </Layout>
   )
 }

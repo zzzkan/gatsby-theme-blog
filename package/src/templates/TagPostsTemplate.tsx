@@ -5,19 +5,23 @@ import { TagPosts } from "../components/TagPosts"
 import { Seo } from "../components/Seo"
 
 type TagPostsContextProps = {
-  readonly totalPage: number
   readonly currentPage: number
+  readonly totalPage: number
   readonly tag: string
   readonly count: number
 }
 
 const TagPostsTemplate: React.FC<
   PageProps<Queries.TagPostsTemplateQuery, TagPostsContextProps>
-> = ({ data, pageContext }) => {
+> = ({ location, data, pageContext }) => {
   const posts = data.allPost.nodes
   return (
     <Layout>
-      <TagPosts posts={posts} {...pageContext} />
+      <TagPosts
+        posts={posts}
+        currentPath={location.pathname}
+        {...pageContext}
+      />
     </Layout>
   )
 }

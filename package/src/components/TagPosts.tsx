@@ -11,8 +11,9 @@ export type TagPostsProps = PostCardListProps &
 
 export const TagPosts: React.FC<TagPostsProps> = ({
   posts,
-  totalPage,
+  currentPath,
   currentPage,
+  totalPage,
   tag,
   count,
 }) => {
@@ -26,9 +27,9 @@ export const TagPosts: React.FC<TagPostsProps> = ({
       </Center>
       <Center>
         <Pagination
-          prefix={`tags/${tag}`}
-          totalPage={totalPage}
+          currentPath={currentPath}
           currentPage={currentPage}
+          totalPage={totalPage}
         />
       </Center>
     </Box>
