@@ -1,5 +1,5 @@
 import React from "react"
-import { Link as GatsbyLink } from "gatsby"
+import { graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import { Box, Heading, Stack, Link } from "@chakra-ui/react"
 import { PostMetadata, PostMetadataProps } from "./PostMetadata"
@@ -62,3 +62,25 @@ export const PostCard: React.FC<PostCardProps> = (post) => {
     </Box>
   )
 }
+
+export const query = graphql`
+  fragment PostCard on Post {
+    slug
+    title
+    publishedDate(formatString: $dateFormatString)
+    updatedDate(formatString: $dateFormatString)
+    publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+    updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+    featuredImage {
+      childImageSharp {
+        gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 50)
+      }
+    }
+    featuredImageAlt
+    tags {
+      slug
+      name
+    }
+    timeToReadMinutes
+  }
+`

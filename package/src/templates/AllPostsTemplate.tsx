@@ -53,23 +53,7 @@ export const query = graphql`
   ) {
     allPost(sort: { publishedDate: DESC }, limit: $limit, skip: $skip) {
       nodes {
-        slug
-        title
-        publishedDate(formatString: $dateFormatString)
-        updatedDate(formatString: $dateFormatString)
-        publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
-          }
-        }
-        featuredImageAlt
-        tags {
-          slug
-          name
-        }
-        timeToReadMinutes
+        ...PostCard
       }
     }
   }

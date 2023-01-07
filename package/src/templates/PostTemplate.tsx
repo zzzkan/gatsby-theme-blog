@@ -69,23 +69,7 @@ export const query = graphql`
       description
       excerpt
       posts: relatedPosts {
-        slug
-        title
-        publishedDate(formatString: $dateFormatString)
-        updatedDate(formatString: $dateFormatString)
-        publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
-          }
-        }
-        featuredImageAlt
-        tags {
-          slug
-          name
-        }
-        timeToReadMinutes
+        ...PostCard
       }
     }
   }
