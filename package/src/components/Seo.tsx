@@ -1,7 +1,7 @@
 import React from "react"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-export type SeoProps = {
+type Props = {
   readonly path?: string
   readonly title?: string
   readonly description?: string
@@ -11,7 +11,7 @@ export type SeoProps = {
   readonly children?: React.ReactNode
 }
 
-export const Seo: React.FC<SeoProps> = (props) => {
+export const Seo: React.FC<Props> = (props) => {
   const {
     title: siteTitle,
     siteUrl,

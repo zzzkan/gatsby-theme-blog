@@ -1,13 +1,16 @@
 import React from "react"
 import { Box, Center, Divider, Heading } from "@chakra-ui/react"
-import { PostCardList, PostCardListProps } from "../PostCardList"
+import { PostCardList } from "../PostCardList"
 
-export type FooterProps = PostCardListProps
+type Props = Pick<
+  NonNullable<Queries.PostTemplateQuery["post"]>,
+  "relatedPosts"
+>
 
-export const Footer: React.FC<FooterProps> = ({ posts }) => {
+export const Footer: React.FC<Props> = ({ relatedPosts }) => {
   return (
     <Box as={"footer"}>
-      {posts != null && posts.length > 0 && (
+      {relatedPosts != null && relatedPosts.length > 0 && (
         <Box>
           <Divider
             as={"hr"}
@@ -19,7 +22,7 @@ export const Footer: React.FC<FooterProps> = ({ posts }) => {
             Read next
           </Heading>
           <Center>
-            <PostCardList posts={posts} />
+            <PostCardList posts={relatedPosts} />
           </Center>
         </Box>
       )}

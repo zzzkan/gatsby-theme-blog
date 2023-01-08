@@ -1,36 +1,51 @@
 import React from "react"
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import { Box, Heading, Stack } from "@chakra-ui/react"
-import { PostMetadata, PostMetadataProps } from "../PostMetadata"
-import { Tags, TagsProps } from "../Tags"
+import { PostMetadata } from "../PostMetadata"
+import { Tags } from "../Tags"
 
-export type HeaderProps = PostMetadataProps &
-  TagsProps & {
-    readonly title: string
-    readonly featuredImage: {
-      readonly childImageSharp: {
-        readonly gatsbyImageData: IGatsbyImageData
-      } | null
-    } | null
-    readonly featuredImageAlt: string | null
-  }
+type Props = Pick<
+  NonNullable<Queries.PostTemplateQuery["post"]>,
+  | "title"
+  | "publishedDate"
+  | "updatedDate"
+  | "publishedDateISO8601"
+  | "updatedDateISO8601"
+  | "timeToReadMinutes"
+  | "featuredImage"
+  | "featuredImageAlt"
+  | "tags"
+>
 
-export const Header: React.FC<HeaderProps> = (post) => {
-  const image = post.featuredImage?.childImageSharp?.gatsbyImageData
+export const Header: React.FC<Props> = ({
+  title,
+  publishedDate,
+  updatedDate,
+  featuredImageAlt,
+  timeToReadMinutes,
+  publishedDateISO8601,
+  updatedDateISO8601,
+  featuredImage,
+  tags,
+}) => {
+  const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box as={"header"} marginBottom={9}>
       <Stack spacing={0} marginBottom={3}>
-        <Tags {...post} />
+        {tags != null && <Tags tags={tags} />}
         <Heading as={"h1"} size={"xl"}>
-          {post.title}
+          {title}
         </Heading>
-        <PostMetadata {...post} />
+        <PostMetadata
+          publishedDate={publishedDate}
+          updatedDate={updatedDate}
+          publishedDateISO8601={publishedDateISO8601}
+          updatedDateISO8601={updatedDateISO8601}
+          timeToReadMinutes={timeToReadMinutes}
+        />
       </Stack>
       {image != null && (
-        <GatsbyImage
-          image={image}
-          alt={post.featuredImageAlt ?? "Featured image"}
-        />
+        <GatsbyImage image={image} alt={featuredImageAlt ?? "Featured image"} />
       )}
     </Box>
   )

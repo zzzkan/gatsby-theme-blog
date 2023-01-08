@@ -9,7 +9,11 @@ const PostTemplate: React.FC<PageProps<Queries.PostTemplateQuery>> = ({
   children,
 }) => {
   const post = data.post
-  return <Layout>{post != null && <Post post={post}>{children}</Post>}</Layout>
+  return (
+    <Layout>
+      <Post post={post}>{children}</Post>
+    </Layout>
+  )
 }
 
 export default PostTemplate
@@ -61,25 +65,15 @@ export const query = graphql`
         }
       }
       featuredImageAlt
-      tags
+      tags {
+        slug
+        name
+      }
       timeToReadMinutes
       description
       excerpt
-      posts: relatedPosts {
-        slug
-        title
-        publishedDate(formatString: $dateFormatString)
-        updatedDate(formatString: $dateFormatString)
-        publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-        featuredImage {
-          childImageSharp {
-            gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 30)
-          }
-        }
-        featuredImageAlt
-        tags
-        timeToReadMinutes
+      relatedPosts {
+        ...PostCard
       }
     }
   }

@@ -1,15 +1,15 @@
 import React from "react"
 import { Box } from "@chakra-ui/react"
-import { Header, HeaderProps } from "./Header"
-import { Footer, FooterProps } from "./Footer"
+import { Header } from "./Header"
+import { Footer } from "./Footer"
 import { Mdx } from "../Mdx"
 
-export type PostProps = {
+type Props = {
   readonly children: React.ReactNode
-  readonly post: HeaderProps & FooterProps
-}
+} & Queries.PostTemplateQuery
 
-export const Post: React.FC<PostProps> = ({ children, post }) => {
+export const Post: React.FC<Props> = ({ children, post }) => {
+  if (post == null) return <Box>Not Found ...</Box>
   return (
     <Box as={"article"}>
       <Header {...post} />

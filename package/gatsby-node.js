@@ -14,7 +14,7 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
           if (!field) return undefined
           const slug = field
             .toLowerCase()
-            .replace(/[^a-z0-9]+/g, "-")
+            .replace(/[^a-z0-9/]+/g, "-")
             .replace(/(^-|-$)+/g, "")
           return `/${basePath}/${slug}`.replace(/\/\/+/g, "/")
         },
@@ -52,12 +52,17 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       updatedDate: Date @dateformat
       featuredImage: File @fileByRelativePath
       featuredImageAlt: String
-      tags: [String!]
+      tags: [Tag!]
       timeToReadMinutes: Float
       wordCount: Int
       description: String
       excerpt(pruneLength: Int = 140): String! @parentPassThrough
       body: String! @parentPassThrough
+    }
+
+    type Tag {
+      slug: String! @slugify
+      name: String!
     }
 
     type themeOption implements Node {
@@ -123,7 +128,10 @@ exports.onCreateNode = (
       updatedDate: node.frontmatter.updatedDate,
       featuredImage: node.frontmatter.featuredImage,
       featuredImageAlt: node.frontmatter.featuredImageAlt,
-      tags: node.frontmatter.tags,
+      tags: node.frontmatter.tags?.map((tag) => ({
+        slug: `/tags/${tag}`,
+        name: tag,
+      })),
       timeToReadMinutes: readingTimeResult.minutes,
       wordCount: readingTimeResult.words,
       description: node.frontmatter.description,
@@ -154,7 +162,7 @@ exports.createResolvers = ({ createResolvers }, themeOptions) => {
   const resolvers = {
     Post: {
       relatedPosts: {
-        type: ["Post"],
+        type: ["Post!"],
         resolve: async (source, args, context, info) => {
           if (source.tags == null) return null
           const { entries } = await context.nodeModel.findAll({
@@ -166,7 +174,9 @@ exports.createResolvers = ({ createResolvers }, themeOptions) => {
                   ne: source.id,
                 },
                 tags: {
-                  in: source.tags,
+                  elemMatch: {
+                    name: { in: source.tags.map((tag) => tag.name) },
+                  },
                 },
               },
               limit: relatedPostsLimit,
@@ -200,9 +210,15 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
         }
       }
       tagPosts: allPost {
-        group(field: { tags: SELECT }) {
+        group(field: { tags: { name: SELECT } }) {
           fieldValue
           totalCount
+          nodes {
+            tags {
+              slug
+              name
+            }
+          }
         }
       }
     }
@@ -234,8 +250,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
       path: i === 0 ? basePath : `${basePath}/${i + 1}`.replace(/\/\/+/g, "/"),
       component: allPostsTemplate,
       context: {
-        totalPage: allPostsPageNumber,
         currentPage: i + 1,
+        totalPage: allPostsPageNumber,
         limit: postsLimit,
         skip: i * postsLimit,
         featuredImageAspectRatio,
@@ -247,24 +263,21 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
   const tagPostsGroup = result.data.tagPosts.group
   if (tagPostsGroup.length > 0) {
     tagPostsGroup.forEach((posts) => {
-      const tag = posts.fieldValue
+      const tag = posts.nodes[0].tags.find((t) => t.name === posts.fieldValue)
       const count = posts.totalCount
-      const tagPostsPath = `${basePath}/tags/${tag}`.replace(/\/\/+/g, "/")
       const tagPostsPageNumber = Math.ceil(count / postsLimit)
       for (let i = 0; i < tagPostsPageNumber; i++) {
         createPage({
           path:
-            i === 0
-              ? tagPostsPath
-              : `${tagPostsPath}/${i + 1}`.replace(/\/\/+/g, "/"),
+            i === 0 ? tag.slug : `${tag.slug}/${i + 1}`.replace(/\/\/+/g, "/"),
           component: tagPostsTemplate,
           context: {
-            totalPage: tagPostsPageNumber,
             currentPage: i + 1,
+            totalPage: tagPostsPageNumber,
             limit: postsLimit,
             skip: i * postsLimit,
-            tag,
-            count,
+            tagName: tag.name,
+            tagCount: count,
             featuredImageAspectRatio,
             dateFormatString,
           },

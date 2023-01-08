@@ -1,19 +1,10 @@
 import { useStaticQuery, graphql } from "gatsby"
+import { ThemeOptionType } from "../types/themeOptionType"
 
-type ThemeOptionProps = {
-  readonly basePath: string
-  readonly links: Array<{
-    readonly name: string
-    readonly url: string
-    readonly label: string | null
-  }>
-}
-
-export const useThemeOption = (): ThemeOptionProps => {
-  const data = useStaticQuery<{ themeOption: ThemeOptionProps }>(graphql`
+export const useThemeOption = (): ThemeOptionType => {
+  const data = useStaticQuery<{ themeOption: ThemeOptionType }>(graphql`
     query {
       themeOption(id: { eq: "@zzzkan/gatsby-theme-blog" }) {
-        basePath
         links {
           name
           url

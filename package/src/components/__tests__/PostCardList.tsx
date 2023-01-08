@@ -26,11 +26,6 @@ describe("PostCardList component", () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test("should not render anything if props is null", () => {
-    const { container } = render(<PostCardList posts={null} />)
-    expect(container.firstChild).toBeNull()
-  })
-
   test("should not render anything if props is []", () => {
     const { container } = render(<PostCardList posts={[]} />)
     expect(container.firstChild).toBeNull()

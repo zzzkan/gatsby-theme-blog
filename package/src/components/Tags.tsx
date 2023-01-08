@@ -1,26 +1,24 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link, Tag, Wrap, WrapItem } from "@chakra-ui/react"
-import { useThemeOption } from "../hooks/useThemeOption"
 
-export type TagsProps = {
-  readonly tags: readonly string[] | null
+type Props = {
+  readonly tags: ReadonlyArray<{
+    readonly slug: string
+    readonly name: string
+  }>
 }
 
-export const Tags: React.FC<TagsProps> = ({ tags }) => {
-  const { basePath } = useThemeOption()
-  if (tags == null || tags.length === 0) return null
-  const path = (tag: string): string => {
-    return `${basePath}/tags/${tag}`.replace(/\/\/+/g, "/")
-  }
+export const Tags: React.FC<Props> = ({ tags }) => {
+  if (tags.length === 0) return null
   return (
     <Wrap>
       {tags.map((tag) => (
-        <WrapItem key={tag}>
+        <WrapItem key={tag.slug}>
           <Link
             as={GatsbyLink}
-            to={path(tag)}
-            aria-label={`Transition to tag page (${tag})`}
+            to={tag.slug}
+            aria-label={`Transition to tag page (${tag.name})`}
             _hover={{ textDecoration: "none" }}
           >
             <Tag
@@ -29,7 +27,7 @@ export const Tags: React.FC<TagsProps> = ({ tags }) => {
               color={"onTintText"}
               background={"tint"}
             >
-              {tag}
+              {tag.name}
             </Tag>
           </Link>
         </WrapItem>

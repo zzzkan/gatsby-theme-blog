@@ -1,9 +1,12 @@
 import React from "react"
 import { Text } from "@chakra-ui/react"
-import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
-export const Copyright: React.FC = () => {
-  const { author, publicationYear } = useSiteMetadata()
+type Props = {
+  readonly author: string
+  readonly publicationYear: number
+}
+
+export const Copyright: React.FC<Props> = ({ author, publicationYear }) => {
   return (
     <Text as={"div"} fontSize={"sm"}>
       © {publicationYear} {author}

@@ -13,6 +13,7 @@ vi.mock("gatsby", () => {
         href: to,
       })
     ),
+    graphql: vi.fn(),
   }
 })
 

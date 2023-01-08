@@ -4,15 +4,15 @@ import { BiCalendar } from "@react-icons/all-files/bi/BiCalendar"
 import { BiCalendarEdit } from "@react-icons/all-files/bi/BiCalendarEdit"
 import { BiTime } from "@react-icons/all-files/bi/BiTime"
 
-export type PostMetadataProps = {
+type Props = {
   readonly publishedDate: string
-  readonly updatedDate: string | null
+  readonly updatedDate?: string | null
   readonly publishedDateISO8601: string
-  readonly updatedDateISO8601: string | null
-  readonly timeToReadMinutes: number | null
+  readonly updatedDateISO8601?: string | null
+  readonly timeToReadMinutes?: number | null
 }
 
-export const PostMetadata: React.FC<PostMetadataProps> = (post) => {
+export const PostMetadata: React.FC<Props> = (post) => {
   return (
     <Wrap color={"secondaryText"} fontSize={"sm"} spacingX={1} spacingY={0}>
       <WrapItem>

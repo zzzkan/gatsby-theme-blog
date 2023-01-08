@@ -31,7 +31,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -51,7 +57,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={null}
@@ -74,7 +86,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{ childImageSharp: null }}
@@ -97,7 +115,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -122,7 +146,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -142,7 +172,13 @@ describe("PostCard component", () => {
         publishedDateISO8601={"2022-01-01"}
         updatedDateISO8601={"2022-01-02"}
         timeToReadMinutes={10}
-        tags={["tag1", "tag2", "tag3", "tag4", "tag5"]}
+        tags={[
+          { slug: "/tags/tag1", name: "tag1" },
+          { slug: "/tags/tag2", name: "tag2" },
+          { slug: "/tags/tag3", name: "tag3" },
+          { slug: "/tags/tag4", name: "tag4" },
+          { slug: "/tags/tag5", name: "tag5" },
+        ]}
         slug={"/slug"}
         title={"title"}
         featuredImage={{
@@ -152,5 +188,41 @@ describe("PostCard component", () => {
       />
     )
     expect(getByAltText("custom featured image alt")).toBeInTheDocument()
+  })
+
+  test("should not render tags if tags is null", () => {
+    const { queryByText } = render(
+      <PostCard
+        publishedDate={"2022/01/01"}
+        updatedDate={null}
+        publishedDateISO8601={"2022-01-01"}
+        updatedDateISO8601={null}
+        timeToReadMinutes={null}
+        tags={null}
+        slug={"/slug"}
+        title={"title"}
+        featuredImage={null}
+        featuredImageAlt={null}
+      />
+    )
+    expect(queryByText("Tags")).toBeNull()
+  })
+
+  test("should render tags if tags is not null", () => {
+    const { queryByText } = render(
+      <PostCard
+        publishedDate={"2022/01/01"}
+        updatedDate={null}
+        publishedDateISO8601={"2022-01-01"}
+        updatedDateISO8601={null}
+        timeToReadMinutes={null}
+        tags={[{ slug: "/tags/tag", name: "tag" }]}
+        slug={"/slug"}
+        title={"title"}
+        featuredImage={null}
+        featuredImageAlt={null}
+      />
+    )
+    expect(queryByText("Tags")).not.toBeNull()
   })
 })
