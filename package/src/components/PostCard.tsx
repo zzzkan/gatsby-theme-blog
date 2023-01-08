@@ -1,3 +1,6 @@
+// Disable some eslint rules because Queries type is undefined in CI
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import React from "react"
 import { graphql, Link as GatsbyLink } from "gatsby"
 import { GatsbyImage } from "gatsby-plugin-image"
@@ -31,7 +34,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`Transition to ${title}`}
+          aria-label={`see ${title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
@@ -49,7 +52,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`Transition to ${title}`}
+          aria-label={`see ${title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Heading as={"div"} size={"md"}>
