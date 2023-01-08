@@ -1,11 +1,14 @@
 import React from "react"
 import { Box, Center, Heading } from "@chakra-ui/react"
-import { PostCardList, PostCardListProps } from "../components/PostCardList"
-import { Pagination, PaginationProps } from "./Pagination"
+import { Pagination } from "./Pagination"
+import { PostCardList } from "../components/PostCardList"
+import { PaginationType } from "../types/paginationType"
 
-export type AllPostsProps = PostCardListProps & PaginationProps
+type Props = {
+  posts: Queries.AllPostsTemplateQuery["allPost"]["nodes"]
+} & PaginationType
 
-export const AllPosts: React.FC<AllPostsProps> = ({
+export const AllPosts: React.FC<Props> = ({
   posts,
   currentPath,
   currentPage,

@@ -18,11 +18,6 @@ describe("Tags component", () => {
     expect(asFragment()).toMatchSnapshot()
   })
 
-  test("should not render anything if props is null", () => {
-    const { container } = render(<Tags tags={null} />)
-    expect(container.firstChild).toBeNull()
-  })
-
   test("should not render anything if props is []", () => {
     const { container } = render(<Tags tags={[]} />)
     expect(container.firstChild).toBeNull()

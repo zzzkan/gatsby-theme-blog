@@ -162,7 +162,7 @@ exports.createResolvers = ({ createResolvers }, themeOptions) => {
   const resolvers = {
     Post: {
       relatedPosts: {
-        type: ["Post"],
+        type: ["Post!"],
         resolve: async (source, args, context, info) => {
           if (source.tags == null) return null
           const { entries } = await context.nodeModel.findAll({
@@ -276,8 +276,8 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
             totalPage: tagPostsPageNumber,
             limit: postsLimit,
             skip: i * postsLimit,
-            tag: tag.name,
-            count,
+            tagName: tag.name,
+            tagCount: count,
             featuredImageAspectRatio,
             dateFormatString,
           },

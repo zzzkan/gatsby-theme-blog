@@ -2,17 +2,15 @@ import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link, Tag, Wrap, WrapItem } from "@chakra-ui/react"
 
-type TagProps = {
-  readonly slug: string
-  readonly name: string
+type Props = {
+  readonly tags: ReadonlyArray<{
+    readonly slug: string
+    readonly name: string
+  }>
 }
 
-export type TagsProps = {
-  readonly tags: readonly TagProps[] | null
-}
-
-export const Tags: React.FC<TagsProps> = ({ tags }) => {
-  if (tags == null || tags.length === 0) return null
+export const Tags: React.FC<Props> = ({ tags }) => {
+  if (tags.length === 0) return null
   return (
     <Wrap>
       {tags.map((tag) => (

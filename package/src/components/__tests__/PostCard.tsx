@@ -189,4 +189,40 @@ describe("PostCard component", () => {
     )
     expect(getByAltText("custom featured image alt")).toBeInTheDocument()
   })
+
+  test("should not render tags if tags is null", () => {
+    const { queryByText } = render(
+      <PostCard
+        publishedDate={"2022/01/01"}
+        updatedDate={null}
+        publishedDateISO8601={"2022-01-01"}
+        updatedDateISO8601={null}
+        timeToReadMinutes={null}
+        tags={null}
+        slug={"/slug"}
+        title={"title"}
+        featuredImage={null}
+        featuredImageAlt={null}
+      />
+    )
+    expect(queryByText("Tags")).toBeNull()
+  })
+
+  test("should render tags if tags is not null", () => {
+    const { queryByText } = render(
+      <PostCard
+        publishedDate={"2022/01/01"}
+        updatedDate={null}
+        publishedDateISO8601={"2022-01-01"}
+        updatedDateISO8601={null}
+        timeToReadMinutes={null}
+        tags={[{ slug: "/tags/tag", name: "tag" }]}
+        slug={"/slug"}
+        title={"title"}
+        featuredImage={null}
+        featuredImageAlt={null}
+      />
+    )
+    expect(queryByText("Tags")).not.toBeNull()
+  })
 })

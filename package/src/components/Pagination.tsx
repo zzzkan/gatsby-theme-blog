@@ -1,14 +1,11 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Box, HStack, Link } from "@chakra-ui/react"
+import { PaginationType } from "../types/paginationType"
 
-export type PaginationProps = {
-  readonly currentPath: string
-  readonly currentPage: number
-  readonly totalPage: number
-}
+type Props = PaginationType
 
-export const Pagination: React.FC<PaginationProps> = ({
+export const Pagination: React.FC<Props> = ({
   currentPath,
   currentPage,
   totalPage,

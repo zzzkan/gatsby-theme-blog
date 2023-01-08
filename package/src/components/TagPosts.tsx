@@ -1,26 +1,27 @@
 import React from "react"
 import { Box, Center, Heading } from "@chakra-ui/react"
-import { PostCardList, PostCardListProps } from "../components/PostCardList"
-import { Pagination, PaginationProps } from "./Pagination"
+import { Pagination } from "./Pagination"
+import { PostCardList } from "../components/PostCardList"
+import { PaginationType } from "../types/paginationType"
 
-export type TagPostsProps = PostCardListProps &
-  PaginationProps & {
-    readonly tag: string
-    readonly count: number
-  }
+type Props = {
+  readonly name: string
+  readonly count: number
+  posts: Queries.TagPostsTemplateQuery["allPost"]["nodes"]
+} & PaginationType
 
-export const TagPosts: React.FC<TagPostsProps> = ({
+export const TagPosts: React.FC<Props> = ({
+  name,
+  count,
   posts,
   currentPath,
   currentPage,
   totalPage,
-  tag,
-  count,
 }) => {
   return (
     <Box as={"section"}>
       <Heading as={"h1"} size={"xl"} textAlign={"center"} marginBottom={3}>
-        Tag - {tag}({count})
+        Tag - {name}({count})
       </Heading>
       <Center marginBottom={3}>
         <PostCardList posts={posts} />

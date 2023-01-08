@@ -4,21 +4,24 @@ import { Layout } from "../components/Layout"
 import { AllPosts } from "../components/AllPosts"
 import { Seo } from "../components/Seo"
 
-type AllPostsContextProps = {
+type PageContext = {
   readonly currentPage: number
   readonly totalPage: number
 }
 
 const AllPostsTemplate: React.FC<
-  PageProps<Queries.AllPostsTemplateQuery, AllPostsContextProps>
+  PageProps<Queries.AllPostsTemplateQuery, PageContext>
 > = ({ location, data, pageContext }) => {
+  const { pathname } = location
   const posts = data.allPost.nodes
+  const { currentPage, totalPage } = pageContext
   return (
     <Layout>
       <AllPosts
         posts={posts}
-        currentPath={location.pathname}
-        {...pageContext}
+        currentPath={pathname}
+        currentPage={currentPage}
+        totalPage={totalPage}
       />
     </Layout>
   )
@@ -26,14 +29,15 @@ const AllPostsTemplate: React.FC<
 
 export default AllPostsTemplate
 
-export const Head: HeadFC<
-  Queries.AllPostsTemplateQuery,
-  AllPostsContextProps
-> = ({ location, pageContext }) => {
+export const Head: HeadFC<Queries.AllPostsTemplateQuery, PageContext> = ({
+  location,
+  pageContext,
+}) => {
+  const { pathname } = location
   const { currentPage } = pageContext
   return (
     <Seo
-      path={location.pathname}
+      path={pathname}
       title={currentPage > 1 ? `All Posts (${currentPage} page)` : "All Posts"}
       description={
         currentPage > 1

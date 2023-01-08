@@ -4,23 +4,28 @@ import { Layout } from "../components/Layout"
 import { TagPosts } from "../components/TagPosts"
 import { Seo } from "../components/Seo"
 
-type TagPostsContextProps = {
+type PageContext = {
   readonly currentPage: number
   readonly totalPage: number
-  readonly tag: string
-  readonly count: number
+  readonly tagName: string
+  readonly tagCount: number
 }
 
 const TagPostsTemplate: React.FC<
-  PageProps<Queries.TagPostsTemplateQuery, TagPostsContextProps>
+  PageProps<Queries.TagPostsTemplateQuery, PageContext>
 > = ({ location, data, pageContext }) => {
+  const { pathname } = location
   const posts = data.allPost.nodes
+  const { currentPage, totalPage, tagName, tagCount } = pageContext
   return (
     <Layout>
       <TagPosts
+        name={tagName}
+        count={tagCount}
         posts={posts}
-        currentPath={location.pathname}
-        {...pageContext}
+        currentPath={pathname}
+        currentPage={currentPage}
+        totalPage={totalPage}
       />
     </Layout>
   )
@@ -28,19 +33,20 @@ const TagPostsTemplate: React.FC<
 
 export default TagPostsTemplate
 
-export const Head: HeadFC<
-  Queries.TagPostsTemplateQuery,
-  TagPostsContextProps
-> = ({ location, pageContext }) => {
-  const { tag, currentPage } = pageContext
+export const Head: HeadFC<Queries.TagPostsTemplateQuery, PageContext> = ({
+  location,
+  pageContext,
+}) => {
+  const { pathname } = location
+  const { currentPage, tagName } = pageContext
   return (
     <Seo
-      path={location.pathname}
-      title={currentPage > 1 ? `${tag} (${currentPage} page)` : tag}
+      path={pathname}
+      title={currentPage > 1 ? `${tagName} (${currentPage} page)` : tagName}
       description={
         currentPage > 1
-          ? `Posts tagged with "${tag}". (${currentPage} page)`
-          : `Posts tagged with "${tag}".`
+          ? `Posts tagged with "${tagName}". (${currentPage} page)`
+          : `Posts tagged with "${tagName}".`
       }
     />
   )
@@ -50,13 +56,13 @@ export const query = graphql`
   query TagPostsTemplate(
     $limit: Int!
     $skip: Int!
-    $tag: String!
+    $tagName: String!
     $featuredImageAspectRatio: Float!
     $dateFormatString: String!
   ) {
     allPost(
       sort: { publishedDate: DESC }
-      filter: { tags: { elemMatch: { name: { in: [$tag] } } } }
+      filter: { tags: { elemMatch: { name: { in: [$tagName] } } } }
       limit: $limit
       skip: $skip
     ) {

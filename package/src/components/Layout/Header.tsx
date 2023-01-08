@@ -1,9 +1,12 @@
 import React from "react"
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
-import { Title, TitleProps } from "../Title"
+import { Title } from "../Title"
 import { ToggleColorModeButton } from "../ToggleColorModeButton"
+import { SiteMetadataType } from "../../types/siteMetadataType"
 
-export const Header: React.FC<TitleProps> = ({ title }) => {
+type Props = Pick<SiteMetadataType, "title">
+
+export const Header: React.FC<Props> = ({ title }) => {
   return (
     <Box
       as={"header"}

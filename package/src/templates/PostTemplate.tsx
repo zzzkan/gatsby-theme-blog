@@ -9,7 +9,11 @@ const PostTemplate: React.FC<PageProps<Queries.PostTemplateQuery>> = ({
   children,
 }) => {
   const post = data.post
-  return <Layout>{post != null && <Post post={post}>{children}</Post>}</Layout>
+  return (
+    <Layout>
+      <Post post={post}>{children}</Post>
+    </Layout>
+  )
 }
 
 export default PostTemplate
@@ -68,7 +72,7 @@ export const query = graphql`
       timeToReadMinutes
       description
       excerpt
-      posts: relatedPosts {
+      relatedPosts {
         ...PostCard
       }
     }
