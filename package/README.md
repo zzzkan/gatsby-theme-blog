@@ -15,7 +15,7 @@
 - MDX
 - [Chakra UI](https://github.com/chakra-ui/chakra-ui) theming
 - Light mode / Dark mode
-- Code highlighting with [Rehype Pretty Code](https://rehype-pretty-code.netlify.app/)
+- Code highlighting with [Shiki](https://github.com/shikijs/shiki)
 - Tags
 - Related posts based on simple tag matching
 - Psagination
@@ -233,7 +233,7 @@ description: Ipsum consetetur nulla facilisi eos
 
 #### Code highlighting
 
-This blog theme uses [Rehype Pretty Code](https://rehype-pretty-code.netlify.app/) for code highlighting. It also supports highlighting and showing line numbers by metastrings.
+This blog theme uses [Shiki](https://github.com/shikijs/shiki) for code highlighting. It also supports highlight lines and showing line numbers by metastrings.
 
 A example is shown below.
 
