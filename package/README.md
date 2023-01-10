@@ -238,7 +238,7 @@ This blog theme uses [Rehype Pretty Code](https://rehype-pretty-code.netlify.app
 A example is shown below.
 
 ````mdx
-```jsx showLineNumbers {1,5} /div/
+```jsx {1,5} showLineNumbers
 import { useFloating } from "@floating-ui/react-dom"
 function MyComponent() {
   const { x, y, reference, floating } = useFloating()
