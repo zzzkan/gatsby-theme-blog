@@ -1,4 +1,5 @@
 const readingTime = require("reading-time")
+const { createFilePath } = require(`gatsby-source-filesystem`)
 const defaultThemeOptions = require("./utils/defaultThemeOptions")
 
 exports.createSchemaCustomization = ({ actions }, themeOptions) => {
@@ -122,7 +123,7 @@ exports.onCreateNode = (
     const readingTimeResult = readingTime(node.body)
     const fieldData = {
       filePath: fileNode.absolutePath,
-      slug: node.frontmatter.slug,
+      slug: node.frontmatter.slug ?? createFilePath({ node, getNode }),
       title: node.frontmatter.title,
       publishedDate: node.frontmatter.publishedDate,
       updatedDate: node.frontmatter.updatedDate,

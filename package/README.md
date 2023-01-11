@@ -201,16 +201,16 @@ New blog posts can be created by adding MDX files in `contentPath`, and add the 
 
 You can set up blog post metadata in frontmatter.
 
-| Key                | Description                           |
-| ------------------ | ------------------------------------- |
-| `slug`             | Slug                                  |
-| `title`            | Title                                 |
-| `publishedDate`    | Published date                        |
-| `updatedDate`      | (optional) Updated date               |
-| `featuredImage`    | (optional) Featured image             |
-| `featuredImageAlt` | (optional) Featured image alternative |
-| `tags`             | (optional) Tags                       |
-| `description`      | (optional) Description                |
+| Key                | Description                                                     |
+| ------------------ | --------------------------------------------------------------- |
+| `slug`             | (optional) Custom slug (default : file path on the file system) |
+| `title`            | Title                                                           |
+| `publishedDate`    | Published date                                                  |
+| `updatedDate`      | (optional) Updated date                                         |
+| `featuredImage`    | (optional) Featured image                                       |
+| `featuredImageAlt` | (optional) Featured image alternative                           |
+| `tags`             | (optional) Tags                                                 |
+| `description`      | (optional) Description                                          |
 
 A example is shown below.
 
