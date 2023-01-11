@@ -140,6 +140,9 @@ describe("Seo component", () => {
     expect(
       container?.querySelector("meta[name$=url]")?.getAttribute("content")
     ).toBe("http://localhost:9000/")
+    expect(
+      container?.querySelector("link[rel=canonical]")?.getAttribute("href")
+    ).toBe("http://localhost:9000/")
   })
 
   test("should put a custom url", () => {
@@ -151,6 +154,9 @@ describe("Seo component", () => {
     ).toBe("http://localhost:9000/custom/")
     expect(
       container?.querySelector("meta[name$=url]")?.getAttribute("content")
+    ).toBe("http://localhost:9000/custom/")
+    expect(
+      container?.querySelector("link[rel=canonical]")?.getAttribute("href")
     ).toBe("http://localhost:9000/custom/")
   })
 

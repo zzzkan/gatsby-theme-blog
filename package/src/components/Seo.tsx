@@ -44,6 +44,7 @@ export const Seo: React.FC<Props> = (props) => {
       <meta name={"twitter:description"} content={pageDescription} />
       <meta name={"twitter:image"} content={pageImageUrl} />
       <meta name={"twitter:creator"} content={author} />
+      <link rel="canonical" href={pageUrl} />
       {isBlogPosting && (
         <script type="application/ld+json">
           {JSON.stringify({

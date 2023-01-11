@@ -57,6 +57,10 @@ exports[`Seo component > snapshot 1`] = `
     content="siteAuthor"
     name="twitter:creator"
   />
+  <link
+    href="http://localhost:9000/page-path"
+    rel="canonical"
+  />
   <script
     type="application/ld+json"
   >
