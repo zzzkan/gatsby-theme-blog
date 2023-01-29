@@ -26,6 +26,7 @@ export const Head: HeadFC<Queries.PostTemplateQuery> = ({ location, data }) => {
     updatedDateISO8601,
     featuredImage,
     description,
+    noindex,
     excerpt,
   } = data.post
   return (
@@ -36,6 +37,7 @@ export const Head: HeadFC<Queries.PostTemplateQuery> = ({ location, data }) => {
       publishedDate={publishedDateISO8601}
       updatedDate={updatedDateISO8601 ?? undefined}
       image={featuredImage?.childImageSharp?.resize?.src ?? undefined}
+      noindex={noindex ?? undefined}
     />
   )
 }
@@ -71,6 +73,7 @@ export const query = graphql`
       }
       timeToReadMinutes
       description
+      noindex
       excerpt
       relatedPosts {
         ...PostCard

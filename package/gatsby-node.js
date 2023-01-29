@@ -57,6 +57,7 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       timeToReadMinutes: Float
       wordCount: Int
       description: String
+      noindex: Boolean
       excerpt(pruneLength: Int = 140): String! @parentPassThrough
       body: String! @parentPassThrough
     }
@@ -137,6 +138,7 @@ exports.onCreateNode = (
       timeToReadMinutes: readingTimeResult.minutes,
       wordCount: readingTimeResult.words,
       description: node.frontmatter.description,
+      noindex: node.frontmatter.noindex,
     }
 
     const postId = createNodeId(`${node.id} >>> Post`)
