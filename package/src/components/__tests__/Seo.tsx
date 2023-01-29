@@ -216,6 +216,22 @@ describe("Seo component", () => {
     ).toBe("siteAuthor")
   })
 
+  test("should not put a noindex tag", () => {
+    const { container } = render(<Seo />, {
+      container: document.head,
+    })
+    expect(container?.querySelector("meta[name='robots']")).toBeNull()
+  })
+
+  test("should put a noindex tag", () => {
+    const { container } = render(<Seo noindex={true} />, {
+      container: document.head,
+    })
+    expect(
+      container?.querySelector("meta[name='robots']")?.getAttribute("content")
+    ).toBe("noindex, nofollow")
+  })
+
   test("should not put a json-ld", () => {
     const { container } = render(<Seo />, {
       container: document.head,

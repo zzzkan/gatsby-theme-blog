@@ -8,6 +8,7 @@ type Props = {
   readonly publishedDate?: string
   readonly updatedDate?: string
   readonly image?: string
+  readonly noindex?: boolean
   readonly children?: React.ReactNode
 }
 
@@ -47,6 +48,9 @@ export const Seo: React.FC<Props> = (props) => {
       <meta name={"twitter:description"} content={pageDescription} />
       <meta name={"twitter:image"} content={pageImageUrl} />
       <meta name={"twitter:creator"} content={author} />
+      {props?.noindex === true && (
+        <meta name={"robots"} content={"noindex, nofollow"} />
+      )}
       <link rel="canonical" href={pageUrl} />
       {isBlogPosting && (
         <script type="application/ld+json">
