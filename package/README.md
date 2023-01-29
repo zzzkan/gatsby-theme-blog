@@ -211,6 +211,7 @@ You can set up blog post metadata in frontmatter.
 | `featuredImageAlt` | (optional) Featured image alternative                           |
 | `tags`             | (optional) Tags                                                 |
 | `description`      | (optional) Description                                          |
+| `draft`            | (optional) If draft, set to true                                |
 
 A example is shown below.
 
@@ -228,6 +229,7 @@ tags:
   - consetetur
   - nulla
 description: Ipsum consetetur nulla facilisi eos
+draft: true
 ---
 ```
 
