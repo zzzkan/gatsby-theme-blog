@@ -24,7 +24,10 @@ export const Seo: React.FC<Props> = (props) => {
   const pageTitle =
     props.title != null ? `${props.title} - ${siteTitle}` : siteTitle
   const pageUrl = new URL(props?.path ?? "", siteUrl).href
-  const pageDescription = props?.description ?? description
+  const pageDescription = (props?.description ?? description).replace(
+    /(\r?\n)+/g,
+    " "
+  )
   const pageImageUrl =
     props?.image != null ? new URL(props.image, siteUrl).href : imageUrl
 
