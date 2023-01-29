@@ -115,10 +115,11 @@ exports.onCreateNode = (
   const { createNode, createParentChildLink } = actions
   const fileNode = getNode(node.parent)
   const { contentPath } = defaultThemeOptions(themeOptions)
-
+  const draft = node.frontmatter?.draft ?? false
   if (
     node.internal.type === "Mdx" &&
-    fileNode.sourceInstanceName === contentPath
+    fileNode.sourceInstanceName === contentPath &&
+    (process.env.NODE_ENV !== "production" || draft === false)
   ) {
     const readingTimeResult = readingTime(node.body)
     const fieldData = {
