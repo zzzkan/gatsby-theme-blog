@@ -212,6 +212,7 @@ You can set up blog post metadata in frontmatter.
 | `tags`             | (optional) Tags                                                 |
 | `description`      | (optional) Description                                          |
 | `draft`            | (optional) If draft, set to true                                |
+| `noindex`          | (optional) If blocking search index, set to true                |
 
 A example is shown below.
 
@@ -230,6 +231,7 @@ tags:
   - nulla
 description: Ipsum consetetur nulla facilisi eos
 draft: true
+noindex: true
 ---
 ```
 
