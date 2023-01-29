@@ -92,24 +92,27 @@ describe("Seo component", () => {
   })
 
   test("should put a custom description", () => {
-    const { container } = render(<Seo description={"customDescription"} />, {
-      container: document.head,
-    })
+    const { container } = render(
+      <Seo description={"custom\n\ndescription"} />,
+      {
+        container: document.head,
+      }
+    )
     expect(
       container
         .querySelector("meta[name='description']")
         ?.getAttribute("content")
-    ).toBe("customDescription")
+    ).toBe("custom description")
     expect(
       container
         ?.querySelector("meta[property$=description]")
         ?.getAttribute("content")
-    ).toBe("customDescription")
+    ).toBe("custom description")
     expect(
       container
         ?.querySelector("meta[name$=description]")
         ?.getAttribute("content")
-    ).toBe("customDescription")
+    ).toBe("custom description")
   })
 
   test("should put a blog type", () => {
