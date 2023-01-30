@@ -5386,7 +5386,7 @@ __metadata:
     rehype-pretty-code: ^0.9.0
     rehype-slug: ^5.1.0
     remark-gfm: ^1
-    shiki: ^0.12.0
+    shiki: ^0.13.0
   peerDependencies:
     gatsby: ^4.24.4 || ^5.0.0
     react: ^18.2.0
@@ -16445,14 +16445,14 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.12.0":
-  version: 0.12.1
-  resolution: "shiki@npm:0.12.1"
+"shiki@npm:^0.13.0":
+  version: 0.13.0
+  resolution: "shiki@npm:0.13.0"
   dependencies:
     jsonc-parser: ^3.2.0
     vscode-oniguruma: ^1.7.0
     vscode-textmate: ^8.0.0
-  checksum: a5d78a79d282f5c5168786980c66e82f075e91fa015097456486624fc5775688d685ad9b1972b0617d7f1ef50927d21b61dca476247a6f6c6b7042046e89a979
+  checksum: edfec5a166b77ec83bae468f6bde5a52b7070fe387853a5b744e810a07aaef76ccced1bf35d606e29d145e48eaa3c62d84972699a531fc7b07cd1eb676523264
   languageName: node
   linkType: hard
 
