@@ -72,7 +72,6 @@ Available theme options are:
 | `postsLimit`               | `30`            | Max number of posts per page                                                           |
 | `relatedPostsLimit`        | `6`             | Max number of posts in related posts                                                   |
 | `shikiLightTheme`          | `github-light`  | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) on light mode |
-| `shikiDarkTheme`           | `github-dark`   | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) on dark mode  |
 | `links`                    | `[]`            | Links to your external sites                                                           |
 
 A example is shown below.
@@ -93,7 +92,6 @@ module.exports = {
         postsLimit: 10,
         relatedPostsLimit: 6,
         shikiLightTheme: "github-light",
-        shikiDarkTheme: "github-dark",
         links: [
           {
             name: "GitHub",

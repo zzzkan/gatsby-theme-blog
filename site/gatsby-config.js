@@ -21,7 +21,6 @@ module.exports = {
         postsLimit: 3,
         relatedPostsLimit: 2,
         shikiLightTheme: "dracula",
-        shikiDarkTheme: "dracula",
         links: [
           {
             name: "Profile",

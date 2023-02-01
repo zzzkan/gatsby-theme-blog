@@ -9,7 +9,6 @@ module.exports = (themeOptions) => {
   const postsLimit = themeOptions.postsLimit || 30
   const relatedPostsLimit = themeOptions.relatedPostsLimit || 6
   const shikiLightTheme = themeOptions.shikiLightTheme || "github-light"
-  const shikiDarkTheme = themeOptions.shikiDarkTheme || "github-dark"
   const links = themeOptions.links || []
 
   return {
@@ -22,7 +21,6 @@ module.exports = (themeOptions) => {
     postsLimit,
     relatedPostsLimit,
     shikiLightTheme,
-    shikiDarkTheme,
     links,
   }
 }

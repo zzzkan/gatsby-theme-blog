@@ -77,7 +77,6 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       postsLimit: Int!
       relatedPostsLimit: Int!
       shikiLightTheme: String!
-      shikiDarkTheme: String!
       links: [Link]!
     }
 
