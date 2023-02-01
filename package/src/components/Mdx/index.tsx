@@ -116,7 +116,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     ),
     pre: (props: object) => (
       <Pre
-        highlightBackground={"highlightBackground"}
+        highlightCodeColor={"highlightCode"}
         lineColor={"secondaryText"}
         marginY={3}
         rounded={"sm"}

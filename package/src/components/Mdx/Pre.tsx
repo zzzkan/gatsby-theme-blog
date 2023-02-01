@@ -2,9 +2,9 @@ import React from "react"
 import { Box, type BoxProps } from "@chakra-ui/react"
 
 export const Pre: React.FC<
-  BoxProps & { highlightBackground: string; lineColor: string }
+  BoxProps & { highlightCodeColor: string; lineColor: string }
 > = (props) => {
-  const { highlightBackground, lineColor, ...rest } = props
+  const { highlightCodeColor, lineColor, ...rest } = props
   return (
     <Box
       as={"pre"}
@@ -38,7 +38,7 @@ export const Pre: React.FC<
             },
           },
           ".highlighted-line, .highlighted-word": {
-            backgroundColor: highlightBackground,
+            backgroundColor: highlightCodeColor,
             rounded: "sm",
           },
         },
