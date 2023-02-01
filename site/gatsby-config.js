@@ -20,7 +20,7 @@ module.exports = {
         dateFormatString: "MMMM DD, YYYY",
         postsLimit: 3,
         relatedPostsLimit: 2,
-        shikiLightTheme: "dracula",
+        shikiTheme: "dracula",
         links: [
           {
             name: "Profile",

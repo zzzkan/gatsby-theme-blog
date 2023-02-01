@@ -8,7 +8,7 @@ module.exports = (themeOptions) => {
   const dateFormatString = themeOptions.dateFormatString || "YYYY-MM-DD"
   const postsLimit = themeOptions.postsLimit || 30
   const relatedPostsLimit = themeOptions.relatedPostsLimit || 6
-  const shikiLightTheme = themeOptions.shikiLightTheme || "github-light"
+  const shikiTheme = themeOptions.shikiTheme || "github-light"
   const links = themeOptions.links || []
 
   return {
@@ -20,7 +20,7 @@ module.exports = (themeOptions) => {
     dateFormatString,
     postsLimit,
     relatedPostsLimit,
-    shikiLightTheme,
+    shikiTheme,
     links,
   }
 }
