@@ -123,7 +123,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {...props}
       />
     ),
-    code: (props: object) => <Code background={"codeBackground"} {...props} />,
+    code: (props: object) => <Code background={"reset"} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
