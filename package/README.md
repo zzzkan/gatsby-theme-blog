@@ -61,19 +61,18 @@ module.exports = {
 
 Available theme options are:
 
-| Key                        | Default value   | Description                                                                            |
-| -------------------------- | --------------- | -------------------------------------------------------------------------------------- |
-| `lang`                     | `en`            | `lang` global attribute                                                                |
-| `basePath`                 | `/`             | Root url for all blog posts                                                            |
-| `contentPath`              | `content/posts` | Location of blog posts                                                                 |
-| `postImageMaxWidth`        | `960`           | Max width of images in your blog posts                                                 |
-| `featuredImageAspectRatio` | `1.7777`        | Aspect ratio of featured images                                                        |
-| `dateFormatString`         | `YYYY-MM-DD`    | Date format                                                                            |
-| `postsLimit`               | `30`            | Max number of posts per page                                                           |
-| `relatedPostsLimit`        | `6`             | Max number of posts in related posts                                                   |
-| `shikiLightTheme`          | `github-light`  | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) on light mode |
-| `shikiDarkTheme`           | `github-dark`   | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) on dark mode  |
-| `links`                    | `[]`            | Links to your external sites                                                           |
+| Key                        | Default value   | Description                                                              |
+| -------------------------- | --------------- | ------------------------------------------------------------------------ |
+| `lang`                     | `en`            | `lang` global attribute                                                  |
+| `basePath`                 | `/`             | Root url for all blog posts                                              |
+| `contentPath`              | `content/posts` | Location of blog posts                                                   |
+| `postImageMaxWidth`        | `960`           | Max width of images in your blog posts                                   |
+| `featuredImageAspectRatio` | `1.7777`        | Aspect ratio of featured images                                          |
+| `dateFormatString`         | `YYYY-MM-DD`    | Date format                                                              |
+| `postsLimit`               | `30`            | Max number of posts per page                                             |
+| `relatedPostsLimit`        | `6`             | Max number of posts in related posts                                     |
+| `shikiTheme`               | `dracula`       | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) |
+| `links`                    | `[]`            | Links to your external sites                                             |
 
 A example is shown below.
 
@@ -92,8 +91,7 @@ module.exports = {
         dateFormatString: "MMMM DD, YYYY",
         postsLimit: 10,
         relatedPostsLimit: 6,
-        shikiLightTheme: "github-light",
-        shikiDarkTheme: "github-dark",
+        shikiTheme: "dracula",
         links: [
           {
             name: "GitHub",
