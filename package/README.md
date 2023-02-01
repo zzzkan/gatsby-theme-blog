@@ -71,7 +71,7 @@ Available theme options are:
 | `dateFormatString`         | `YYYY-MM-DD`    | Date format                                                              |
 | `postsLimit`               | `30`            | Max number of posts per page                                             |
 | `relatedPostsLimit`        | `6`             | Max number of posts in related posts                                     |
-| `shikiTheme`               | `github-light`  | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) |
+| `shikiTheme`               | `dracula`       | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) |
 | `links`                    | `[]`            | Links to your external sites                                             |
 
 A example is shown below.
@@ -91,7 +91,7 @@ module.exports = {
         dateFormatString: "MMMM DD, YYYY",
         postsLimit: 10,
         relatedPostsLimit: 6,
-        shikiTheme: "github-light",
+        shikiTheme: "dracula",
         links: [
           {
             name: "GitHub",
