@@ -1,10 +1,9 @@
 import React from "react"
-import { Box, BoxProps, useColorModeValue } from "@chakra-ui/react"
+import { Box, BoxProps } from "@chakra-ui/react"
 
 export const Pre: React.FC<
   BoxProps & { highlightBackground: string; lineColor: string }
 > = (props) => {
-  const isDarkMode = useColorModeValue(false, true)
   const { highlightBackground, lineColor, ...rest } = props
   return (
     <Box
@@ -13,12 +12,6 @@ export const Pre: React.FC<
       sx={{
         overflowX: "auto",
         overflowY: "hidden",
-        "&[data-theme=light]": {
-          display: isDarkMode ? "none" : "inherit",
-        },
-        "&[data-theme=dark]": {
-          display: isDarkMode ? "inherit" : "none",
-        },
         counterReset: "line",
         code: {
           display: "grid",
