@@ -116,14 +116,14 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     ),
     pre: (props: object) => (
       <Pre
-        highlightBackground={"highlightBackground"}
+        highlightCodeColor={"highlightCode"}
         lineColor={"secondaryText"}
         marginY={3}
         rounded={"sm"}
         {...props}
       />
     ),
-    code: (props: object) => <Code background={"codeBackground"} {...props} />,
+    code: (props: object) => <Code background={"reset"} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
