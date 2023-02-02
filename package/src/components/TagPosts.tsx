@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Center, Heading } from "@chakra-ui/react"
 import { Pagination } from "./Pagination"
 import { PostCardList } from "../components/PostCardList"
-import { PaginationType } from "../types/paginationType"
+import { type PaginationType } from "../types/paginationType"
 
 type Props = {
   readonly name: string
