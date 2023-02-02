@@ -2,7 +2,7 @@ import React from "react"
 import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
 import { Title } from "../Title"
 import { ToggleColorModeButton } from "../ToggleColorModeButton"
-import { SiteMetadataType } from "../../types/siteMetadataType"
+import { type SiteMetadataType } from "../../types/siteMetadataType"
 
 type Props = Pick<SiteMetadataType, "title">
 
