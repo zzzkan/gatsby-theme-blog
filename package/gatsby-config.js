@@ -86,6 +86,7 @@ module.exports = (themeOptions) => {
                 wrapESMPlugin("rehype-pretty-code"),
                 {
                   theme: shikiTheme,
+                  keepBackground: true,
                   onVisitLine(node) {
                     if (node.children.length === 0) {
                       node.children = [{ type: "text", value: " " }]
