@@ -1,5 +1,5 @@
 import React from "react"
-import { Alert, AlertDescription, AlertProps } from "@chakra-ui/react"
+import { Alert, AlertDescription, type AlertProps } from "@chakra-ui/react"
 
 export const Blockquote: React.FC<AlertProps> = (props) => {
   const { children, ...rest } = props

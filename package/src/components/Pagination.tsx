@@ -1,7 +1,7 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Box, HStack, Link } from "@chakra-ui/react"
-import { PaginationType } from "../types/paginationType"
+import { type PaginationType } from "../types/paginationType"
 
 type Props = PaginationType
 

@@ -1,5 +1,5 @@
 import React from "react"
-import { Heading, HeadingProps } from "@chakra-ui/react"
+import { Heading, type HeadingProps } from "@chakra-ui/react"
 
 export const AnchorHeading: React.FC<HeadingProps> = (props) => {
   return (

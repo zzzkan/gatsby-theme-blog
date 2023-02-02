@@ -1,5 +1,5 @@
 import { useStaticQuery, graphql } from "gatsby"
-import { ThemeOptionType } from "../types/themeOptionType"
+import { type ThemeOptionType } from "../types/themeOptionType"
 
 export const useThemeOption = (): ThemeOptionType => {
   const data = useStaticQuery<{ themeOption: ThemeOptionType }>(graphql`

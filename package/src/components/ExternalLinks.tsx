@@ -1,6 +1,6 @@
 import React from "react"
 import { HStack, Icon, Link, Tooltip } from "@chakra-ui/react"
-import { IconType } from "@react-icons/all-files/lib"
+import { type IconType } from "@react-icons/all-files/lib"
 import { FaLink } from "@react-icons/all-files/fa/FaLink"
 import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
