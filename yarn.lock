@@ -5386,7 +5386,7 @@ __metadata:
     rehype-pretty-code: ^0.9.0
     rehype-slug: ^5.1.0
     remark-gfm: ^1
-    shiki: ^0.13.0
+    shiki: ^0.14.0
   peerDependencies:
     gatsby: ^4.24.4 || ^5.0.0
     react: ^18.2.0
@@ -5638,6 +5638,13 @@ __metadata:
   version: 6.0.1
   resolution: "ansi-regex@npm:6.0.1"
   checksum: 1ff8b7667cded1de4fa2c9ae283e979fc87036864317da86a2e546725f96406746411d0d85e87a2d12fa5abd715d90006de7fa4fa0477c92321ad3b4c7d4e169
+  languageName: node
+  linkType: hard
+
+"ansi-sequence-parser@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "ansi-sequence-parser@npm:1.1.0"
+  checksum: 75f4d3a4c555655a698aec05b5763cbddcd16ccccdbfd178fb0aa471ab74fdf98e031b875ef26e64be6a95cf970c89238744b26de6e34af97f316d5186b1df53
   languageName: node
   linkType: hard
 
@@ -16445,14 +16452,15 @@ __metadata:
   languageName: node
   linkType: hard
 
-"shiki@npm:^0.13.0":
-  version: 0.13.0
-  resolution: "shiki@npm:0.13.0"
+"shiki@npm:^0.14.0":
+  version: 0.14.0
+  resolution: "shiki@npm:0.14.0"
   dependencies:
+    ansi-sequence-parser: ^1.1.0
     jsonc-parser: ^3.2.0
     vscode-oniguruma: ^1.7.0
     vscode-textmate: ^8.0.0
-  checksum: edfec5a166b77ec83bae468f6bde5a52b7070fe387853a5b744e810a07aaef76ccced1bf35d606e29d145e48eaa3c62d84972699a531fc7b07cd1eb676523264
+  checksum: b2861536ae361237a6ecf6fd543a4880b16dc0c3fa8f27ec99b4e7418972197ab149982ad38ec6f042919cb077ba4b79bc4b628ba0d83858f81c1142deac9d0c
   languageName: node
   linkType: hard
 
