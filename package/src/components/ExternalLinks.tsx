@@ -37,6 +37,8 @@ export const ExternalLinks: React.FC<Props> = ({ links }) => {
             href={link.url}
             aria-label={`Move to ${link.label ?? link.name}`}
             _hover={{ textDecoration: "none" }}
+            target="_blank"
+            rel="noopener noreferrer nofollow"
           >
             <Icon as={icon(link.name)} fontSize={"2xl"} />
           </Link>

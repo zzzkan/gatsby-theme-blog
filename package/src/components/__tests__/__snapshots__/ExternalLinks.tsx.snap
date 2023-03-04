@@ -38,21 +38,29 @@ exports[`ExternalLinks component > snapshot 1`] = `
       aria-label="Move to Profile Label"
       class="chakra-link emotion-1"
       href="/profile"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
     />
     <a
       aria-label="Move to RSS Label"
       class="chakra-link emotion-1"
       href="/rss"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
     />
     <a
       aria-label="Move to GitHub Label"
       class="chakra-link emotion-1"
       href="/github"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
     />
     <a
       aria-label="Move to Twitter Label"
       class="chakra-link emotion-1"
       href="/twitter"
+      rel="noopener noreferrer nofollow"
+      target="_blank"
     />
   </div>
 </DocumentFragment>
