@@ -48,6 +48,7 @@ export const Head: HeadFC<Queries.TagPostsTemplateQuery, PageContext> = ({
           ? `Posts tagged with "${tagName}". (${currentPage} page)`
           : `Posts tagged with "${tagName}".`
       }
+      noindex={true}
     />
   )
 }

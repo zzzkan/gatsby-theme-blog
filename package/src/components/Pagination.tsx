@@ -25,7 +25,7 @@ export const Pagination: React.FC<Props> = ({
         <Link
           as={GatsbyLink}
           to={path(currentPage - 1)}
-          aria-label={"Transition to previous page"}
+          aria-label={"Move to previous page"}
         >
           {"<"}
         </Link>
@@ -43,7 +43,7 @@ export const Pagination: React.FC<Props> = ({
             key={page}
             as={GatsbyLink}
             to={path(page)}
-            aria-label={`Transition to ${page} page`}
+            aria-label={`Move to ${page} page`}
           >
             {page}
           </Link>
@@ -53,7 +53,7 @@ export const Pagination: React.FC<Props> = ({
         <Link
           as={GatsbyLink}
           to={path(currentPage + 1)}
-          aria-label={"Transition to next page"}
+          aria-label={"Move to next page"}
         >
           {">"}
         </Link>

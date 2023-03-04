@@ -35,15 +35,17 @@ export const Head: HeadFC<Queries.AllPostsTemplateQuery, PageContext> = ({
 }) => {
   const { pathname } = location
   const { currentPage } = pageContext
+  const isNotFirstPage = currentPage > 1
   return (
     <Seo
       path={pathname}
-      title={currentPage > 1 ? `All Posts (${currentPage} page)` : "All Posts"}
+      title={isNotFirstPage ? `All Posts (${currentPage} page)` : "All Posts"}
       description={
-        currentPage > 1
+        isNotFirstPage
           ? `All posts page. (${currentPage} page)`
           : "All posts page."
       }
+      noindex={isNotFirstPage}
     />
   )
 }

@@ -12,7 +12,7 @@ export const Title: React.FC<Props> = ({ title }) => {
       <Link
         as={GatsbyLink}
         to="/"
-        aria-label={"Transition to home"}
+        aria-label={"Move to home"}
         _hover={{ textDecoration: "none" }}
       >
         {title}
