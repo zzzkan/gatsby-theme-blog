@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`PostCard component > snapshot 1`] = `
 <DocumentFragment>
@@ -61,7 +61,7 @@ exports[`PostCard component > snapshot 1`] = `
     class="emotion-0"
   >
     <a
-      aria-label="see title"
+      aria-label="Move to title"
       class="chakra-link emotion-1"
       href="/slug"
     >
@@ -85,7 +85,7 @@ exports[`PostCard component > snapshot 1`] = `
         Tags
       </div>
       <a
-        aria-label="see title"
+        aria-label="Move to title"
         class="chakra-link emotion-1"
         href="/slug"
       >

@@ -35,7 +35,7 @@ export const ExternalLinks: React.FC<Props> = ({ links }) => {
         >
           <Link
             href={link.url}
-            aria-label={`Transition to ${link.label ?? link.name}`}
+            aria-label={`Move to ${link.label ?? link.name}`}
             _hover={{ textDecoration: "none" }}
           >
             <Icon as={icon(link.name)} fontSize={"2xl"} />

@@ -34,7 +34,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`see ${title}`}
+          aria-label={`Move to ${title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
@@ -52,7 +52,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`see ${title}`}
+          aria-label={`Move to ${title}`}
           _hover={{ textDecoration: "none" }}
         >
           <Heading as={"div"} size={"md"}>

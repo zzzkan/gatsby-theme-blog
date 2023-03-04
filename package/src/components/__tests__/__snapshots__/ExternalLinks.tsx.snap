@@ -1,4 +1,4 @@
-// Vitest Snapshot v1
+// Vitest Snapshot v1, https://vitest.dev/guide/snapshot.html
 
 exports[`ExternalLinks component > snapshot 1`] = `
 <DocumentFragment>
@@ -35,22 +35,22 @@ exports[`ExternalLinks component > snapshot 1`] = `
     class="chakra-stack emotion-0"
   >
     <a
-      aria-label="Transition to Profile Label"
+      aria-label="Move to Profile Label"
       class="chakra-link emotion-1"
       href="/profile"
     />
     <a
-      aria-label="Transition to RSS Label"
+      aria-label="Move to RSS Label"
       class="chakra-link emotion-1"
       href="/rss"
     />
     <a
-      aria-label="Transition to GitHub Label"
+      aria-label="Move to GitHub Label"
       class="chakra-link emotion-1"
       href="/github"
     />
     <a
-      aria-label="Transition to Twitter Label"
+      aria-label="Move to Twitter Label"
       class="chakra-link emotion-1"
       href="/twitter"
     />

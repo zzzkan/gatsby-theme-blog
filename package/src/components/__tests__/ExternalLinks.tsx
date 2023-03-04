@@ -85,7 +85,7 @@ describe("ExternalLinks component", () => {
         ]}
       />
     )
-    expect(getByLabelText("Transition to Profile")).toBeInTheDocument()
+    expect(getByLabelText("Move to Profile")).toBeInTheDocument()
   })
 
   test("should render links.label as label", () => {
@@ -100,8 +100,8 @@ describe("ExternalLinks component", () => {
         ]}
       />
     )
-    expect(queryByLabelText("Transition to Profile")).toBeNull()
-    expect(queryByLabelText("Transition to Profile Label")).toBeInTheDocument()
+    expect(queryByLabelText("Move to Profile")).toBeNull()
+    expect(queryByLabelText("Move to Profile Label")).toBeInTheDocument()
   })
 
   test("should render FaLink", () => {
