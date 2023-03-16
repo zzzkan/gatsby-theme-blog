@@ -3,6 +3,7 @@ import { graphql, type HeadFC, type PageProps } from "gatsby"
 import { Layout } from "../components/Layout"
 import { AllPosts } from "../components/AllPosts"
 import { Seo } from "../components/Seo"
+import { useSiteMetadata } from "../hooks/useSiteMetadata"
 
 type PageContext = {
   readonly currentPage: number
@@ -36,14 +37,13 @@ export const Head: HeadFC<Queries.AllPostsTemplateQuery, PageContext> = ({
   const { pathname } = location
   const { currentPage } = pageContext
   const isNotFirstPage = currentPage > 1
+  const { description } = useSiteMetadata()
   return (
     <Seo
       path={pathname}
       title={isNotFirstPage ? `All Posts (${currentPage} page)` : "All Posts"}
       description={
-        isNotFirstPage
-          ? `All posts page. (${currentPage} page)`
-          : "All posts page."
+        isNotFirstPage ? `${description} (${currentPage} page)` : description
       }
       noindex={isNotFirstPage}
     />
