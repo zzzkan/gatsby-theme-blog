@@ -11,7 +11,7 @@ type Props = Pick<SiteMetadataType, "author" | "publicationYear"> &
 export const Footer: React.FC<Props> = ({ author, publicationYear, links }) => {
   return (
     <Box as={"footer"} position={"sticky"} top={"100vh"}>
-      <Container maxWidth={"container.lg"}>
+      <Container>
         <Flex alignItems={"end"}>
           <Copyright author={author} publicationYear={publicationYear} />
           <Spacer />

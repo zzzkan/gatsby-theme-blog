@@ -16,7 +16,7 @@ export const Header: React.FC<Props> = ({ title }) => {
       background={"inherit"}
       marginBottom={9}
     >
-      <Container maxWidth={"container.lg"}>
+      <Container>
         <Flex alignItems={"center"}>
           <Title title={title} />
           <Spacer />

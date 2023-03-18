@@ -1,4 +1,5 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
+import { Container } from "./components"
 import colors from "./colors"
 import styles from "./styles"
 
@@ -9,6 +10,9 @@ const config: ThemeConfig = {
 
 const theme = extendTheme({
   config,
+  components: {
+    Container,
+  },
   semanticTokens: {
     colors,
   },

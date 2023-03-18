@@ -18,7 +18,7 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
     >
       <Header title={title} />
       <Box as={"main"} marginBottom={9}>
-        <Container maxWidth={"container.lg"}>{children}</Container>
+        <Container>{children}</Container>
       </Box>
       <Footer author={author} publicationYear={publicationYear} links={links} />
     </Box>
