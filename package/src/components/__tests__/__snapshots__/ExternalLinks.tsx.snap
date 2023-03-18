@@ -21,14 +21,39 @@ exports[`ExternalLinks component > snapshot 1`] = `
   -webkit-margin-end: 0px;
   margin-inline-end: 0px;
   margin-bottom: 0px;
-  -webkit-margin-start: 2px;
-  margin-inline-start: 2px;
+  -webkit-margin-start: 0px;
+  margin-inline-start: 0px;
 }
 
-.emotion-1:hover,
-.emotion-1[data-hover] {
-  -webkit-text-decoration: none;
-  text-decoration: none;
+.emotion-1 {
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  position: relative;
+  white-space: nowrap;
+  vertical-align: middle;
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+  padding: 0px;
+  border-radius: full;
+  font-size: 2xl;
 }
 
 <div
@@ -36,28 +61,28 @@ exports[`ExternalLinks component > snapshot 1`] = `
   >
     <a
       aria-label="Move to Profile Label"
-      class="chakra-link emotion-1"
+      class="chakra-button emotion-1"
       href="/profile"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
       aria-label="Move to RSS Label"
-      class="chakra-link emotion-1"
+      class="chakra-button emotion-1"
       href="/rss"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
       aria-label="Move to GitHub Label"
-      class="chakra-link emotion-1"
+      class="chakra-button emotion-1"
       href="/github"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
       aria-label="Move to Twitter Label"
-      class="chakra-link emotion-1"
+      class="chakra-button emotion-1"
       href="/twitter"
       rel="noopener noreferrer nofollow"
       target="_blank"
