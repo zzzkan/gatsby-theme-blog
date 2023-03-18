@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
+import { Box, Flex, Spacer } from "@chakra-ui/react"
 import { Copyright } from "../Copyright"
 import { ExternalLinks } from "../ExternalLinks"
 import { type SiteMetadataType } from "../../types/siteMetadataType"
@@ -11,13 +11,11 @@ type Props = Pick<SiteMetadataType, "author" | "publicationYear"> &
 export const Footer: React.FC<Props> = ({ author, publicationYear, links }) => {
   return (
     <Box as={"footer"} position={"sticky"} top={"100vh"}>
-      <Container>
-        <Flex alignItems={"end"}>
-          <Copyright author={author} publicationYear={publicationYear} />
-          <Spacer />
-          <ExternalLinks links={links} />
-        </Flex>
-      </Container>
+      <Flex alignItems={"end"}>
+        <Copyright author={author} publicationYear={publicationYear} />
+        <Spacer />
+        <ExternalLinks links={links} />
+      </Flex>
     </Box>
   )
 }

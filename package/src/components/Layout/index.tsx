@@ -11,16 +11,12 @@ export const Layout: React.FC<{ children: React.ReactNode }> = ({
   const { title, author, publicationYear } = useSiteMetadata()
   const { links } = useThemeOption()
   return (
-    <Box
-      background={"primaryBackground"}
-      color={"primaryText"}
-      minHeight={"100vh"}
-    >
+    <Container minHeight={"100vh"}>
       <Header title={title} />
       <Box as={"main"} marginBottom={9}>
-        <Container>{children}</Container>
+        {children}
       </Box>
       <Footer author={author} publicationYear={publicationYear} links={links} />
-    </Box>
+    </Container>
   )
 }
