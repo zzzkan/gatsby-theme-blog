@@ -139,12 +139,12 @@ module.exports = {
 
 ### Chakra UI theme
 
-This blog theme is based on Chakra UI. You can easily change the site color scheme, or other styles by [shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/) Chakra UI theme (`/src/@chakra-ui/gatsby-plugin/theme.ts`).
+This blog theme is based on Chakra UI. You can easily change the site color scheme, or other styles by [shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/) Chakra UI theme (`/src/@zzzkan/gatsby-theme-blog/theme/index.ts`).
 
 A example is shown below.
 
 ```ts
-// /src/@chakra-ui/gatsby-plugin/theme.ts
+// /src/@zzzkan/gatsby-theme-blog/theme/index.ts
 import { extendTheme, baseTheme } from "@chakra-ui/react"
 
 const theme = extendTheme({
