@@ -27,12 +27,6 @@ module.exports = (themeOptions) => {
     graphqlTypegen: true,
     plugins: [
       {
-        resolve: "@chakra-ui/gatsby-plugin",
-        options: {
-          resetCSS: true,
-        },
-      },
-      {
         resolve: "gatsby-source-filesystem",
         options: {
           path: contentPath,
