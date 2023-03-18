@@ -8,9 +8,10 @@ export const ToggleColorModeButton: React.FC = () => {
   return (
     <IconButton
       onClick={toggleColorMode}
-      variant={"ghost"}
       aria-label={"Toggle color mode"}
+      variant={"ghost"}
       isRound={true}
+      size={"sm"}
       fontSize={"2xl"}
       icon={colorMode === "light" ? <RiMoonLine /> : <RiSunLine />}
     />
