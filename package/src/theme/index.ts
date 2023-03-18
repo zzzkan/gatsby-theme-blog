@@ -1,37 +1,18 @@
-import { extendTheme, baseTheme } from "@chakra-ui/react"
+import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
+import colors from "./colors"
+import styles from "./styles"
+
+const config: ThemeConfig = {
+  initialColorMode: "dark",
+  useSystemColorMode: false,
+}
 
 const theme = extendTheme({
-  config: {
-    initialColorMode: "dark",
-  },
-  colors: {
-    brand: baseTheme.colors.blue,
-    base: baseTheme.colors.gray,
-  },
+  config,
   semanticTokens: {
-    colors: {
-      tint: { default: "brand.700", _dark: "brand.200" },
-      primaryText: { default: "base.800", _dark: "base.100" },
-      secondaryText: { default: "base.600", _dark: "base.400" },
-      onTintText: { default: "white", _dark: "base.900" },
-      primaryBackground: { default: "white", _dark: "base.900" },
-      secondaryBackground: {
-        default: "RGBA(0, 0, 0, 0.02)",
-        _dark: "RGBA(255, 255, 255, 0.02)",
-      },
-      highlightCode: {
-        default: "RGBA(255, 255, 255, 0.05)",
-      },
-    },
+    colors,
   },
-  styles: {
-    global: {
-      html: {
-        scrollPaddingTop: "12",
-        scrollbarGutter: "stable",
-      },
-    },
-  },
+  styles,
 })
 
 export default theme

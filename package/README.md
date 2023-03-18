@@ -139,49 +139,28 @@ module.exports = {
 
 ### Chakra UI theme
 
-This blog theme is based on Chakra UI. You can easily change the site color scheme, or other styles by [shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/) Chakra UI theme (`/src/@zzzkan/gatsby-theme-blog/theme/index.ts`).
+This blog theme is based on Chakra UI. You can easily change the site color scheme, or other styles by [shadowing](https://www.gatsbyjs.com/docs/how-to/plugins-and-themes/shadowing/) Chakra UI theme.
 
 A example is shown below.
 
 ```ts
-// /src/@zzzkan/gatsby-theme-blog/theme/index.ts
-import { extendTheme, baseTheme } from "@chakra-ui/react"
+// /src/@zzzkan/gatsby-theme-blog/theme/colors.ts
+const colors = {
+  tint: { default: "#350697", _dark: "#E0BBFE" },
+  primaryText: { default: "#4A4850", _dark: "#FBFAFC" },
+  secondaryText: { default: "#9995A3", _dark: "#D0CBD8" },
+  onTintText: { default: "white", _dark: "#232226" },
+  primaryBackground: { default: "white", _dark: "#232226" },
+  secondaryBackground: {
+    default: "RGBA(0, 0, 0, 0.02)",
+    _dark: "RGBA(255, 255, 255, 0.02)",
+  },
+  highlightCode: {
+    default: "RGBA(255, 255, 255, 0.05)",
+  },
+}
 
-const theme = extendTheme({
-  config: {
-    initialColorMode: "dark",
-  },
-  colors: {
-    brand: baseTheme.colors.blue,
-    base: baseTheme.colors.gray,
-  },
-  semanticTokens: {
-    colors: {
-      tint: { default: "brand.700", _dark: "brand.200" },
-      primaryText: { default: "base.800", _dark: "base.100" },
-      secondaryText: { default: "base.600", _dark: "base.400" },
-      onTintText: { default: "white", _dark: "base.900" },
-      primaryBackground: { default: "white", _dark: "base.900" },
-      secondaryBackground: {
-        default: "RGBA(0, 0, 0, 0.02)",
-        _dark: "RGBA(255, 255, 255, 0.02)",
-      },
-      highlightCode: {
-        default: "RGBA(255, 255, 255, 0.05)",
-      },
-    },
-  },
-  styles: {
-    global: {
-      html: {
-        scrollPaddingTop: "12",
-        scrollbarGutter: "stable",
-      },
-    },
-  },
-})
-
-export default theme
+export default colors
 ```
 
 ## Adding content
