@@ -1,5 +1,13 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
-import { Alert, Code, Container, Divider, Heading, Link } from "./components"
+import {
+  Alert,
+  Code,
+  Container,
+  Divider,
+  Heading,
+  Link,
+  Table,
+} from "./components"
 import colors from "./colors"
 import styles from "./styles"
 
@@ -17,6 +25,7 @@ const theme = extendTheme({
     Divider,
     Heading,
     Link,
+    Table,
   },
   semanticTokens: {
     colors,

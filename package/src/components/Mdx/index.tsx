@@ -92,27 +92,12 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     li: (props: object) => <ListItem as={"li"} {...props} />,
     table: (props: object) => (
       <TableContainer tabIndex={0} marginY={3}>
-        <Table as={"table"} variant={"simple"} size={"md"} {...props} />
+        <Table as={"table"} {...props} />
       </TableContainer>
     ),
     tr: (props: object) => <Tr as={"tr"} {...props} />,
-    td: (props: object) => (
-      <Td
-        as={"td"}
-        color={"primaryText"}
-        borderColor={"primaryText"}
-        {...props}
-      />
-    ),
-    th: (props: object) => (
-      <Th
-        as={"th"}
-        color={"primaryText"}
-        borderColor={"primaryText"}
-        fontWeight={"semibold"}
-        {...props}
-      />
-    ),
+    td: (props: object) => <Td as={"td"} {...props} />,
+    th: (props: object) => <Th as={"th"} {...props} />,
     pre: (props: object) => <Pre marginY={3} {...props} />,
     code: (props: object) => <Code as={"code"} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
