@@ -2,6 +2,7 @@ import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import {
   Divider,
+  Heading,
   Link,
   ListItem,
   OrderedList,
@@ -16,25 +17,26 @@ import {
 import { Blockquote } from "./Blockquote"
 import { Pre } from "./Pre"
 import { Code } from "./Code"
-import { AnchorHeading } from "./AnchorHeading"
 
 export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const components = {
     p: (props: object) => <Text marginY={3} {...props} />,
     h1: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h1"}
         color={"tint"}
-        size={"xl"}
+        size={"2xl"}
+        variant={"anchor"}
         marginY={6}
         {...props}
       />
     ),
     h2: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h2"}
         color={"tint"}
-        size={"lg"}
+        size={"xl"}
+        variant={"anchor"}
         borderBottom={"1px solid"}
         borderColor={"secondaryText"}
         marginY={6}
@@ -43,37 +45,41 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       />
     ),
     h3: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h3"}
         color={"tint"}
         size={"lg"}
+        variant={"anchor"}
         marginY={3}
         {...props}
       />
     ),
     h4: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h4"}
         color={"tint"}
         size={"md"}
+        variant={"anchor"}
         marginY={3}
         {...props}
       />
     ),
     h5: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h5"}
         color={"tint"}
         size={"sm"}
+        variant={"anchor"}
         marginY={3}
         {...props}
       />
     ),
     h6: (props: object) => (
-      <AnchorHeading
+      <Heading
         as={"h6"}
         color={"tint"}
         size={"xs"}
+        variant={"anchor"}
         marginY={3}
         {...props}
       />
