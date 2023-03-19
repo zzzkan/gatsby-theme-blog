@@ -1,6 +1,7 @@
 import React from "react"
 import { MDXProvider } from "@mdx-js/react"
 import {
+  Code,
   Divider,
   Heading,
   Link,
@@ -16,7 +17,6 @@ import {
 } from "@chakra-ui/react"
 import { Blockquote } from "./Blockquote"
 import { Pre } from "./Pre"
-import { Code } from "./Code"
 
 export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const components = {
@@ -129,7 +129,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         {...props}
       />
     ),
-    code: (props: object) => <Code background={"reset"} {...props} />,
+    code: (props: object) => <Code as={"code"} {...props} />,
     em: (props: object) => <Text as={"em"} {...props} />,
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
