@@ -7,6 +7,7 @@ import {
   Heading,
   Link,
   Table,
+  Tag,
 } from "./components"
 import colors from "./colors"
 import styles from "./styles"
@@ -26,6 +27,7 @@ const theme = extendTheme({
     Heading,
     Link,
     Table,
+    Tag,
   },
   semanticTokens: {
     colors,
