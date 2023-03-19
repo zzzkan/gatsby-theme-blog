@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Container, Flex, Spacer } from "@chakra-ui/react"
+import { Box, Flex, Spacer } from "@chakra-ui/react"
 import { Title } from "../Title"
 import { ToggleColorModeButton } from "../ToggleColorModeButton"
 import { type SiteMetadataType } from "../../types/siteMetadataType"
@@ -13,16 +13,14 @@ export const Header: React.FC<Props> = ({ title }) => {
       position={"sticky"}
       top={0}
       zIndex={"sticky"}
-      background={"inherit"}
+      background={"primaryBackground"}
       marginBottom={9}
     >
-      <Container maxWidth={"container.lg"}>
-        <Flex alignItems={"center"}>
-          <Title title={title} />
-          <Spacer />
-          <ToggleColorModeButton />
-        </Flex>
-      </Container>
+      <Flex alignItems={"center"}>
+        <Title title={title} />
+        <Spacer />
+        <ToggleColorModeButton />
+      </Flex>
     </Box>
   )
 }

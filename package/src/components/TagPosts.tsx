@@ -20,7 +20,7 @@ export const TagPosts: React.FC<Props> = ({
 }) => {
   return (
     <Box as={"section"}>
-      <Heading as={"h1"} size={"xl"} textAlign={"center"} marginBottom={3}>
+      <Heading as={"h1"} size={"2xl"} textAlign={"center"} marginBottom={3}>
         Tag - {name}({count})
       </Heading>
       <Center marginBottom={3}>

@@ -34,27 +34,20 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`Move to ${title}`}
+          aria-label={`Move to ${slug}`}
           _hover={{ textDecoration: "none" }}
         >
           <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
-            <Box _hover={{ transform: "scale(1.02)" }}>
-              <GatsbyImage
-                image={image}
-                alt={featuredImageAlt ?? "Featured image"}
-              />
-            </Box>
+            <GatsbyImage
+              image={image}
+              alt={featuredImageAlt ?? `Featured image for ${slug}`}
+            />
           </Box>
         </Link>
       )}
       <Stack spacing={0}>
         {tags != null && <Tags tags={tags} />}
-        <Link
-          as={GatsbyLink}
-          to={slug}
-          aria-label={`Move to ${title}`}
-          _hover={{ textDecoration: "none" }}
-        >
+        <Link as={GatsbyLink} to={slug} aria-label={`Move to ${slug}`}>
           <Heading as={"div"} size={"md"}>
             {title}
           </Heading>

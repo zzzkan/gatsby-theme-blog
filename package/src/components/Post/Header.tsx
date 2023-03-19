@@ -33,7 +33,7 @@ export const Header: React.FC<Props> = ({
     <Box as={"header"} marginBottom={9}>
       <Stack spacing={0} marginBottom={3}>
         {tags != null && <Tags tags={tags} />}
-        <Heading as={"h1"} size={"xl"}>
+        <Heading as={"h1"} size={"2xl"}>
           {title}
         </Heading>
         <PostMetadata
