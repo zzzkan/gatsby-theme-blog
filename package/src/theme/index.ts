@@ -1,6 +1,7 @@
 import { extendTheme, type ThemeConfig } from "@chakra-ui/react"
 import {
   Alert,
+  Button,
   Code,
   Container,
   Divider,
@@ -21,6 +22,7 @@ const theme = extendTheme({
   config,
   components: {
     Alert,
+    Button,
     Code,
     Container,
     Divider,

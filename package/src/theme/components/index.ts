@@ -1,4 +1,5 @@
 export { Alert } from "./Alert"
+export { Button } from "./Button"
 export { Code } from "./Code"
 export { Container } from "./Container"
 export { Divider } from "./Divider"
