@@ -10,8 +10,4 @@ const baseStyle = defineStyle({
 
 export const Code = defineStyleConfig({
   baseStyle,
-  defaultProps: {
-    variant: "",
-    colorScheme: "",
-  },
 })

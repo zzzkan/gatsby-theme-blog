@@ -52,19 +52,14 @@ const sizes = {
     th: {
       px: "4",
       py: "1",
-      lineHeight: "4",
-      fontSize: "xs",
+      fontSize: "sm",
+      lineHeight: "3",
     },
     td: {
       px: "4",
       py: "2",
       fontSize: "sm",
       lineHeight: "4",
-    },
-    caption: {
-      px: "4",
-      py: "2",
-      fontSize: "xs",
     },
   }),
   md: definePartsStyle({
@@ -72,17 +67,11 @@ const sizes = {
       px: "6",
       py: "3",
       lineHeight: "4",
-      fontSize: "xs",
     },
     td: {
       px: "6",
       py: "4",
       lineHeight: "5",
-    },
-    caption: {
-      px: "6",
-      py: "2",
-      fontSize: "sm",
     },
   }),
   lg: definePartsStyle({
@@ -90,17 +79,11 @@ const sizes = {
       px: "8",
       py: "4",
       lineHeight: "5",
-      fontSize: "sm",
     },
     td: {
       px: "8",
       py: "5",
       lineHeight: "6",
-    },
-    caption: {
-      px: "6",
-      py: "2",
-      fontSize: "md",
     },
   }),
 }
