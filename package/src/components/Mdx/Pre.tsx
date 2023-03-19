@@ -1,13 +1,12 @@
 import React from "react"
 import { Box, type BoxProps } from "@chakra-ui/react"
 
-export const Pre: React.FC<
-  BoxProps & { highlightCodeColor: string; lineColor: string }
-> = (props) => {
-  const { highlightCodeColor, lineColor, ...rest } = props
+export const Pre: React.FC<BoxProps> = (props) => {
+  const { ...rest } = props
   return (
     <Box
       as={"pre"}
+      rounded={"sm"}
       tabIndex={0}
       sx={{
         overflowX: "auto",
@@ -34,11 +33,11 @@ export const Pre: React.FC<
               width: 1,
               marginRight: 5,
               textAlign: "right",
-              color: lineColor,
+              color: "secondaryText",
             },
           },
           ".highlighted-line, .highlighted-word": {
-            backgroundColor: highlightCodeColor,
+            backgroundColor: "highlightCode",
             rounded: "sm",
           },
         },
