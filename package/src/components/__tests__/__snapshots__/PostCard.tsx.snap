@@ -30,15 +30,7 @@ exports[`PostCard component > snapshot 1`] = `
   overflow: hidden;
 }
 
-.emotion-3:hover,
-.emotion-3[data-hover] {
-  -webkit-transform: scale(1.02);
-  -moz-transform: scale(1.02);
-  -ms-transform: scale(1.02);
-  transform: scale(1.02);
-}
-
-.emotion-4 {
+.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -48,7 +40,7 @@ exports[`PostCard component > snapshot 1`] = `
   flex-direction: column;
 }
 
-.emotion-4>*:not(style)~*:not(style) {
+.emotion-3>*:not(style)~*:not(style) {
   margin-top: 0px;
   -webkit-margin-end: 0px;
   margin-inline-end: 0px;
@@ -61,36 +53,32 @@ exports[`PostCard component > snapshot 1`] = `
     class="emotion-0"
   >
     <a
-      aria-label="Move to title"
+      aria-label="Move to /slug"
       class="chakra-link emotion-1"
       href="/slug"
     >
       <div
         class="emotion-2"
       >
-        <div
-          class="emotion-3"
-        >
-          <img
-            alt="featuredImageAlt"
-            src="featuredImage"
-          />
-        </div>
+        <img
+          alt="featuredImageAlt"
+          src="featuredImage"
+        />
       </div>
     </a>
     <div
-      class="chakra-stack emotion-4"
+      class="chakra-stack emotion-3"
     >
       <div>
         Tags
       </div>
       <a
-        aria-label="Move to title"
-        class="chakra-link emotion-1"
+        aria-label="Move to /slug"
+        class="chakra-link emotion-4"
         href="/slug"
       >
         <div
-          class="chakra-heading emotion-6"
+          class="chakra-heading emotion-4"
         >
           title
         </div>
