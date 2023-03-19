@@ -103,15 +103,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
     em: (props: object) => <Text as={"em"} {...props} />,
     strong: (props: object) => <Text as={"strong"} {...props} />,
     delete: (props: object) => <Text as={"del"} {...props} />,
-    hr: (props: object) => (
-      <Divider
-        as={"hr"}
-        border={"1px solid"}
-        borderColor={"secondaryText"}
-        marginY={6}
-        {...props}
-      />
-    ),
+    hr: (props: object) => <Divider as={"hr"} marginY={6} {...props} />,
     a: (props: object) => <Link color={"tint"} {...props} />,
     input: (props: object) => <input aria-label={"input"} {...props} />,
   }
