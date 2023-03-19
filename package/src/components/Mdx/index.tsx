@@ -85,14 +85,7 @@ export const Mdx: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       />
     ),
     blockquote: (props: object) => (
-      <Blockquote
-        background={"secondaryBackground"}
-        borderColor={"tint"}
-        rounded={"sm"}
-        marginY={3}
-        paddingY={0}
-        {...props}
-      />
+      <Blockquote marginY={3} paddingY={0} {...props} />
     ),
     ul: (props: object) => <UnorderedList as={"ul"} {...props} />,
     ol: (props: object) => <OrderedList as={"ol"} {...props} />,
