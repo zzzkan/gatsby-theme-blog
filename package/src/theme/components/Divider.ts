@@ -2,16 +2,15 @@ import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system"
 
 const baseStyle = defineStyle({
   border: "none",
-  borderWidth: "1px",
   borderColor: "secondaryText",
 })
 
 const variantSolid = defineStyle({
-  borderTop: "solid",
+  borderTop: "solid 2px",
 })
 
 const variantDashed = defineStyle({
-  borderTop: "dashed",
+  borderTop: "dashed 2px",
 })
 
 const variants = {
