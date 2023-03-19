@@ -57,6 +57,7 @@ const variantAnchor = defineStyle({
 
 const variants = {
   anchor: variantAnchor,
+  unstyled: defineStyle({}),
 }
 
 export const Heading = defineStyleConfig({
@@ -65,5 +66,6 @@ export const Heading = defineStyleConfig({
   variants,
   defaultProps: {
     size: "2xl",
+    variant: "unstyled",
   },
 })
