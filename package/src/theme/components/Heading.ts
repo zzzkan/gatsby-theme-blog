@@ -40,32 +40,10 @@ const sizes = {
   }),
 }
 
-const variantAnchor = defineStyle({
-  ".anchor": {
-    visibility: "hidden",
-    color: "inherit",
-    fontWeight: "normal",
-    marginLeft: "1",
-  },
-  _hover: {
-    ".anchor": {
-      visibility: "visible",
-      textDecoration: "none",
-    },
-  },
-})
-
-const variants = {
-  anchor: variantAnchor,
-  unstyled: defineStyle({}),
-}
-
 export const Heading = defineStyleConfig({
   baseStyle,
   sizes,
-  variants,
   defaultProps: {
     size: "2xl",
-    variant: "unstyled",
   },
 })

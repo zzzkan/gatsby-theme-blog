@@ -51,31 +51,6 @@ module.exports = (themeOptions) => {
           mdxOptions: {
             remarkPlugins: [require("remark-gfm")],
             rehypePlugins: [
-              wrapESMPlugin("rehype-external-links"),
-              wrapESMPlugin("rehype-slug"),
-              [
-                wrapESMPlugin("rehype-autolink-headings"),
-                {
-                  behavior: "append",
-                  properties: {
-                    className: "anchor",
-                    ariaHidden: true,
-                    tabIndex: -1,
-                  },
-                  content: [
-                    {
-                      type: "element",
-                      tagName: "span",
-                      children: [
-                        {
-                          type: "text",
-                          value: "#",
-                        },
-                      ],
-                    },
-                  ],
-                },
-              ],
               [
                 wrapESMPlugin("rehype-pretty-code"),
                 {
