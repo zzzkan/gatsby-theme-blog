@@ -45,7 +45,6 @@
     "gatsby-transformer-sharp": "^5.0.0",
     "reading-time": "^1.5.0",
     "rehype-autolink-headings": "^6.1.1",
-    "rehype-external-links": "^2.0.1",
     "rehype-pretty-code": "^0.9.0",
     "rehype-slug": "^5.1.0",
     "remark-gfm": "^1",
