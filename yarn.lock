@@ -16523,14 +16523,14 @@ __metadata:
   linkType: hard
 
 "shiki@npm:^0.14.0":
-  version: 0.14.0
-  resolution: "shiki@npm:0.14.0"
+  version: 0.14.1
+  resolution: "shiki@npm:0.14.1"
   dependencies:
     ansi-sequence-parser: ^1.1.0
     jsonc-parser: ^3.2.0
     vscode-oniguruma: ^1.7.0
     vscode-textmate: ^8.0.0
-  checksum: b2861536ae361237a6ecf6fd543a4880b16dc0c3fa8f27ec99b4e7418972197ab149982ad38ec6f042919cb077ba4b79bc4b628ba0d83858f81c1142deac9d0c
+  checksum: b19ea337cc84da69d99ca39d109f82946e0c56c11cc4c67b3b91cc14a9479203365fd0c9e0dd87e908f493ab409dc6f1849175384b6ca593ce7da884ae1edca2
   languageName: node
   linkType: hard
 
