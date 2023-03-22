@@ -39,7 +39,7 @@ exports[`PostCard component > snapshot 1`] = `
   margin-inline-start: 0px;
 }
 
-<article
+<div
     class="emotion-0"
   >
     <a
@@ -73,6 +73,6 @@ exports[`PostCard component > snapshot 1`] = `
         PostMetadata
       </div>
     </div>
-  </article>
+  </div>
 </DocumentFragment>
 `;

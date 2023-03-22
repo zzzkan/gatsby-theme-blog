@@ -1,5 +1,5 @@
 import React from "react"
-import { Box, Center, Heading } from "@chakra-ui/react"
+import { Center, Heading } from "@chakra-ui/react"
 import { Pagination } from "./Pagination"
 import { PostCardList } from "../components/PostCardList"
 import { type PaginationType } from "../types/paginationType"
@@ -15,7 +15,7 @@ export const AllPosts: React.FC<Props> = ({
   totalPage,
 }) => {
   return (
-    <Box as={"section"}>
+    <>
       <Heading as={"h1"} size={"2xl"} textAlign={"center"} marginBottom={3}>
         All Posts
       </Heading>
@@ -29,6 +29,6 @@ export const AllPosts: React.FC<Props> = ({
           totalPage={totalPage}
         />
       </Center>
-    </Box>
+    </>
   )
 }

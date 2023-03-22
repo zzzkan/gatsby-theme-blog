@@ -22,7 +22,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
 }) => {
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
-    <Box as={"article"} boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
+    <Box boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
       {image != null && (
         <Link
           as={GatsbyLink}
