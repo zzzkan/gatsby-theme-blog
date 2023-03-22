@@ -11,12 +11,12 @@ type Props = {
 export const Post: React.FC<Props> = ({ children, post }) => {
   if (post == null) return <Box>Not Found ...</Box>
   return (
-    <>
+    <Box as={"article"}>
       <Header {...post} />
       <Box as={"section"} marginBottom={9}>
         <Mdx>{children}</Mdx>
       </Box>
       <Footer {...post} />
-    </>
+    </Box>
   )
 }
