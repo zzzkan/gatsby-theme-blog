@@ -22,13 +22,15 @@ export const AllPosts: React.FC<Props> = ({
       <Center marginBottom={3}>
         <PostCardList posts={posts} />
       </Center>
-      <Center>
-        <Pagination
-          currentPath={currentPath}
-          currentPage={currentPage}
-          totalPage={totalPage}
-        />
-      </Center>
+      {totalPage > 1 && (
+        <Center>
+          <Pagination
+            currentPath={currentPath}
+            currentPage={currentPage}
+            totalPage={totalPage}
+          />
+        </Center>
+      )}
     </>
   )
 }
