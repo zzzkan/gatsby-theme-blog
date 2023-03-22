@@ -8,19 +8,16 @@ type Props = Pick<
 >
 
 export const Footer: React.FC<Props> = ({ relatedPosts }) => {
+  if (relatedPosts == null || relatedPosts.length === 0) return null
   return (
     <Box as={"footer"}>
-      {relatedPosts != null && relatedPosts.length > 0 && (
-        <Box>
-          <Divider as={"hr"} marginBottom={3} />
-          <Heading as={"div"} size={"md"} textAlign={"center"} marginBottom={3}>
-            Read next
-          </Heading>
-          <Center>
-            <PostCardList posts={relatedPosts} />
-          </Center>
-        </Box>
-      )}
+      <Divider as={"hr"} marginBottom={3} />
+      <Heading as={"div"} size={"md"} textAlign={"center"} marginBottom={3}>
+        Read next
+      </Heading>
+      <Center>
+        <PostCardList posts={relatedPosts} />
+      </Center>
     </Box>
   )
 }
