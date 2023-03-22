@@ -22,14 +22,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
 }) => {
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
-    <Box
-      as={"article"}
-      boxShadow={"md"}
-      rounded={"xl"}
-      paddingX={6}
-      paddingY={3}
-      overflow={"hidden"}
-    >
+    <Box as={"article"} boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
       {image != null && (
         <Link
           as={GatsbyLink}
@@ -37,15 +30,13 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
           aria-label={`Move to ${slug}`}
           _hover={{ textDecoration: "none" }}
         >
-          <Box marginTop={-3} marginX={-6} marginBottom={3} overflow={"hidden"}>
-            <GatsbyImage
-              image={image}
-              alt={featuredImageAlt ?? `Featured image for ${slug}`}
-            />
-          </Box>
+          <GatsbyImage
+            image={image}
+            alt={featuredImageAlt ?? `Featured image for ${slug}`}
+          />
         </Link>
       )}
-      <Stack spacing={0}>
+      <Stack spacing={0} paddingX={6} paddingY={3}>
         {tags != null && <Tags tags={tags} />}
         <Link as={GatsbyLink} to={slug} aria-label={`Move to ${slug}`}>
           <Heading as={"div"} size={"md"}>
@@ -74,7 +65,11 @@ export const query = graphql`
     updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
     featuredImage {
       childImageSharp {
-        gatsbyImageData(aspectRatio: $featuredImageAspectRatio, quality: 50)
+        gatsbyImageData(
+          layout: FULL_WIDTH
+          aspectRatio: $featuredImageAspectRatio
+          quality: 50
+        )
       }
     }
     featuredImageAlt

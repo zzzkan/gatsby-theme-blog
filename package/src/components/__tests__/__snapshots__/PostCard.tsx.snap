@@ -5,12 +5,6 @@ exports[`PostCard component > snapshot 1`] = `
   .emotion-0 {
   box-shadow: md;
   border-radius: xl;
-  -webkit-padding-start: 6px;
-  padding-inline-start: 6px;
-  -webkit-padding-end: 6px;
-  padding-inline-end: 6px;
-  padding-top: 3px;
-  padding-bottom: 3px;
   overflow: hidden;
 }
 
@@ -21,16 +15,6 @@ exports[`PostCard component > snapshot 1`] = `
 }
 
 .emotion-2 {
-  margin-top: -3px;
-  -webkit-margin-start: -6px;
-  margin-inline-start: -6px;
-  -webkit-margin-end: -6px;
-  margin-inline-end: -6px;
-  margin-bottom: 3px;
-  overflow: hidden;
-}
-
-.emotion-3 {
   display: -webkit-box;
   display: -webkit-flex;
   display: -ms-flexbox;
@@ -38,9 +22,15 @@ exports[`PostCard component > snapshot 1`] = `
   -webkit-flex-direction: column;
   -ms-flex-direction: column;
   flex-direction: column;
+  -webkit-padding-start: 6px;
+  padding-inline-start: 6px;
+  -webkit-padding-end: 6px;
+  padding-inline-end: 6px;
+  padding-top: 3px;
+  padding-bottom: 3px;
 }
 
-.emotion-3>*:not(style)~*:not(style) {
+.emotion-2>*:not(style)~*:not(style) {
   margin-top: 0px;
   -webkit-margin-end: 0px;
   margin-inline-end: 0px;
@@ -57,28 +47,24 @@ exports[`PostCard component > snapshot 1`] = `
       class="chakra-link emotion-1"
       href="/slug"
     >
-      <div
-        class="emotion-2"
-      >
-        <img
-          alt="featuredImageAlt"
-          src="featuredImage"
-        />
-      </div>
+      <img
+        alt="featuredImageAlt"
+        src="featuredImage"
+      />
     </a>
     <div
-      class="chakra-stack emotion-3"
+      class="chakra-stack emotion-2"
     >
       <div>
         Tags
       </div>
       <a
         aria-label="Move to /slug"
-        class="chakra-link emotion-4"
+        class="chakra-link emotion-3"
         href="/slug"
       >
         <div
-          class="chakra-heading emotion-4"
+          class="chakra-heading emotion-3"
         >
           title
         </div>
