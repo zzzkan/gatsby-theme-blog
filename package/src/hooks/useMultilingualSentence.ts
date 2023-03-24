@@ -8,13 +8,13 @@ export const useMultilingualSentence = (): multilingualSentenceType => {
       movePageSentence: (str: string) => `ページを遷移します。 (${str})`,
       featuredImageSentence: (str?: string) =>
         str == null ? "アイキャッチ画像" : `アイキャッチ画像 (${str})`,
-      toggleColorModeSentence: "カラーモードを変更する。",
+      toggleColorModeSentence: "カラーモードを変更します。",
     }
   }
   return {
-    movePageSentence: (str: string) => `Move page (${str})`,
+    movePageSentence: (str: string) => `Move a page. (${str})`,
     featuredImageSentence: (str?: string) =>
       str == null ? "Featured image" : `Featured image (${str})`,
-    toggleColorModeSentence: "Toggle color mode",
+    toggleColorModeSentence: "Toggle color mode.",
   }
 }
