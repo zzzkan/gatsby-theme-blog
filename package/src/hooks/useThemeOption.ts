@@ -8,7 +8,6 @@ export const useThemeOption = (): ThemeOptionType => {
         links {
           name
           url
-          label
         }
       }
     }

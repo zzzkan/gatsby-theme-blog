@@ -32,22 +32,18 @@ describe("ExternalLinks component", () => {
           {
             name: "Profile",
             url: "/profile",
-            label: "Profile Label",
           },
           {
             name: "RSS",
             url: "/rss",
-            label: "RSS Label",
           },
           {
             name: "GitHub",
             url: "/github",
-            label: "GitHub Label",
           },
           {
             name: "Twitter",
             url: "/twitter",
-            label: "Twitter Label",
           },
         ]}
       />
@@ -74,7 +70,7 @@ describe("ExternalLinks component", () => {
     expect(getByRole("link")).toHaveAttribute("href", "/profile")
   })
 
-  test("should render links.name as label", () => {
+  test("should render links.name", () => {
     const { getByLabelText } = render(
       <ExternalLinks
         links={[
@@ -86,22 +82,6 @@ describe("ExternalLinks component", () => {
       />
     )
     expect(getByLabelText("Move to Profile")).toBeInTheDocument()
-  })
-
-  test("should render links.label as label", () => {
-    const { queryByLabelText } = render(
-      <ExternalLinks
-        links={[
-          {
-            name: "Profile",
-            url: "/",
-            label: "Profile Label",
-          },
-        ]}
-      />
-    )
-    expect(queryByLabelText("Move to Profile")).toBeNull()
-    expect(queryByLabelText("Move to Profile Label")).toBeInTheDocument()
   })
 
   test("should render FaLink", () => {
