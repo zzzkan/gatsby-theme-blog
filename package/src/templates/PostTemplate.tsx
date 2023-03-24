@@ -8,10 +8,12 @@ const PostTemplate: React.FC<PageProps<Queries.PostTemplateQuery>> = ({
   data,
   children,
 }) => {
-  const post = data.post
+  const { post, previous, next } = data
   return (
     <Layout>
-      <Post post={post}>{children}</Post>
+      <Post post={post} previous={previous} next={next}>
+        {children}
+      </Post>
     </Layout>
   )
 }
@@ -45,6 +47,8 @@ export const Head: HeadFC<Queries.PostTemplateQuery> = ({ location, data }) => {
 export const query = graphql`
   query PostTemplate(
     $id: String!
+    $previousId: String
+    $nextId: String
     $featuredImageAspectRatio: Float!
     $dateFormatString: String!
   ) {
@@ -78,6 +82,14 @@ export const query = graphql`
       relatedPosts {
         ...PostCard
       }
+    }
+    previous: post(id: { eq: $previousId }) {
+      slug
+      title
+    }
+    next: post(id: { eq: $nextId }) {
+      slug
+      title
     }
   }
 `

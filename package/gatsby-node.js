@@ -231,16 +231,15 @@ exports.createPages = async ({ graphql, actions, reporter }, themeOptions) => {
 
   const allPosts = result.data.allPosts.nodes
   allPosts.forEach((post, index) => {
-    const previous =
-      index === allPosts.length - 1 ? undefined : allPosts[index + 1]
-    const next = index === 0 ? undefined : allPosts[index - 1]
+    const previous = index === allPosts.length - 1 ? null : allPosts[index + 1]
+    const next = index === 0 ? null : allPosts[index - 1]
     createPage({
       path: post.slug,
       component: `${postTemplate}?__contentFilePath=${post.filePath}`,
       context: {
         id: post.id,
-        previousId: previous ? previous.id : undefined,
-        nextId: next ? next.id : undefined,
+        previousId: previous ? previous.id : null,
+        nextId: next ? next.id : null,
         featuredImageAspectRatio,
         dateFormatString,
       },
