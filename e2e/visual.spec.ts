@@ -16,7 +16,7 @@ test.describe("Visual Regression Testing", () => {
         fullPage: true,
       })
       const getToggleColorModeButton = page.getByRole("button", {
-        name: "Toggle color mode",
+        name: "カラーモードを変更します。",
       })
       await getToggleColorModeButton.click()
       await expect(page).toHaveScreenshot({
