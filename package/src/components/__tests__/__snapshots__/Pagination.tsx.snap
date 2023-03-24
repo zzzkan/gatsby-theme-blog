@@ -34,21 +34,21 @@ exports[`Pagination component > snapshot 1`] = `
     class="chakra-stack emotion-0"
   >
     <a
-      aria-label="Move page (/4)"
+      aria-label="Move a page. (/4)"
       class="chakra-link emotion-1"
       href="/4"
     >
       &lt;
     </a>
     <a
-      aria-label="Move page (/3)"
+      aria-label="Move a page. (/3)"
       class="chakra-link emotion-1"
       href="/3"
     >
       3
     </a>
     <a
-      aria-label="Move page (/4)"
+      aria-label="Move a page. (/4)"
       class="chakra-link emotion-1"
       href="/4"
     >
@@ -60,21 +60,21 @@ exports[`Pagination component > snapshot 1`] = `
       5
     </span>
     <a
-      aria-label="Move page (/6)"
+      aria-label="Move a page. (/6)"
       class="chakra-link emotion-1"
       href="/6"
     >
       6
     </a>
     <a
-      aria-label="Move page (/7)"
+      aria-label="Move a page. (/7)"
       class="chakra-link emotion-1"
       href="/7"
     >
       7
     </a>
     <a
-      aria-label="Move page (/6)"
+      aria-label="Move a page. (/6)"
       class="chakra-link emotion-1"
       href="/6"
     >

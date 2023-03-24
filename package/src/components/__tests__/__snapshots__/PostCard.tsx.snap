@@ -43,7 +43,7 @@ exports[`PostCard component > snapshot 1`] = `
     class="emotion-0"
   >
     <a
-      aria-label="Move page (/slug)"
+      aria-label="Move a page. (/slug)"
       class="chakra-link emotion-1"
       href="/slug"
     >
@@ -59,7 +59,7 @@ exports[`PostCard component > snapshot 1`] = `
         Tags
       </div>
       <a
-        aria-label="Move page (/slug)"
+        aria-label="Move a page. (/slug)"
         class="chakra-link emotion-3"
         href="/slug"
       >
