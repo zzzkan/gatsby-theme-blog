@@ -16,7 +16,6 @@ type Props = {
   readonly links: Array<{
     readonly name: string
     readonly url: string
-    readonly label?: string
   }>
 }
 
@@ -31,7 +30,7 @@ export const ExternalLinks: React.FC<Props> = ({ links }) => {
           href={link.url}
           target={"_blank"}
           rel={"noopener noreferrer nofollow"}
-          aria-label={`Move to ${link.label ?? link.name}`}
+          aria-label={`Move to ${link.name}`}
           variant={"ghost"}
           isRound={true}
           size={"sm"}

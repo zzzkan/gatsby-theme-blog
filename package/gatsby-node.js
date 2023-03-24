@@ -83,7 +83,6 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
     type Link {
       name: String!
       url: String!
-      label: String
     }
 
   `)
