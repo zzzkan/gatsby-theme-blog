@@ -161,7 +161,7 @@ describe("PostCard component", () => {
         featuredImageAlt={null}
       />
     )
-    expect(getByAltText("Featured image for /slug")).toBeInTheDocument()
+    expect(getByAltText("Featured image (/slug)")).toBeInTheDocument()
   })
 
   test("should render custom alt text if featuredImageAlt is not null", () => {

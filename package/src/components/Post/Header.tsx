@@ -3,6 +3,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Box, Heading, Stack } from "@chakra-ui/react"
 import { PostMetadata } from "../PostMetadata"
 import { Tags } from "../Tags"
+import { useMultilingualSentence } from "../../hooks/useMultilingualSentence"
 
 type Props = Pick<
   NonNullable<Queries.PostTemplateQuery["post"]>,
@@ -28,6 +29,7 @@ export const Header: React.FC<Props> = ({
   featuredImage,
   tags,
 }) => {
+  const { featuredImageSentence } = useMultilingualSentence()
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box as={"header"} marginBottom={9}>
@@ -45,7 +47,10 @@ export const Header: React.FC<Props> = ({
         />
       </Stack>
       {image != null && (
-        <GatsbyImage image={image} alt={featuredImageAlt ?? "Featured image"} />
+        <GatsbyImage
+          image={image}
+          alt={featuredImageAlt ?? featuredImageSentence()}
+        />
       )}
     </Box>
   )

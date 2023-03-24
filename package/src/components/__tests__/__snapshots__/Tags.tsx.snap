@@ -70,7 +70,7 @@ exports[`Tags component > snapshot 1`] = `
         class="chakra-wrap__listitem emotion-2"
       >
         <a
-          aria-label="Move to tag page (tag1)"
+          aria-label="Move page (/tags/tag1)"
           class="chakra-link emotion-3"
           href="/tags/tag1"
         >
@@ -85,7 +85,7 @@ exports[`Tags component > snapshot 1`] = `
         class="chakra-wrap__listitem emotion-2"
       >
         <a
-          aria-label="Move to tag page (tag2)"
+          aria-label="Move page (/tags/tag2)"
           class="chakra-link emotion-3"
           href="/tags/tag2"
         >
@@ -100,7 +100,7 @@ exports[`Tags component > snapshot 1`] = `
         class="chakra-wrap__listitem emotion-2"
       >
         <a
-          aria-label="Move to tag page (tag3)"
+          aria-label="Move page (/tags/tag3)"
           class="chakra-link emotion-3"
           href="/tags/tag3"
         >
@@ -115,7 +115,7 @@ exports[`Tags component > snapshot 1`] = `
         class="chakra-wrap__listitem emotion-2"
       >
         <a
-          aria-label="Move to tag page (tag4)"
+          aria-label="Move page (/tags/tag4)"
           class="chakra-link emotion-3"
           href="/tags/tag4"
         >
@@ -130,7 +130,7 @@ exports[`Tags component > snapshot 1`] = `
         class="chakra-wrap__listitem emotion-2"
       >
         <a
-          aria-label="Move to tag page (tag5)"
+          aria-label="Move page (/tags/tag5)"
           class="chakra-link emotion-3"
           href="/tags/tag5"
         >

@@ -81,7 +81,7 @@ describe("ExternalLinks component", () => {
         ]}
       />
     )
-    expect(getByLabelText("Move to Profile")).toBeInTheDocument()
+    expect(getByLabelText("Move page (Profile)")).toBeInTheDocument()
   })
 
   test("should render FaLink", () => {

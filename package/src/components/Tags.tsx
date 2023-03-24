@@ -1,6 +1,7 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Link, Tag, Wrap, WrapItem } from "@chakra-ui/react"
+import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
 
 type Props = {
   readonly tags: ReadonlyArray<{
@@ -10,6 +11,7 @@ type Props = {
 }
 
 export const Tags: React.FC<Props> = ({ tags }) => {
+  const { movePageSentence } = useMultilingualSentence()
   if (tags.length === 0) return null
   return (
     <Wrap>
@@ -18,7 +20,7 @@ export const Tags: React.FC<Props> = ({ tags }) => {
           <Link
             as={GatsbyLink}
             to={tag.slug}
-            aria-label={`Move to tag page (${tag.name})`}
+            aria-label={movePageSentence(tag.slug)}
             _hover={{ textDecoration: "none" }}
           >
             <Tag

@@ -1,6 +1,7 @@
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import { Box, HStack, Link } from "@chakra-ui/react"
+import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
 import { type PaginationType } from "../types/paginationType"
 
 type Props = PaginationType
@@ -10,6 +11,7 @@ export const Pagination: React.FC<Props> = ({
   currentPage,
   totalPage,
 }) => {
+  const { movePageSentence } = useMultilingualSentence()
   const width = 2
   const pages = [...Array(2 * width + 1)]
     .map((_, i) => i + currentPage - width)
@@ -25,7 +27,7 @@ export const Pagination: React.FC<Props> = ({
         <Link
           as={GatsbyLink}
           to={path(currentPage - 1)}
-          aria-label={"Move to previous page"}
+          aria-label={movePageSentence(path(currentPage - 1))}
         >
           {"<"}
         </Link>
@@ -43,7 +45,7 @@ export const Pagination: React.FC<Props> = ({
             key={page}
             as={GatsbyLink}
             to={path(page)}
-            aria-label={`Move to ${page} page`}
+            aria-label={movePageSentence(path(page))}
           >
             {page}
           </Link>
@@ -53,7 +55,7 @@ export const Pagination: React.FC<Props> = ({
         <Link
           as={GatsbyLink}
           to={path(currentPage + 1)}
-          aria-label={"Move to next page"}
+          aria-label={movePageSentence(path(currentPage + 1))}
         >
           {">"}
         </Link>
