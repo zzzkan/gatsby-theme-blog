@@ -1,3 +1,6 @@
+// Disable some eslint rules because Queries type is undefined in CI
+/* eslint-disable @typescript-eslint/restrict-template-expressions */
+
 import React from "react"
 import { Link as GatsbyLink } from "gatsby"
 import {
