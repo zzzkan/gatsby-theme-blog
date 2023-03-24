@@ -8,7 +8,7 @@ type Props = {
   readonly children: React.ReactNode
 } & Queries.PostTemplateQuery
 
-export const Post: React.FC<Props> = ({ children, post }) => {
+export const Post: React.FC<Props> = ({ children, post, previous, next }) => {
   if (post == null) return <Box>Not Found ...</Box>
   return (
     <Box as={"article"}>
@@ -16,7 +16,11 @@ export const Post: React.FC<Props> = ({ children, post }) => {
       <Box as={"section"} marginBottom={9}>
         <Mdx>{children}</Mdx>
       </Box>
-      <Footer {...post} />
+      <Footer
+        relatedPosts={post.relatedPosts}
+        previous={previous}
+        next={next}
+      />
     </Box>
   )
 }
