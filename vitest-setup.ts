@@ -14,6 +14,13 @@ vi.mock("gatsby", () => {
       })
     ),
     graphql: vi.fn(),
+    useStaticQuery: vi.fn().mockImplementation(() => {
+      return {
+        themeOption: {
+          lang: "en",
+        },
+      }
+    }),
   }
 })
 

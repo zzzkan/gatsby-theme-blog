@@ -7,6 +7,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Box, Heading, Stack, Link } from "@chakra-ui/react"
 import { PostMetadata } from "./PostMetadata"
 import { Tags } from "./Tags"
+import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
 
 export const PostCard: React.FC<Queries.PostCardFragment> = ({
   slug,
@@ -20,6 +21,7 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
   featuredImage,
   tags,
 }) => {
+  const { movePageSentence, featuredImageSentence } = useMultilingualSentence()
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
@@ -27,18 +29,18 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
         <Link
           as={GatsbyLink}
           to={slug}
-          aria-label={`Move to ${slug}`}
+          aria-label={movePageSentence(slug)}
           _hover={{ textDecoration: "none" }}
         >
           <GatsbyImage
             image={image}
-            alt={featuredImageAlt ?? `Featured image for ${slug}`}
+            alt={featuredImageAlt ?? featuredImageSentence(slug)}
           />
         </Link>
       )}
       <Stack spacing={0} paddingX={6} paddingY={3}>
         {tags != null && <Tags tags={tags} />}
-        <Link as={GatsbyLink} to={slug} aria-label={`Move to ${slug}`}>
+        <Link as={GatsbyLink} to={slug} aria-label={movePageSentence(slug)}>
           <Heading as={"div"} size={"md"}>
             {title}
           </Heading>

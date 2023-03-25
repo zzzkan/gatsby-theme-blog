@@ -5,6 +5,7 @@ export const useThemeOption = (): ThemeOptionType => {
   const data = useStaticQuery<{ themeOption: ThemeOptionType }>(graphql`
     query {
       themeOption(id: { eq: "@zzzkan/gatsby-theme-blog" }) {
+        lang
         links {
           name
           url

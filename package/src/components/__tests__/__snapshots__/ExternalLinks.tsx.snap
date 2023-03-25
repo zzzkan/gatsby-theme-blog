@@ -60,28 +60,28 @@ exports[`ExternalLinks component > snapshot 1`] = `
     class="chakra-stack emotion-0"
   >
     <a
-      aria-label="Move to Profile"
+      aria-label="Move a page. (Profile)"
       class="chakra-button emotion-1"
       href="/profile"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
-      aria-label="Move to RSS"
+      aria-label="Move a page. (RSS)"
       class="chakra-button emotion-1"
       href="/rss"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
-      aria-label="Move to GitHub"
+      aria-label="Move a page. (GitHub)"
       class="chakra-button emotion-1"
       href="/github"
       rel="noopener noreferrer nofollow"
       target="_blank"
     />
     <a
-      aria-label="Move to Twitter"
+      aria-label="Move a page. (Twitter)"
       class="chakra-button emotion-1"
       href="/twitter"
       rel="noopener noreferrer nofollow"
