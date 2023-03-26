@@ -6,11 +6,11 @@ import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
 
 export const ToggleColorModeButton: React.FC = () => {
   const { colorMode, toggleColorMode } = useColorMode()
-  const { toggleColorModeSentence } = useMultilingualSentence()
+  const { getToggleColorModeLabel } = useMultilingualSentence()
   return (
     <IconButton
       onClick={toggleColorMode}
-      aria-label={toggleColorModeSentence}
+      aria-label={getToggleColorModeLabel()}
       variant={"ghost"}
       isRound={true}
       size={"sm"}

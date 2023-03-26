@@ -34,7 +34,7 @@ exports[`ToggleColorModeButton component > snapshot 1`] = `
 }
 
 <button
-    aria-label="Toggle color mode."
+    aria-label="Switch to color mode"
     class="chakra-button emotion-0"
     type="button"
   />

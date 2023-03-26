@@ -4,7 +4,6 @@ import { FaLink } from "@react-icons/all-files/fa/FaLink"
 import { FaRss } from "@react-icons/all-files/fa/FaRss"
 import { FaGithub } from "@react-icons/all-files/fa/FaGithub"
 import { FaTwitter } from "@react-icons/all-files/fa/FaTwitter"
-import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
 
 const Icon: React.FC<{ name: string }> = ({ name }) => {
   if (name === "GitHub") return <FaGithub />
@@ -21,18 +20,17 @@ type Props = {
 }
 
 export const ExternalLinks: React.FC<Props> = ({ links }) => {
-  const { movePageSentence } = useMultilingualSentence()
   if (links == null || links.length === 0) return null
   return (
     <HStack spacing={0}>
       {links.map((link, index) => (
         <IconButton
           key={`${link.name}-${index}`}
+          aria-label={link.name}
           as={"a"}
           href={link.url}
           target={"_blank"}
           rel={"noopener noreferrer nofollow"}
-          aria-label={movePageSentence(link.name)}
           variant={"ghost"}
           isRound={true}
           size={"sm"}

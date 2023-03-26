@@ -13,7 +13,6 @@ import {
   Spacer,
 } from "@chakra-ui/react"
 import { PostCardList } from "../PostCardList"
-import { useMultilingualSentence } from "../../hooks/useMultilingualSentence"
 
 type Props = Pick<
   NonNullable<Queries.PostTemplateQuery["post"]>,
@@ -24,7 +23,6 @@ type Props = Pick<
 }
 
 export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
-  const { movePageSentence } = useMultilingualSentence()
   return (
     <Box as={"footer"}>
       <Flex>
@@ -32,7 +30,6 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
           <Link
             as={GatsbyLink}
             to={previous.slug}
-            aria-label={movePageSentence(previous.slug)}
             textAlign={"left"}
             marginRight={1}
             color={"tint"}
@@ -45,7 +42,6 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
           <Link
             as={GatsbyLink}
             to={next.slug}
-            aria-label={movePageSentence(next.slug)}
             textAlign={"right"}
             marginLeft={1}
             color={"tint"}

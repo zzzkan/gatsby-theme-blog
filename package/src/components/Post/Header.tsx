@@ -29,7 +29,7 @@ export const Header: React.FC<Props> = ({
   featuredImage,
   tags,
 }) => {
-  const { featuredImageSentence } = useMultilingualSentence()
+  const { getFeaturedImageAlt } = useMultilingualSentence()
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box as={"header"} marginBottom={9}>
@@ -49,7 +49,7 @@ export const Header: React.FC<Props> = ({
       {image != null && (
         <GatsbyImage
           image={image}
-          alt={featuredImageAlt ?? featuredImageSentence()}
+          alt={featuredImageAlt ?? getFeaturedImageAlt()}
         />
       )}
     </Box>

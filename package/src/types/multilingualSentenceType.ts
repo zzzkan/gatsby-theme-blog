@@ -1,5 +1,5 @@
 export type multilingualSentenceType = {
-  readonly movePageSentence: (str: string) => string
-  readonly featuredImageSentence: (str?: string) => string
-  readonly toggleColorModeSentence: string
+  readonly getFeaturedImageAlt: () => string
+  readonly getFeaturedImageLinkAlt: (str: string) => string
+  readonly getToggleColorModeLabel: () => string
 }
