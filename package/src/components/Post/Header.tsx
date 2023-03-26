@@ -49,7 +49,7 @@ export const Header: React.FC<Props> = ({
       {image != null && (
         <GatsbyImage
           image={image}
-          alt={featuredImageAlt ?? getFeaturedImageAlt(title)}
+          alt={featuredImageAlt ?? getFeaturedImageAlt()}
         />
       )}
     </Box>

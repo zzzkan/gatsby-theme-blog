@@ -43,7 +43,6 @@ describe("PostCard component", () => {
         featuredImage={{
           childImageSharp: { gatsbyImageData: "featuredImage" as any },
         }}
-        featuredImageAlt={"featuredImageAlt"}
       />
     )
     expect(asFragment()).toMatchSnapshot()
@@ -67,7 +66,6 @@ describe("PostCard component", () => {
         slug={"/slug"}
         title={"title"}
         featuredImage={null}
-        featuredImageAlt={null}
       />
     )
     expect(queryByRole("img")).toBeNull()
@@ -96,7 +94,6 @@ describe("PostCard component", () => {
         slug={"/slug"}
         title={"title"}
         featuredImage={{ childImageSharp: null }}
-        featuredImageAlt={null}
       />
     )
     expect(queryByRole("img")).toBeNull()
@@ -127,7 +124,6 @@ describe("PostCard component", () => {
         featuredImage={{
           childImageSharp: { gatsbyImageData: "featuredImage" as any },
         }}
-        featuredImageAlt={null}
       />
     )
     expect(queryByRole("img")).toHaveAttribute("src", "featuredImage")
@@ -138,7 +134,7 @@ describe("PostCard component", () => {
     })
   })
 
-  test("should render default alt text if featuredImageAlt is null", () => {
+  test("should render alt text", () => {
     const { getByAltText } = render(
       <PostCard
         publishedDate={"2022/01/01"}
@@ -158,36 +154,9 @@ describe("PostCard component", () => {
         featuredImage={{
           childImageSharp: { gatsbyImageData: "featuredImage" as any },
         }}
-        featuredImageAlt={null}
       />
     )
-    expect(getByAltText("Featured image (title)")).toBeInTheDocument()
-  })
-
-  test("should render custom alt text if featuredImageAlt is not null", () => {
-    const { getByAltText } = render(
-      <PostCard
-        publishedDate={"2022/01/01"}
-        updatedDate={"2022/01/02"}
-        publishedDateISO8601={"2022-01-01"}
-        updatedDateISO8601={"2022-01-02"}
-        timeToReadMinutes={10}
-        tags={[
-          { slug: "/tags/tag1", name: "tag1" },
-          { slug: "/tags/tag2", name: "tag2" },
-          { slug: "/tags/tag3", name: "tag3" },
-          { slug: "/tags/tag4", name: "tag4" },
-          { slug: "/tags/tag5", name: "tag5" },
-        ]}
-        slug={"/slug"}
-        title={"title"}
-        featuredImage={{
-          childImageSharp: { gatsbyImageData: "featuredImage" as any },
-        }}
-        featuredImageAlt={"custom featured image alt"}
-      />
-    )
-    expect(getByAltText("custom featured image alt")).toBeInTheDocument()
+    expect(getByAltText("Go to the page (title)")).toBeInTheDocument()
   })
 
   test("should not render tags if tags is null", () => {
@@ -202,7 +171,6 @@ describe("PostCard component", () => {
         slug={"/slug"}
         title={"title"}
         featuredImage={null}
-        featuredImageAlt={null}
       />
     )
     expect(queryByText("Tags")).toBeNull()
@@ -220,7 +188,6 @@ describe("PostCard component", () => {
         slug={"/slug"}
         title={"title"}
         featuredImage={null}
-        featuredImageAlt={null}
       />
     )
     expect(queryByText("Tags")).not.toBeNull()

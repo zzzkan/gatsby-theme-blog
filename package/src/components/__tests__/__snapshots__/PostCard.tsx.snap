@@ -47,7 +47,7 @@ exports[`PostCard component > snapshot 1`] = `
       href="/slug"
     >
       <img
-        alt="featuredImageAlt"
+        alt="Go to the page (title)"
         src="featuredImage"
       />
     </a>

@@ -14,23 +14,19 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
   title,
   publishedDate,
   updatedDate,
-  featuredImageAlt,
   timeToReadMinutes,
   publishedDateISO8601,
   updatedDateISO8601,
   featuredImage,
   tags,
 }) => {
-  const { getFeaturedImageAlt } = useMultilingualSentence()
+  const { getFeaturedImageLinkAlt } = useMultilingualSentence()
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
       {image != null && (
         <Link as={GatsbyLink} to={slug} _hover={{ textDecoration: "none" }}>
-          <GatsbyImage
-            image={image}
-            alt={featuredImageAlt ?? getFeaturedImageAlt(title)}
-          />
+          <GatsbyImage image={image} alt={getFeaturedImageLinkAlt(title)} />
         </Link>
       )}
       <Stack spacing={0} paddingX={6} paddingY={3}>
@@ -69,7 +65,6 @@ export const query = graphql`
         )
       }
     }
-    featuredImageAlt
     tags {
       slug
       name
