@@ -21,26 +21,21 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
   featuredImage,
   tags,
 }) => {
-  const { movePageSentence, featuredImageSentence } = useMultilingualSentence()
+  const { getFeaturedImageAlt } = useMultilingualSentence()
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box boxShadow={"md"} rounded={"xl"} overflow={"hidden"}>
       {image != null && (
-        <Link
-          as={GatsbyLink}
-          to={slug}
-          aria-label={movePageSentence(slug)}
-          _hover={{ textDecoration: "none" }}
-        >
+        <Link as={GatsbyLink} to={slug} _hover={{ textDecoration: "none" }}>
           <GatsbyImage
             image={image}
-            alt={featuredImageAlt ?? featuredImageSentence(slug)}
+            alt={featuredImageAlt ?? getFeaturedImageAlt(title)}
           />
         </Link>
       )}
       <Stack spacing={0} paddingX={6} paddingY={3}>
         {tags != null && <Tags tags={tags} />}
-        <Link as={GatsbyLink} to={slug} aria-label={movePageSentence(slug)}>
+        <Link as={GatsbyLink} to={slug}>
           <Heading as={"div"} size={"md"}>
             {title}
           </Heading>
