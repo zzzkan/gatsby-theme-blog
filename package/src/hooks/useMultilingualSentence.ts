@@ -16,5 +16,29 @@ export const useMultilingualSentence = (): multilingualSentenceType => {
       if (lang === "ja") return "カラーモードを変更"
       return "Switch to color mode"
     },
+    getAllPostsText: () => {
+      if (lang === "ja") return "記事一覧"
+      return "All Posts"
+    },
+    getPreviousPageText: () => {
+      if (lang === "ja") return "前の記事"
+      return "Previous Post"
+    },
+    getNextPageText: () => {
+      if (lang === "ja") return "次の記事"
+      return "Next Post"
+    },
+    getRelatedPostsText: () => {
+      if (lang === "ja") return "関連記事"
+      return "Related Posts"
+    },
+    getPageCountText: (count: number) => {
+      if (lang === "ja") return `${count}ページ目`
+      return `page ${count}`
+    },
+    getTagPostsDescriptionText: (tag: string) => {
+      if (lang === "ja") return `${tag}タグが付いた記事一覧`
+      return `Posts tagged with ${tag}`
+    },
   }
 }

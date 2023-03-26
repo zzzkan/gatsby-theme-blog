@@ -20,8 +20,8 @@ export const TagPosts: React.FC<Props> = ({
 }) => {
   return (
     <>
-      <Heading as={"h1"} size={"2xl"} textAlign={"center"} marginBottom={3}>
-        Tag - {name}({count})
+      <Heading as={"h1"} size={"xl"} textAlign={"center"} marginBottom={3}>
+        {name} ({count})
       </Heading>
       <Center marginBottom={3}>
         <PostCardList posts={posts} />

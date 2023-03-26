@@ -19,15 +19,15 @@ const sizes = {
     lineHeight: [1.33, null, 1.2],
   }),
   xl: defineStyle({
-    fontSize: "3xl",
-    lineHeight: 1.2,
+    fontSize: ["2xl", null, "3xl"],
+    lineHeight: [1.33, null, 1.2],
   }),
   lg: defineStyle({
-    fontSize: "2xl",
-    lineHeight: 1.2,
+    fontSize: ["xl", null, "2xl"],
+    lineHeight: [1.33, null, 1.2],
   }),
   md: defineStyle({
-    fontSize: "xl",
+    fontSize: "lg",
     lineHeight: 1.2,
   }),
   sm: defineStyle({
