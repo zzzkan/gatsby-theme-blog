@@ -13,6 +13,7 @@ import {
   Spacer,
 } from "@chakra-ui/react"
 import { PostCardList } from "../PostCardList"
+import { useMultilingualSentence } from "../../hooks/useMultilingualSentence"
 
 type Props = Pick<
   NonNullable<Queries.PostTemplateQuery["post"]>,
@@ -23,6 +24,8 @@ type Props = Pick<
 }
 
 export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
+  const { getPreviousPageText, getNextPageText, getRelatedPostsText } =
+    useMultilingualSentence()
   return (
     <Box as={"footer"}>
       <Flex>
@@ -32,9 +35,8 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
             to={previous.slug}
             textAlign={"left"}
             marginRight={1}
-            color={"tint"}
           >
-            {`< ${previous.title}`}
+            {`< ${getPreviousPageText()}`}
           </Link>
         )}
         <Spacer />
@@ -44,9 +46,8 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
             to={next.slug}
             textAlign={"right"}
             marginLeft={1}
-            color={"tint"}
           >
-            {`${next.title} >`}
+            {`${getNextPageText()} >`}
           </Link>
         )}
       </Flex>
@@ -54,7 +55,7 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
         <>
           <Divider as={"hr"} marginTop={1} marginBottom={3} />
           <Heading as={"div"} size={"md"} textAlign={"center"} marginBottom={3}>
-            Read next
+            {getRelatedPostsText()}
           </Heading>
           <Center>
             <PostCardList posts={relatedPosts} />
