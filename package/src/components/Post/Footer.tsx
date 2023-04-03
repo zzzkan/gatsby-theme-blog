@@ -54,7 +54,13 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
       {relatedPosts != null && relatedPosts.length > 0 && (
         <>
           <Divider as={"hr"} marginTop={1} marginBottom={9} />
-          <Heading as={"div"} size={"md"} textAlign={"center"}>
+          <Heading
+            as={"div"}
+            size={"md"}
+            textAlign={"center"}
+            fontWeight={"semibold"}
+            marginBottom={3}
+          >
             {getRelatedPostsText()}
           </Heading>
           <Center>
