@@ -56,8 +56,8 @@ export const query = graphql`
       title
       publishedDate(formatString: $dateFormatString)
       updatedDate(formatString: $dateFormatString)
-      publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
-      updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DDTHH:mm:ss")
+      publishedDateISO8601: publishedDate(formatString: "YYYY-MM-DD")
+      updatedDateISO8601: updatedDate(formatString: "YYYY-MM-DD")
       featuredImage {
         childImageSharp {
           gatsbyImageData(
