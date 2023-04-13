@@ -18,6 +18,7 @@ export const Seo: React.FC<Props> = (props) => {
     siteUrl,
     description,
     author,
+    authorUrl,
     imageUrl,
   } = useSiteMetadata()
 
@@ -60,11 +61,11 @@ export const Seo: React.FC<Props> = (props) => {
             headline: pageTitle,
             image: pageImageUrl,
             datePublished: props.publishedDate,
-            dateModified: props.updatedDate ?? props.publishedDate,
+            dateModified: props.updatedDate,
             author: {
               "@type": "Person",
               name: author,
-              url: siteUrl,
+              url: authorUrl,
             },
           })}
         </script>

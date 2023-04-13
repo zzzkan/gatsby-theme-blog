@@ -13,6 +13,7 @@ export const useSiteMetadata = (): SiteMetadataType => {
             siteUrl
             description
             author
+            authorUrl
             publicationYear
             imageUrl
           }
