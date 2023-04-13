@@ -11,6 +11,7 @@ describe("Seo component", () => {
           siteUrl: "http://localhost:9000/",
           description: "siteDescription",
           author: "siteAuthor",
+          authorUrl: "http://localhost:9001/",
           imageUrl: "http://localhost:9000/site-image.png",
         }
       }),
@@ -263,6 +264,6 @@ describe("Seo component", () => {
     expect(jsonld.datePublished).toBe("2023-01-01")
     expect(jsonld.dateModified).toBe("2023-01-02")
     expect(jsonld.author.name).toBe("siteAuthor")
-    expect(jsonld.author.url).toBe("http://localhost:9000/")
+    expect(jsonld.author.url).toBe("http://localhost:9001/")
   })
 })

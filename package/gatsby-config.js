@@ -21,6 +21,7 @@ module.exports = (themeOptions) => {
       siteUrl: "http://localhost:9000/",
       description: "@zzzkan/gatsby-theme-blog example.",
       author: "zzzkan",
+      authorUrl: "http://localhost:9001/",
       publicationYear: 2022,
       imageUrl: "http://localhost:9000/og-image.png",
     },

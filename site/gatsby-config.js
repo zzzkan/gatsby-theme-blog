@@ -4,6 +4,7 @@ module.exports = {
     siteUrl: "https://zzzkan-gatsby-theme-blog.netlify.app/",
     description: "gatsby-theme-blog by @zzzkan.",
     author: "zzzkan",
+    authorUrl: "https://zzzkan.me/",
     publicationYear: 2023,
     imageUrl: "https://zzzkan-gatsby-theme-blog.netlify.app/banner.png",
   },

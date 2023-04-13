@@ -64,7 +64,7 @@ exports[`Seo component > snapshot 1`] = `
   <script
     type="application/ld+json"
   >
-    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"http://localhost:9000/page-image.png","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"http://localhost:9000/"}}
+    {"@context":"https://schema.org","@type":"BlogPosting","headline":"pageTitle - siteTitle","image":"http://localhost:9000/page-image.png","datePublished":"pagePublishedDate","dateModified":"pageUpdatedDate","author":{"@type":"Person","name":"siteAuthor","url":"http://localhost:9001/"}}
   </script>
 </DocumentFragment>
 `;
