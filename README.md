@@ -22,8 +22,8 @@ See the readme [@zzzkan/gatsby-theme-blog](https://github.com/zzzkan/gatsby-them
 
 ## Examples
 
-- [@zzzkan/gatsby-starter-blog](https://zzzkan-gatsby-starter-blog.netlify.app/>)
-- [blog.zzzkan.me](https://blog.zzzkan.me/)
+- <https://zzzkan-gatsby-starter-blog.netlify.app/>
+- <https://blog.zzzkan.me/>
 
 ## Getting Started
 

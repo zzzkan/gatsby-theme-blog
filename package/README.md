@@ -23,8 +23,8 @@
 
 ## Examples
 
-- [@zzzkan/gatsby-starter-blog](https://zzzkan-gatsby-starter-blog.netlify.app/>)
-- [blog.zzzkan.me](https://blog.zzzkan.me/)
+- <https://zzzkan-gatsby-starter-blog.netlify.app/>
+- <https://blog.zzzkan.me/>
 
 ## Installation
 
