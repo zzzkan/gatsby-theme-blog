@@ -21,6 +21,11 @@
 - Psagination
 - Social buttons (GitHub, Twitter, RSS)
 
+## Examples
+
+- [@zzzkan/gatsby-starter-blog](https://zzzkan-gatsby-starter-blog.netlify.app/>)
+- [blog.zzzkan.me](https://blog.zzzkan.me/)
+
 ## Installation
 
 ### For a new site

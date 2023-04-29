@@ -20,6 +20,11 @@
 
 See the readme [@zzzkan/gatsby-theme-blog](https://github.com/zzzkan/gatsby-theme-blog/tree/main/package#readme).
 
+## Examples
+
+- [@zzzkan/gatsby-starter-blog](https://zzzkan-gatsby-starter-blog.netlify.app/>)
+- [blog.zzzkan.me](https://blog.zzzkan.me/)
+
 ## Getting Started
 
 You can use [@zzzkan/gatsby-starter-blog](https://github.com/zzzkan/gatsby-starter-blog#readme) if you are creating a new site and want to use the theme.
