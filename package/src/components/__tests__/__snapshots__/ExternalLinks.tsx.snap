@@ -53,7 +53,7 @@ exports[`ExternalLinks component > snapshot 1`] = `
   outline-offset: 2px;
   padding: 0px;
   border-radius: full;
-  font-size: 2xl;
+  font-size: xl;
 }
 
 <div
