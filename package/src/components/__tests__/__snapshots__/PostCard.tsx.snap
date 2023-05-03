@@ -3,7 +3,7 @@
 exports[`PostCard component > snapshot 1`] = `
 <DocumentFragment>
   .emotion-0 {
-  box-shadow: md;
+  box-shadow: lg;
   border-radius: xl;
   overflow: hidden;
 }
