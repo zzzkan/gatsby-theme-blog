@@ -33,8 +33,8 @@ export const ExternalLinks: React.FC<Props> = ({ links }) => {
           rel={"noopener noreferrer nofollow"}
           variant={"ghost"}
           isRound={true}
-          size={"sm"}
-          fontSize={"2xl"}
+          size={"xs"}
+          fontSize={"xl"}
           icon={<Icon name={link.name} />}
         />
       ))}

@@ -58,7 +58,7 @@ export const Footer: React.FC<Props> = ({ relatedPosts, previous, next }) => {
             as={"div"}
             size={"md"}
             textAlign={"center"}
-            fontWeight={"semibold"}
+            fontWeight={"bold"}
             marginBottom={3}
           >
             {getRelatedPostsText()}
