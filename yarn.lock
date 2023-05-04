@@ -1518,12 +1518,21 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@babel/runtime@npm:^7.19.4, @babel/runtime@npm:^7.20.13":
+"@babel/runtime@npm:^7.20.13":
   version: 7.21.0
   resolution: "@babel/runtime@npm:7.21.0"
   dependencies:
     regenerator-runtime: ^0.13.11
   checksum: 7b33e25bfa9e0e1b9e8828bb61b2d32bdd46b41b07ba7cb43319ad08efc6fda8eb89445193e67d6541814627df0ca59122c0ea795e412b99c5183a0540d338ab
+  languageName: node
+  linkType: hard
+
+"@babel/runtime@npm:^7.21.5":
+  version: 7.21.5
+  resolution: "@babel/runtime@npm:7.21.5"
+  dependencies:
+    regenerator-runtime: ^0.13.11
+  checksum: 358f2779d3187f5c67ad302e8f8d435412925d0b991d133c7d4a7b1ddd5a3fda1b6f34537cb64628dfd96a27ae46df105bed3895b8d754b88cacdded8d1129dd
   languageName: node
   linkType: hard
 
@@ -10189,14 +10198,14 @@ __metadata:
   linkType: hard
 
 "gatsby-plugin-webpack-bundle-analyser-v2@npm:^1.1.30":
-  version: 1.1.30
-  resolution: "gatsby-plugin-webpack-bundle-analyser-v2@npm:1.1.30"
+  version: 1.1.31
+  resolution: "gatsby-plugin-webpack-bundle-analyser-v2@npm:1.1.31"
   dependencies:
-    "@babel/runtime": ^7.19.4
-    webpack-bundle-analyzer: ^4.6.1
+    "@babel/runtime": ^7.21.5
+    webpack-bundle-analyzer: ^4.8.0
   peerDependencies:
-    gatsby: ^2.0.0 || ^3.0.0 || ^4.0.0
-  checksum: 0a7d6eba493ea9613fd45daf8859e204a54646bb823fe5f908d5753939fe1ad93844cc97026a53c35cc73773292f2df9b0b879f4707b26c56e0ee54e50625b3c
+    gatsby: ^2.0.0 || ^3.0.0 || ^4.0.0 || ^5.0.0
+  checksum: 36e8001a3bc61affa4691f5460ba280a37765a792810afa87cb4f28686e0918df9c3fae4367eaa6137dc2c6d8d221223487543f6ff0630f5358d68918c887d03
   languageName: node
   linkType: hard
 
@@ -18621,7 +18630,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"webpack-bundle-analyzer@npm:^4.6.1":
+"webpack-bundle-analyzer@npm:^4.8.0":
   version: 4.8.0
   resolution: "webpack-bundle-analyzer@npm:4.8.0"
   dependencies:
