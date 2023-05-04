@@ -22,7 +22,7 @@ type Props = {
 export const ExternalLinks: React.FC<Props> = ({ links }) => {
   if (links == null || links.length === 0) return null
   return (
-    <HStack spacing={0}>
+    <HStack spacing={1}>
       {links.map((link, index) => (
         <IconButton
           key={`${link.name}-${index}`}
