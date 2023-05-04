@@ -63,7 +63,6 @@ export const Header: React.FC<Props> = ({
                 href={featuredImageCreditLink}
                 target={"_blank"}
                 rel={"noopener noreferrer nofollow"}
-                color={"tint"}
               >
                 {featuredImageCreditText ?? featuredImageCreditLink}
               </Link>
