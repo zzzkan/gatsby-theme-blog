@@ -1,6 +1,6 @@
 import React from "react"
 import { GatsbyImage } from "gatsby-plugin-image"
-import { Box, Heading, Stack } from "@chakra-ui/react"
+import { Box, Heading, Link, Stack } from "@chakra-ui/react"
 import { PostMetadata } from "../PostMetadata"
 import { Tags } from "../Tags"
 import { useMultilingualSentence } from "../../hooks/useMultilingualSentence"
@@ -15,6 +15,8 @@ type Props = Pick<
   | "timeToReadMinutes"
   | "featuredImage"
   | "featuredImageAlt"
+  | "featuredImageCreditText"
+  | "featuredImageCreditLink"
   | "tags"
 >
 
@@ -23,6 +25,8 @@ export const Header: React.FC<Props> = ({
   publishedDate,
   updatedDate,
   featuredImageAlt,
+  featuredImageCreditText,
+  featuredImageCreditLink,
   timeToReadMinutes,
   publishedDateISO8601,
   updatedDateISO8601,
@@ -47,10 +51,24 @@ export const Header: React.FC<Props> = ({
         />
       </Stack>
       {image != null && (
-        <GatsbyImage
-          image={image}
-          alt={featuredImageAlt ?? getFeaturedImageAlt()}
-        />
+        <Stack spacing={0}>
+          <GatsbyImage
+            image={image}
+            alt={featuredImageAlt ?? getFeaturedImageAlt()}
+          />
+          {featuredImageCreditLink != null && (
+            <Box as={"small"} fontSize={"xs"} textAlign={"right"}>
+              Credit:{" "}
+              <Link
+                href={featuredImageCreditLink}
+                target={"_blank"}
+                rel={"noopener noreferrer nofollow"}
+              >
+                {featuredImageCreditText ?? featuredImageCreditLink}
+              </Link>
+            </Box>
+          )}
+        </Stack>
       )}
     </Box>
   )

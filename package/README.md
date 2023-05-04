@@ -180,18 +180,20 @@ New blog posts can be created by adding MDX files in `contentPath`, and add the 
 
 You can set up blog post metadata in frontmatter.
 
-| Key                | Description                                                     |
-| ------------------ | --------------------------------------------------------------- |
-| `slug`             | (optional) Custom slug (default : file path on the file system) |
-| `title`            | Title                                                           |
-| `publishedDate`    | Published date                                                  |
-| `updatedDate`      | (optional) Updated date                                         |
-| `featuredImage`    | (optional) Featured image                                       |
-| `featuredImageAlt` | (optional) Featured image alternative                           |
-| `tags`             | (optional) Tags                                                 |
-| `description`      | (optional) Description                                          |
-| `draft`            | (optional) If draft, set to true                                |
-| `noindex`          | (optional) If blocking search index, set to true                |
+| Key                       | Description                                                     |
+| ------------------------- | --------------------------------------------------------------- |
+| `slug`                    | (optional) Custom slug (default : file path on the file system) |
+| `title`                   | Title                                                           |
+| `publishedDate`           | Published date                                                  |
+| `updatedDate`             | (optional) Updated date                                         |
+| `featuredImage`           | (optional) Featured image                                       |
+| `featuredImageAlt`        | (optional) Featured image alternative                           |
+| `featuredImageCreditText` | (optional) Featured image credit text                           |
+| `featuredImageCreditLink` | (optional) Featured image credit link                           |
+| `tags`                    | (optional) Tags                                                 |
+| `description`             | (optional) Description                                          |
+| `draft`                   | (optional) If draft, set to true                                |
+| `noindex`                 | (optional) If blocking search index, set to true                |
 
 A example is shown below.
 
@@ -201,8 +203,10 @@ slug: ipsum-consetetur
 title: Ipsum consetetur nulla facilisi eos
 publishedDate: 2022-10-01
 updatedDate: 2022-10-02
-featuredImage: ./featuredImage.png
-featuredImageAlt: "featured image"
+featuredImage: "./jane-almon-7rriIaBH6JY-unsplash.jpg"
+featuredImageAlt: "A white pitbull wearing big googly-eye glasses"
+featuredImageCreditText: "Jane Almon"
+featuredImageCreditLink: "https://unsplash.com/photos/7rriIaBH6JY"
 tags:
   - sample
   - ipsum

@@ -53,6 +53,8 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       updatedDate: Date @dateformat
       featuredImage: File @fileByRelativePath
       featuredImageAlt: String
+      featuredImageCreditText: String
+      featuredImageCreditLink: String
       tags: [Tag!]
       timeToReadMinutes: Float
       wordCount: Int
@@ -129,6 +131,8 @@ exports.onCreateNode = (
       updatedDate: node.frontmatter.updatedDate,
       featuredImage: node.frontmatter.featuredImage,
       featuredImageAlt: node.frontmatter.featuredImageAlt,
+      featuredImageCreditText: node.frontmatter.featuredImageCreditText,
+      featuredImageCreditLink: node.frontmatter.featuredImageCreditLink,
       tags: node.frontmatter.tags?.map((tag) => ({
         slug: `/tags/${tag}`,
         name: tag,
