@@ -71,6 +71,8 @@ export const query = graphql`
         }
       }
       featuredImageAlt
+      featuredImageCreditText
+      featuredImageCreditLink
       tags {
         slug
         name
