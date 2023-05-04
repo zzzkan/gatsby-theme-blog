@@ -21,8 +21,8 @@ exports[`ExternalLinks component > snapshot 1`] = `
   -webkit-margin-end: 0px;
   margin-inline-end: 0px;
   margin-bottom: 0px;
-  -webkit-margin-start: 0px;
-  margin-inline-start: 0px;
+  -webkit-margin-start: 1px;
+  margin-inline-start: 1px;
 }
 
 .emotion-1 {
