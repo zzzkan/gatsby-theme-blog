@@ -23,7 +23,6 @@ See the readme [@zzzkan/gatsby-theme-blog](https://github.com/zzzkan/gatsby-them
 ## Examples
 
 - <https://zzzkan-gatsby-starter-blog.netlify.app/>
-- <https://blog.zzzkan.me/>
 
 ## Getting Started
 

@@ -24,7 +24,6 @@
 ## Examples
 
 - <https://zzzkan-gatsby-starter-blog.netlify.app/>
-- <https://blog.zzzkan.me/>
 
 ## Installation
 
