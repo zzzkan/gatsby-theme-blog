@@ -1,7 +1,7 @@
 const colors = {
   tint: { default: "#350697", _dark: "#E0BBFE" },
-  primaryText: { default: "#4A4850", _dark: "#FBFAFC" },
-  secondaryText: { default: "#9995A3", _dark: "#D0CBD8" },
+  primaryText: { default: "#29282C", _dark: "#FBFAFC" },
+  secondaryText: { default: "#767183", _dark: "#D0CBD8" },
   onTintText: { default: "white", _dark: "#232226" },
   primaryBackground: { default: "white", _dark: "#232226" },
   secondaryBackground: {
