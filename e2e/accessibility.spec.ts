@@ -6,11 +6,20 @@ test.describe("Accessibility Testing", () => {
   for (const url of urls) {
     test(`testing on ${url}`, async ({ page }) => {
       await page.goto(url)
-      const accessibilityScanResults = await new AxeBuilder({ page })
+      const getToggleColorModeButton = page.getByRole("button", {
+        name: "カラーモードを変更",
+      })
+      const accessibilityScanResultsOnLight = await new AxeBuilder({ page })
         .exclude(".chakra-portal")
         .disableRules(["link-in-text-block"])
         .analyze()
-      expect(accessibilityScanResults.violations).toEqual([])
+      expect(accessibilityScanResultsOnLight.violations).toEqual([])
+      await getToggleColorModeButton.click()
+      const accessibilityScanResultsOnDark = await new AxeBuilder({ page })
+        .exclude(".chakra-portal")
+        .disableRules(["link-in-text-block"])
+        .analyze()
+      expect(accessibilityScanResultsOnDark.violations).toEqual([])
     })
   }
 })

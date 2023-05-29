@@ -12,11 +12,12 @@ test.describe("Visual Regression Testing", () => {
   for (const url of urls) {
     test(`testing on ${url}`, async ({ page }) => {
       await page.goto(url)
-      await expect(page).toHaveScreenshot({
-        fullPage: true,
-      })
       const getToggleColorModeButton = page.getByRole("button", {
         name: "カラーモードを変更",
+      })
+      await getToggleColorModeButton.click()
+      await expect(page).toHaveScreenshot({
+        fullPage: true,
       })
       await getToggleColorModeButton.click()
       await expect(page).toHaveScreenshot({
