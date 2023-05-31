@@ -2,14 +2,20 @@
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
   "extends": [
     "config:base",
-    ":autodetectPinVersions",
+    ":preserveSemverRanges",
+    "group:all",
+    "schedule:monthly",
+    ":maintainLockFilesMonthly",
     ":automergePatch",
     ":automergeTypes",
     ":dependencyDashboard",
     ":label(dependencies)",
     ":prHourlyLimitNone",
-    "schedule:earlyMondays",
     ":timezone(Asia/Tokyo)"
   ],
+  "lockFileMaintenance": {
+    "extends": ["group:all"]
+  },
+  "separateMajorMinor": false,
   "ignoreDeps": ["@zzzkan/gatsby-theme-blog"]
 }
