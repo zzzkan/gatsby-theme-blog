@@ -30,7 +30,7 @@ export const ExternalLinks: React.FC<Props> = ({ links }) => {
           as={"a"}
           href={link.url}
           target={"_blank"}
-          rel={"noopener noreferrer nofollow"}
+          rel={"noreferrer"}
           variant={"ghost"}
           isRound={true}
           size={"xs"}
