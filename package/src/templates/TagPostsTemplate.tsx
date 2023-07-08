@@ -3,7 +3,7 @@ import { graphql, type HeadFC, type PageProps } from "gatsby"
 import { Layout } from "../components/Layout"
 import { TagPosts } from "../components/TagPosts"
 import { Seo } from "../components/Seo"
-import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
+import { resource } from "../resource"
 
 type PageContext = {
   readonly currentPage: number
@@ -41,22 +41,20 @@ export const Head: HeadFC<Queries.TagPostsTemplateQuery, PageContext> = ({
   const { pathname } = location
   const { currentPage, tagName } = pageContext
   const isNotFirstPage = currentPage > 1
-  const { getTagPostsDescriptionText, getPageCountText } =
-    useMultilingualSentence()
   return (
     <Seo
       path={pathname}
       title={
         isNotFirstPage
-          ? `${tagName} (${getPageCountText(currentPage)})`
+          ? `${tagName} (${resource.PageCountText(currentPage)})`
           : tagName
       }
       description={
         isNotFirstPage
-          ? `${getTagPostsDescriptionText(tagName)} (${getPageCountText(
-              currentPage
-            )})`
-          : getTagPostsDescriptionText(tagName)
+          ? `${resource.TagPostsDescriptionText(
+              tagName
+            )} (${resource.PageCountText(currentPage)})`
+          : resource.TagPostsDescriptionText(tagName)
       }
       noindex={true}
     />
