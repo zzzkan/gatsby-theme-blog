@@ -4,7 +4,7 @@ import { Layout } from "../components/Layout"
 import { AllPosts } from "../components/AllPosts"
 import { Seo } from "../components/Seo"
 import { useSiteMetadata } from "../hooks/useSiteMetadata"
-import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
+import { resource } from "../resource"
 
 type PageContext = {
   readonly currentPage: number
@@ -39,18 +39,17 @@ export const Head: HeadFC<Queries.AllPostsTemplateQuery, PageContext> = ({
   const { currentPage } = pageContext
   const isNotFirstPage = currentPage > 1
   const { description } = useSiteMetadata()
-  const { getAllPostsText, getPageCountText } = useMultilingualSentence()
   return (
     <Seo
       path={pathname}
       title={
         isNotFirstPage
-          ? `${getAllPostsText()} (${getPageCountText(currentPage)})`
-          : getAllPostsText()
+          ? `${resource.AllPostsText} (${resource.PageCountText(currentPage)})`
+          : resource.AllPostsText
       }
       description={
         isNotFirstPage
-          ? `${description} (${getPageCountText(currentPage)})`
+          ? `${description} (${resource.PageCountText(currentPage)})`
           : description
       }
       noindex={isNotFirstPage}

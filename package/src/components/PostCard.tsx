@@ -7,7 +7,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import { Box, Heading, Stack, Link, useColorModeValue } from "@chakra-ui/react"
 import { PostMetadata } from "./PostMetadata"
 import { Tags } from "./Tags"
-import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
+import { resource } from "../resource"
 
 export const PostCard: React.FC<Queries.PostCardFragment> = ({
   slug,
@@ -20,14 +20,16 @@ export const PostCard: React.FC<Queries.PostCardFragment> = ({
   featuredImage,
   tags,
 }) => {
-  const { getFeaturedImageLinkAlt } = useMultilingualSentence()
   const boxShadowStyle = useColorModeValue("lg", "dark-lg")
   const image = featuredImage?.childImageSharp?.gatsbyImageData
   return (
     <Box boxShadow={boxShadowStyle} rounded={"xl"} overflow={"hidden"}>
       {image != null && (
         <Link as={GatsbyLink} to={slug} _hover={{ textDecoration: "none" }}>
-          <GatsbyImage image={image} alt={getFeaturedImageLinkAlt(title)} />
+          <GatsbyImage
+            image={image}
+            alt={resource.FeaturedImageLinkAltText(title)}
+          />
         </Link>
       )}
       <Stack spacing={0} paddingX={6} paddingY={3}>

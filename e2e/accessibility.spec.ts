@@ -7,7 +7,7 @@ test.describe("Accessibility Testing", () => {
     test(`testing on ${url}`, async ({ page }) => {
       await page.goto(url)
       const getToggleColorModeButton = page.getByRole("button", {
-        name: "カラーモードを変更",
+        name: "Switch to color mode",
       })
       const accessibilityScanResultsOnLight = await new AxeBuilder({ page })
         .exclude(".chakra-portal")

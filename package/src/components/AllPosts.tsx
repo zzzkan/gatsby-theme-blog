@@ -3,7 +3,7 @@ import { Center, Heading } from "@chakra-ui/react"
 import { Pagination } from "./Pagination"
 import { PostCardList } from "../components/PostCardList"
 import { type PaginationType } from "../types/paginationType"
-import { useMultilingualSentence } from "../hooks/useMultilingualSentence"
+import { resource } from "../resource"
 
 type Props = {
   posts: Queries.AllPostsTemplateQuery["allPost"]["nodes"]
@@ -15,11 +15,10 @@ export const AllPosts: React.FC<Props> = ({
   currentPage,
   totalPage,
 }) => {
-  const { getAllPostsText } = useMultilingualSentence()
   return (
     <>
       <Heading as={"h1"} size={"xl"} textAlign={"center"} marginBottom={3}>
-        {getAllPostsText()}
+        {resource.AllPostsText}
       </Heading>
       <Center marginBottom={3}>
         <PostCardList posts={posts} />
