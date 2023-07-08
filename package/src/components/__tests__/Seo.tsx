@@ -230,7 +230,7 @@ describe("Seo component", () => {
     })
     expect(
       container?.querySelector("meta[name='robots']")?.getAttribute("content")
-    ).toBe("noindex, nofollow")
+    ).toBe("noindex")
   })
 
   test("should not put a json-ld", () => {
