@@ -28,7 +28,7 @@
       "prettier --write"
     ]
   },
-  "packageManager": "yarn@3.6.3",
+  "packageManager": "yarn@3.6.4",
   "devDependencies": {
     "@axe-core/playwright": "^4.5.2",
     "@emotion/jest": "^11.10.5",
