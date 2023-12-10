@@ -52,11 +52,10 @@ export const Head: HeadFC<Queries.TagPostsTemplateQuery, PageContext> = ({
       description={
         isNotFirstPage
           ? `${resource.TagPostsDescriptionText(
-              tagName
+              tagName,
             )} (${resource.PageCountText(currentPage)})`
           : resource.TagPostsDescriptionText(tagName)
       }
-      noindex={true}
     />
   )
 }
