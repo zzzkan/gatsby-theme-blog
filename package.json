@@ -33,7 +33,7 @@
     "@axe-core/playwright": "^4.5.2",
     "@emotion/jest": "^11.10.5",
     "@playwright/test": "^1.28.1",
-    "@testing-library/jest-dom": "^5.16.5",
+    "@testing-library/jest-dom": "^6.0.0",
     "@testing-library/react": "^14.0.0",
     "@types/eslint": "^8",
     "@types/node": "^18.11.0",
