@@ -34,7 +34,7 @@ exports[`Seo component > snapshot 1`] = `
     property="og:site_name"
   />
   <meta
-    content="summary_large_image"
+    content="summary"
     name="twitter:card"
   />
   <meta

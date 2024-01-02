@@ -38,7 +38,7 @@ describe("Seo component", () => {
       />,
       {
         container: document.head,
-      }
+      },
     )
     expect(asFragment()).toMatchSnapshot()
   })
@@ -49,10 +49,12 @@ describe("Seo component", () => {
     })
     expect(container.querySelector("title")?.textContent).toBe("siteTitle")
     expect(
-      container?.querySelector("meta[property$=title]")?.getAttribute("content")
+      container
+        ?.querySelector("meta[property$=title]")
+        ?.getAttribute("content"),
     ).toBe("siteTitle")
     expect(
-      container?.querySelector("meta[name$=title]")?.getAttribute("content")
+      container?.querySelector("meta[name$=title]")?.getAttribute("content"),
     ).toBe("siteTitle")
   })
 
@@ -61,13 +63,15 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(container.querySelector("title")?.textContent).toBe(
-      "customTitle - siteTitle"
+      "customTitle - siteTitle",
     )
     expect(
-      container?.querySelector("meta[property$=title]")?.getAttribute("content")
+      container
+        ?.querySelector("meta[property$=title]")
+        ?.getAttribute("content"),
     ).toBe("customTitle - siteTitle")
     expect(
-      container?.querySelector("meta[name$=title]")?.getAttribute("content")
+      container?.querySelector("meta[name$=title]")?.getAttribute("content"),
     ).toBe("customTitle - siteTitle")
   })
 
@@ -78,17 +82,17 @@ describe("Seo component", () => {
     expect(
       container
         .querySelector("meta[name='description']")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("siteDescription")
     expect(
       container
         ?.querySelector("meta[property$=description]")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("siteDescription")
     expect(
       container
         ?.querySelector("meta[name$=description]")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("siteDescription")
   })
 
@@ -97,22 +101,22 @@ describe("Seo component", () => {
       <Seo description={"custom\n\ndescription"} />,
       {
         container: document.head,
-      }
+      },
     )
     expect(
       container
         .querySelector("meta[name='description']")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("custom description")
     expect(
       container
         ?.querySelector("meta[property$=description]")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("custom description")
     expect(
       container
         ?.querySelector("meta[name$=description]")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("custom description")
   })
 
@@ -121,7 +125,7 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=type]")?.getAttribute("content")
+      container?.querySelector("meta[property$=type]")?.getAttribute("content"),
     ).toBe("blog")
   })
 
@@ -130,7 +134,7 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=type]")?.getAttribute("content")
+      container?.querySelector("meta[property$=type]")?.getAttribute("content"),
     ).toBe("article")
   })
 
@@ -139,13 +143,13 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=url]")?.getAttribute("content")
+      container?.querySelector("meta[property$=url]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/")
     expect(
-      container?.querySelector("meta[name$=url]")?.getAttribute("content")
+      container?.querySelector("meta[name$=url]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/")
     expect(
-      container?.querySelector("link[rel=canonical]")?.getAttribute("href")
+      container?.querySelector("link[rel=canonical]")?.getAttribute("href"),
     ).toBe("http://localhost:9000/")
   })
 
@@ -154,13 +158,13 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=url]")?.getAttribute("content")
+      container?.querySelector("meta[property$=url]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/custom/")
     expect(
-      container?.querySelector("meta[name$=url]")?.getAttribute("content")
+      container?.querySelector("meta[name$=url]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/custom/")
     expect(
-      container?.querySelector("link[rel=canonical]")?.getAttribute("href")
+      container?.querySelector("link[rel=canonical]")?.getAttribute("href"),
     ).toBe("http://localhost:9000/custom/")
   })
 
@@ -169,10 +173,12 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=image]")?.getAttribute("content")
+      container
+        ?.querySelector("meta[property$=image]")
+        ?.getAttribute("content"),
     ).toBe("http://localhost:9000/site-image.png")
     expect(
-      container?.querySelector("meta[name$=image]")?.getAttribute("content")
+      container?.querySelector("meta[name$=image]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/site-image.png")
   })
 
@@ -181,10 +187,12 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[property$=image]")?.getAttribute("content")
+      container
+        ?.querySelector("meta[property$=image]")
+        ?.getAttribute("content"),
     ).toBe("http://localhost:9000/custom-site-image.png")
     expect(
-      container?.querySelector("meta[name$=image]")?.getAttribute("content")
+      container?.querySelector("meta[name$=image]")?.getAttribute("content"),
     ).toBe("http://localhost:9000/custom-site-image.png")
   })
 
@@ -195,7 +203,7 @@ describe("Seo component", () => {
     expect(
       container
         ?.querySelector("meta[property$=site_name]")
-        ?.getAttribute("content")
+        ?.getAttribute("content"),
     ).toBe("siteTitle")
   })
 
@@ -204,8 +212,8 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[name$=card]")?.getAttribute("content")
-    ).toBe("summary_large_image")
+      container?.querySelector("meta[name$=card]")?.getAttribute("content"),
+    ).toBe("summary")
   })
 
   test("should put a creator", () => {
@@ -213,7 +221,7 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[name$=creator]")?.getAttribute("content")
+      container?.querySelector("meta[name$=creator]")?.getAttribute("content"),
     ).toBe("siteAuthor")
   })
 
@@ -229,7 +237,7 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("meta[name='robots']")?.getAttribute("content")
+      container?.querySelector("meta[name='robots']")?.getAttribute("content"),
     ).toBe("noindex")
   })
 
@@ -238,7 +246,7 @@ describe("Seo component", () => {
       container: document.head,
     })
     expect(
-      container?.querySelector("script[type=application/ld+json]")
+      container?.querySelector("script[type=application/ld+json]"),
     ).toBeNull()
   })
 
@@ -252,11 +260,11 @@ describe("Seo component", () => {
       />,
       {
         container: document.head,
-      }
+      },
     )
     const jsonld = JSON.parse(
       container?.querySelector("script[type=application/ld+json]")
-        ?.textContent ?? ""
+        ?.textContent ?? "",
     )
     expect(jsonld["@type"]).toBe("BlogPosting")
     expect(jsonld.headline).toBe("customTitle - siteTitle")

@@ -28,7 +28,7 @@ export const Seo: React.FC<Props> = (props) => {
   const pageUrl = new URL(props?.path ?? "", siteUrl).href
   const pageDescription = (props?.description ?? description).replace(
     /(\r?\n)+/g,
-    " "
+    " ",
   )
   const pageImageUrl =
     props?.image != null ? new URL(props.image, siteUrl).href : imageUrl
@@ -43,7 +43,7 @@ export const Seo: React.FC<Props> = (props) => {
       <meta property={"og:description"} content={pageDescription} />
       <meta property={"og:image"} content={pageImageUrl} />
       <meta property={"og:site_name"} content={siteTitle} />
-      <meta name={"twitter:card"} content={"summary_large_image"} />
+      <meta name={"twitter:card"} content={"summary"} />
       <meta name={"twitter:title"} content={pageTitle} />
       <meta name={"twitter:url"} content={pageUrl} />
       <meta name={"twitter:description"} content={pageDescription} />
