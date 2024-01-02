@@ -45,7 +45,7 @@
     "gatsby-transformer-sharp": "^5.0.0",
     "reading-time": "^1.5.0",
     "rehype-pretty-code": "^0.9.0",
-    "remark-gfm": "^1",
+    "remark-gfm": "^4.0.0",
     "shiki": "^0.14.0"
   },
   "engines": {
