@@ -77,6 +77,7 @@ Available theme options are:
 | `relatedPostsLimit`        | `6`             | Max number of posts in related posts                                     |
 | `shikiTheme`               | `dracula`       | [Shiki theme](https://github.com/shikijs/shiki/blob/main/docs/themes.md) |
 | `links`                    | `[]`            | Links to your external sites                                             |
+| `wordsPerMinute`           | `300`           | Words per minute                                                         |
 
 A example is shown below.
 
@@ -106,6 +107,7 @@ module.exports = {
             url: "https://twitter.com/_zzzkan",
           },
         ],
+        wordsPerMinute: 250,
       },
     },
   ],

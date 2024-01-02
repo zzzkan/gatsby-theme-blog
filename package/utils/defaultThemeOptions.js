@@ -10,6 +10,7 @@ module.exports = (themeOptions) => {
   const relatedPostsLimit = themeOptions.relatedPostsLimit || 6
   const shikiTheme = themeOptions.shikiTheme || "dracula"
   const links = themeOptions.links || []
+  const wordsPerMinute = themeOptions.wordsPerMinute || 300
 
   return {
     lang,
@@ -22,5 +23,6 @@ module.exports = (themeOptions) => {
     relatedPostsLimit,
     shikiTheme,
     links,
+    wordsPerMinute,
   }
 }
