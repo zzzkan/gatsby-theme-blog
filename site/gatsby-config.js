@@ -40,6 +40,7 @@ module.exports = {
             url: "https://twitter.com/_zzzkan",
           },
         ],
+        wordsPerMinute: 200,
       },
     },
     {

@@ -80,6 +80,7 @@ exports.createSchemaCustomization = ({ actions }, themeOptions) => {
       relatedPostsLimit: Int!
       shikiTheme: String!
       links: [Link]!
+      wordsPerMinute: Int!
     }
 
     type Link {
@@ -111,18 +112,20 @@ exports.sourceNodes = ({ actions, createContentDigest }, themeOptions) => {
 
 exports.onCreateNode = (
   { node, actions, getNode, createNodeId, createContentDigest },
-  themeOptions
+  themeOptions,
 ) => {
   const { createNode, createParentChildLink } = actions
   const fileNode = getNode(node.parent)
-  const { contentPath } = defaultThemeOptions(themeOptions)
+  const { contentPath, wordsPerMinute } = defaultThemeOptions(themeOptions)
   const draft = node.frontmatter?.draft ?? false
   if (
     node.internal.type === "Mdx" &&
     fileNode.sourceInstanceName === contentPath &&
     (process.env.NODE_ENV !== "production" || draft === false)
   ) {
-    const readingTimeResult = readingTime(node.body)
+    const readingTimeResult = readingTime(node.body, {
+      wordsPerMinute,
+    })
     const fieldData = {
       filePath: fileNode.absolutePath,
       slug: node.frontmatter.slug ?? createFilePath({ node, getNode }),
